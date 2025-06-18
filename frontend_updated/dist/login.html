@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+   
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+   
+        @keyframes slideText {
+            0% { transform: translateX(-100%); opacity: 0; }
+            25% { transform: translateX(0); opacity: 1; }
+            75% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+   
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/Login_Background1.png'); /* Optional dark background */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+   
+        .login-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+   
+        .login-container {
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+   
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            z-index: 10;
+        }
+   
+        .form-side {
+            flex: 1;
+            padding: 30px;
+            background-color: #1e1e2f;
+        }
+   
+        .animation-side {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(270deg, #ff6ec4, #7873f5, #47e6b1, #ffd200);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+            overflow: hidden;
+        }
+   
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            animation: slideText 6s ease-in-out infinite;
+            white-space: nowrap;
+        }
+   
+        h2 {
+            margin-bottom: 20px;
+            color: #00ffbb;
+            text-align: center;
+        }
+   
+        .form-group {
+            margin-bottom: 15px;
+        }
+   
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #baff0a;
+        }
+   
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+   
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+   
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+   
+        button:hover {
+            background-color: #0056b3;
+        }
+   
+        .forgot-password {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+   
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-popup">
+        <div class="login-container">
+            <!-- Close button -->
+            <button class="close-btn" id="closeButton">×</button>
+            
+            <!-- Left side: Login form -->
+            <div class="form-side">
+                <h2>Admin Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Login</button>
+                        <!-- <a href="#" class="forgot-password">Forgot Password?</a> -->
+                    </div>
+                </form>
+            </div>
+   
+            <!-- Right side: Animated background with sliding text -->
+            <div class="animation-side">
+                <div class="company-name">QuantumSoft <br> Technologies</div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+ 
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+ 
+            try {
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        username: username,
+                        password: password
+                    })
+                });
+ 
+                const responseBody = await response.text();
+                console.log(responseBody);
+ 
+                if (response.ok) {
+                    alert('Login successful!');
+                    window.location.href = 'admin/index.html';
+                } else {
+                    alert(`Error: ${responseBody}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An unexpected error occurred. Please try again later.');
+            }
+        });
+
+        // Close button functionality - redirect to home page
+        document.getElementById('closeButton').addEventListener('click', () => {
+            window.location.href = '/index.html'; // Adjust this to your home page URL
+        });
+    </script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

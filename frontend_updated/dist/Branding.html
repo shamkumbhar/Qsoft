@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>QuantumSoft Technologies Pvt Ltd</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet"> -->
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <title>Branding</title>
+    <style>
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #0056b3;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: white;
+            font-size: 30px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+
+        .service {
+            max-width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            background: url('img/cs.png');
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .testimonial {
+            background-color: rgb(241, 245, 243);
+        }
+
+        .portfolio {
+            max-width: 80%;
+            margin: 20px auto;
+            text-align: center;
+            background: #eff2e7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .service button {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .service button:hover {
+            background: #0056b3;
+        }
+
+        .portfolio img {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
+        .testimonial h4 {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                        Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                        Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                        Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software TestingS.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="UI UX Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                        Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                        Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                        Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                        Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                        Information
+                                    </a>
+                                    <a href="Web developmentP.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                        Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                        Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+        </nav>
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(to right, #000000, #0a2a43, #0055aa);
+ ">
+            <!-- style="background: url('img/Branding-and-Advertising-2\ \(1\).png') !important; -->
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h1 style="color: white;">Welcome to Our Branding Services</h1>
+                <p style="color: white;">We craft unique brand identities that leave lasting impressions.</p>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Service</a></li>
+                    <li class="breadcrumb-item active text-primary">Branding</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header -->
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+            <button class="cta-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section>
+        <h2>Our Services</h2>
+
+        <div class="service">
+            <h3>Logo Design</h3>
+            <p>We create custom logos that reflect your brand's personality and stand out in the market.</p>
+            <button
+                onclick="showPopup('Logo Design', 'Our logo design service ensures your brand is represented by a unique and memorable symbol.')">Learn
+                More</button>
+        </div>
+
+        <div class="service">
+            <h3>Brand Strategy</h3>
+            <p>Develop a comprehensive strategy to position your brand and connect with your target audience.</p>
+            <button
+                onclick="showPopup('Brand Strategy', 'We help you define your brand\'s vision, mission, and market position.')">Learn
+                More</button>
+        </div>
+
+        <div class="service">
+            <h3>Visual Identity</h3>
+            <p>Create a consistent visual style across all brand materials, including color schemes and typography.</p>
+            <button
+                onclick="showPopup('Visual Identity', 'Our visual identity services ensure brand consistency across all platforms.')">Learn
+                More</button>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section>
+        <h2>Our Work</h2>
+        <div class="portfolio">
+            <h3 style="color: black;">Project: QuantumSoft Technologies</h3>
+            <img src="img/logo.png" alt="Innovative Tech Logo"> <br>
+            <p>A sleek and modern logo designed for a tech startup.</p>
+        </div>
+    </section>
+
+    <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-uppercase text-primary">Testimonials</h4>
+                <h1 class="display-3 text-capitalize mb-3">Our Employees.</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
+                <div class="testimonial-item text-center p-4">
+                    <p>QuantumSoft Technology is known for its innovative solutions and commitment to
+                        delivering high-quality IT services.
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-1.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Govind Kakulde</h4>
+                        <p class="m-0 pb-3">Software Test Engineer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>At the forefront of innovation, we create software that transforms industries.
+                        Our focus is on building user-friendly.
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Abhilesh Dadurwade</h4>
+                        <p class="m-0 pb-3">Web Developer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>"We specialize in crafting innovative software tailored to your business needs.
+                        Our solutions are designed efficiency."
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Saiprasad Shrimangale</h4>
+                        <p class="m-0 pb-3">Web Developer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>"We deliver cutting-edge software solutions tailored to drive innovation and
+                        efficiency."
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Annu Singh</h4>
+                        <p class="m-0 pb-3">Web Developer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>Quantumsoft Technologies is a great place to work, fostering a collaborative
+                        environment where team members.
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">N.Pooja Reddy</h4>
+                        <p class="m-0 pb-3"> Devops Engineer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>The company fosters a culture of innovation and empathy, encouraging
+                        entrepreneurs to embody.
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Shubhangi Patil</h4>
+                        <p class="m-0 pb-3">Automation Test Engineer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>At the forefront of innovation, we create software that transforms industries.
+                        Our focus is on building user-friendly.
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-3.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Ashwini Pawar</h4>
+                        <p class="m-0 pb-3">Software Test Engineer </p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center p-4">
+                    <p>Empowering businesses with cutting-edge software that delivers results. We
+                        combine creativity and technology .
+                    </p>
+                    <div class="d-flex justify-content-center mb-4">
+                        <!-- <img src="img/testimonial-3.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt=""> -->
+                    </div>
+                    <div class="d-block">
+                        <h4 class="text-dark">Vipul Kulkarni</h4>
+                        <p class="m-0 pb-3">Jr. Software Engineer</p>
+                        <div class="d-flex justify-content-center text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                        src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                                accessible, effective, and tailored to your business needs.
+                                Powered by a team of experts who are passionate about technology and problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+
+                        <a href="#"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third
+                            Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                            contact@quantumsofttechnologies.com</a>
+
+                        <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                            href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0"
+                            href="https://www.linkedin.com/company/93195251/admin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white" href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Function to show the popup
+        function showPopup(title, description) {
+            const popup = document.getElementById('popup');
+            const popupTitle = document.getElementById('popup-title');
+            const popupDescription = document.getElementById('popup-description');
+
+            popupTitle.textContent = title;
+            popupDescription.textContent = description;
+            popup.style.display = 'flex';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+
+    </script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

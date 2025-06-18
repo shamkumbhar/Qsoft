@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+
+
+    <meta charset="utf-8">
+    <title>QuantumSoft Technologies Pvt Ltd</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* :root {
+  --primary-color: #0376c1;
+  --primary-color-dark: #002954;
+  --text-dark: #12110f;
+  --text-light: #6b7280;
+  --extra-light: #fbf7f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Merriweather", serif;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.section__description {
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.logo span {
+  color: var(--text-dark);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--extra-light);
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--extra-light);
+  border-bottom: 1px solid var(--text-light);
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--extra-light);
+  border-bottom: 1px solid var(--text-light);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-family: var(--header-font);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-light);
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.header {
+  padding-block: 5rem;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("img/header2.png"); */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header__container h1 {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 5rem;
+}
+
+.header__container h1 span {
+  font-size: 5.5rem;
+}
+
+.header__container p {
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.header__container form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header__container .input__group {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.header__container .input__group span {
+  padding: 6px 10px;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--text-dark);
+}
+
+.header__container input {
+  width: 100%;
+  padding-inline: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.header__container .btn {
+  width: 100%;
+}
+
+.feature__container {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature__card {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature__card img {
+  max-width: 70px;
+}
+
+.feature__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.feature__card p {
+  color: var(--text-light);
+  line-height: 1.5rem;
+}
+
+.destination {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.destination::before {
+  position: absolute;
+  content: "TRAVEL";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-100%);
+  font-size: 20rem;
+  font-weight: 900;
+  line-height: 14rem;
+  letter-spacing: -30px;
+  color: var(--text-light);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.destination__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.destination__card {
+  position: relative;
+  isolation: isolate;
+}
+
+.destination__content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.destination__card:hover .destination__content {
+  opacity: 1;
+}
+
+.discount {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("img/laptop.png"); */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.discount__container {
+  text-align: center;
+}
+
+.discount__container h2 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.discount__container h2 span {
+  font-size: 2rem;
+}
+
+.package__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.package__card {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.package__card__details {
+  padding: 1rem;
+}
+
+.package__card__details h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.package__card__details p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.5rem;
+}
+
+.package__card__details > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.package__card__details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-family: var(--header-font);
+}
+
+.swiper {
+  width: 100%;
+  padding-block: 4rem;
+}
+
+.swiper-slide {
+  max-width: calc((var(--max-width) - 1rem) / 3);
+  flex: 1;
+  padding: 1rem;
+}
+
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide {
+    max-width: calc((var(--max-width) - 1rem) / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper-slide {
+    max-width: calc(var(--max-width) - 1rem);
+  }
+
+  .destination::before {
+    font-size: 15rem;
+    line-height: 10rem;
+  }
+
+  .feature__card {
+    flex-direction: column;
+  }
+
+  .header__container {
+    padding: 1.5rem;
+  }
+
+  .header__container form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .package__card {
+    flex-direction: column;
+  }
+}
+
+
+.section__container {
+  padding: 5rem 1rem;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.mobile__features__container {
+  background-color: var(--white);
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section__header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section__description {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mobile__features__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+}
+
+.mobile__feature__card {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+
+.mobile__feature__card:hover {
+  transform: translateY(-5px);
+}
+
+.mobile__feature__card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.mobile__feature__card h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.mobile__feature__card p {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+    </style>
+
+  </head>
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="about.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                    About Us
+                                </a>
+                                
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                    Leadership
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Testimonial.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                    Testimonials
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="ourStory.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                    Our Story
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Project.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                    Our Projects
+                                 
+                                </a>
+                            </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="service.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                    Our Services
+                                   
+                                </a>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Web Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                                <a href="Interface Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                    Interface Design
+                                </a>
+                                <a href="Business Consulting.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                    Business Consulting
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="App_Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                    Development
+                                </a>
+                                <a href="Content_Creation.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                    Creation
+                                </a>
+                                <a href="Branding.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Software TestingS.html" class="dropdown-item"
+                                style="white-space: normal;color: white;">
+                                <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                Testing
+                            </a>
+                                <a href="UI UX Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                    Design
+                                </a>
+                                <a href="24_7_Service.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                    Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                <div class="nav-item dropdown">
+                    <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Web Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                    Design
+                                </a>
+                                <a href="Cyber Security.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                    Security
+                                </a>
+                                <a href="Mobile Information.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                    Information
+                                </a>
+                                <a href="Web developmentP.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Software Testing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                    Testing
+                                </a>
+                                <a href="Digital Marketing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                    Marketing
+                                </a>
+                                <a href="Keyword Research.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                    Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+    </nav>
+            <!-- Header Start -->
+            <div class="container-fluid bg-breadcrumb" style="background:url('img/moinfo\ \(1\).jpg') !important;">
+                <div class="container text-center py-5" style="max-width: 900px;">
+                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Mobile Information</h4>
+                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="Project.html">Project</a></li>
+                        <li class="breadcrumb-item active text-primary">Mobile Information</li>
+                    </ol>    
+                </div>
+            </div>
+            <!-- Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
+   
+    <!-- <header class="header" id="home">
+      <div class="section__container header__container">
+        <h1>Simplify<br /><span> Life Digitally</span></h1>
+        <p>
+          Stay Connected Anytime Anywhere</p>
+      
+    </header> -->
+
+    <section class="section__container feature__container" id="service">
+      <div class="feature__card">
+        <img src="img/user-interface.png" alt="feature" />
+        <div>
+          <h4> Operating Systems</h4>
+          <p>Android and iOS dominate the mobile market, each with unique features, apps, and ecosystems.</p>
+        </div>
+      </div>
+      <div class="feature__card">
+        <img src="img/user-interface.png" alt="feature" />
+        <div>
+          <h4> User Interface (UI)</h4>
+          <p> Android and iOS offer different UI experiences, with Android providing more customization options.</p>
+        </div>
+      </div>
+      <div class="feature__card">
+        <img src="img/security.png" alt="feature" />
+        <div>
+          <h4>Software Updates</h4>
+          <p>Software updates are crucial for security patches, new features, and compatibility with new apps, with iOS typically offering more consistent updates than Android.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+<!-- 
+    <section class="discount">
+      
+      <div class="section__container discount__container">
+        <h2>
+          Get upto 60% discount<br /><span>by joining us before summer</span>
+        </h2>
+        <div class="discount__btn">
+          <a href="contact.html"> <button class="btn">Join Us</button></a>
+        </div>
+      </div>
+    </section> -->
+
+
+    <section class="section__container mobile__features__container" id="mobile-features">
+      <h2 class="section__header">Features of Mobile Information</h2>
+      <p class="section__description">
+        Discover the cutting-edge features that make our mobile solutions stand out!
+      </p>
+      <div class="mobile__features__grid">
+        <div class="mobile__feature__card">
+          <img src="img/mbl6.png" alt="Feature 1" />
+          <h4>Seamless Connectivity</h4>
+          <p>
+            Stay connected with the latest network technologies and uninterrupted performance.
+          </p>
+        </div>
+        <div class="mobile__feature__card">
+          <img src="img/mbl7.png" alt="Feature 2" />
+          <h4>High-Resolution Display</h4>
+          <p>
+            Experience stunning visuals with vibrant colors and crystal-clear resolution.
+          </p>
+        </div>
+        <div class="mobile__feature__card">
+          <img src="img/mbl8.png" alt="Feature 3" />
+          <h4>Long-Lasting Battery</h4>
+          <p>
+            Enjoy extended usage with advanced battery optimization and fast charging.
+          </p>
+        </div>
+        <div class="mobile__feature__card">
+          <img src="img/mbl11.png" alt="Feature 4" />
+          <h4>Powerful Performance</h4>
+          <p>
+            Multitask effortlessly with high-speed processors and ample storage options.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+
+    <img src="img/marketing.png" alt="Description of the image">
+      
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+      <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <div class="footer-item">
+                      <h3 class="text-white mb-4">
+                          <a href="index.html">
+                              <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                  src="img/logo.png" alt="logo"></a>
+                      </h3>
+                      <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                          accessible, effective, and tailored to your business needs.
+                          Powered by a team of experts who are passionate about technology and problem-solving.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Short Link's</h4>
+                  <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                  <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                  <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                  <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                  <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                  <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                  <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Help Link's</h4>
+                  <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                  <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Contact Info</h4>
+
+                  <a href="#"><i class="fa fa-map-marker-alt me-2"></i>
+                    QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+                  <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                      contact@quantumsofttechnologies.com</a>
+
+                  <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+              </div>
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-twitter"></i></a>
+                          <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                              class="fab fa-instagram"></i></a>
+                      <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                              class="fab fa-linkedin-in"></i></a>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+ 
+   <!-- Copyright Start -->
+   <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-body"><a href="#"
+                        class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                        Technologies</a>, All right
+                    reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-body">
+
+                Designed By <a class="border-bottom text-white"
+                    href="#">QuantumSoft</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+ 
+ 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+ 
+ 
+ 
+ 
+       
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+   
+ 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
+
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+});
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
+
+const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".header__container h1", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".header__container p", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".header__container form", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+
+ScrollReveal().reveal(".feature__card", {
+  duration: 1000,
+  interval: 500,
+});
+
+ScrollReveal().reveal(".destination__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+ScrollReveal().reveal(".package__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+const swiper = new Swiper(".swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+    </script>
+     <script src="config/Config.js"></script>
+     <script src="js/script.js"></script>
+  </body>
+</html>

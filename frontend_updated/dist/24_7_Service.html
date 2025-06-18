@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 Support</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+
+    <!-- <link rel="stylesheet" href="twenty.css"> -->
+     <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* body {
+    background-color: #f0f4f8; 
+    color: #333;
+} */
+
+/* Hero Section */
+#hero {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(26, 35, 126, 0.8), rgba(33, 150, 243, 0.8)), 
+                url('hero-attractive-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    animation: rotateGradient 10s infinite linear;
+    z-index: 1;
+}
+
+@keyframes rotateGradient {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#hero .content-wrapper {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#hero h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#hero .highlight {
+    color: #ff4081;
+    background: linear-gradient(to right, #ff4081, #f50057);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: highlightPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes highlightPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    background: linear-gradient(to right, #ff4081, #f50057);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(255, 64, 129, 0.4);
+}
+
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+}
+
+.cta-btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to right, #f50057, #ff4081);
+    box-shadow: 0 15px 30px rgba(255, 64, 129, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small Mobile (up to 360px) */
+@media (max-width: 360px) {
+    #hero h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    #hero p {
+        font-size: 0.9rem;
+    }
+    .cta-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .cta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    #hero h2 {
+        font-size: 3rem;
+    }
+    #hero p {
+        font-size: 1.2rem;
+    }
+    .cta-btn {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Laptops (up to 1366px) */
+@media (max-width: 1366px) {
+    #hero h2 {
+        font-size: 3.5rem;
+    }
+    #hero p {
+        font-size: 1.3rem;
+    }
+    .cta-btn {
+        padding: 14px 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktops (larger than 1366px) */
+@media (min-width: 1367px) {
+    #hero h2 {
+        font-size: 4rem;
+    }
+    #hero p {
+        font-size: 1.4rem;
+    }
+    .cta-btn {
+        padding: 15px 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Services Section */
+#services-offered {
+    background: linear-gradient(to right, #9b4de0, #f56a91);
+
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+#services-offered::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pattern.png') repeat; /* Add a subtle pattern */
+    opacity: 0.05;
+    z-index: 0;
+}
+
+#services-offered h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #0d47a1;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1;
+    position: relative;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.service-card {
+    background: linear-gradient(145deg, #ffffff, #f3f3f3); /* 3D gradient card */
+    border-radius: 15px;
+    width: 300px;
+    height: 420px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2), -10px -10px 30px rgba(255, 255, 255, 0.8);
+}
+
+.service-image-container {
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.service-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50%;
+}
+
+.service-details h3 {
+    font-size: 1.4rem;
+    color: #15c02f;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.service-details h3::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: #1565c0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+}
+
+.service-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+/* Subtle background effect for the section */
+#services-offered::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-pattern.svg') repeat;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+        height: auto;
+    }
+}
+/* Responsive Design */
+
+/* Mobile (portrait) */
+@media (max-width: 480px) {
+    #services-offered h2 {
+        font-size: 1.2rem; /* Smaller heading for mobile */
+        margin-bottom: 30px;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 80%; /* Full-width card for mobile */
+        height: auto;
+    }
+
+    .service-details h3 {
+        font-size: 1.3rem; /* Smaller service title */
+    }
+
+    .service-details p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+    }
+}
+
+/* Tablet (portrait) */
+@media (max-width: 768px) {
+    #services-offered h2 {
+        font-size: 2.rem; /* Slightly smaller heading for tablets */
+        margin-bottom: 40px;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 80%; /* Cards take up 85% of the width */
+        height: auto;
+    }
+
+    .service-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-details p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Laptop (landscape) */
+@media (max-width: 1024px) {
+    #services-offered h2 {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+
+    .service-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .service-card {
+        width: 45%; /* Cards take up 45% of the width */
+        height: 420px;
+    }
+
+    .service-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-details p {
+        font-size: rem;
+    }
+}
+
+/* Desktop (default) */
+@media (min-width: 1025px) {
+    .service-cards {
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 300px; /* 300px width for larger screens */
+        height: 420px;
+    }
+}
+
+/* Importance of 24/7 Availability Section */
+#importance-247 {
+    background: linear-gradient(to right, #26a69a, #42a5f5);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1); /* Subtle shadow effect for depth */
+    border-radius: 15px;
+}
+
+#importance-247 .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.text-column {
+    flex: 1;
+    padding: 20px;
+    max-width: 600px;
+    color: #333;
+}
+
+.text-column h2 {
+    font-size: 2.7rem;
+    color: #0d47a1;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.text-column p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+.text-column ul {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1rem;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.text-column li {
+    margin-bottom: 10px;
+}
+
+.image-column {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.support-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-column:hover .support-image {
+    transform: scale(1.05);
+}
+
+.support-image:hover {
+    opacity: 0.8; /* Slight fade on hover */
+}
+
+/* Mobile Design (Portrait) */
+@media (max-width: 480px) {
+    #importance-247 {
+        padding: 60px 20px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-column {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .image-column {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .support-image {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .text-column h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-column p {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Design (Portrait) */
+@media (max-width: 768px) {
+    #importance-247 {
+        padding: 70px 20px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-column {
+        text-align: center;
+        max-width: 80%;
+    }
+
+    .image-column {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .support-image {
+        width: 75%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .text-column h2 {
+        font-size: 2.5rem;
+    }
+
+    .text-column p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Laptop Design (Landscape) */
+@media (max-width: 1024px) {
+    #importance-247 {
+        padding: 80px 30px;
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .text-column {
+        text-align: left;
+        max-width: 45%;
+    }
+
+    .image-column {
+        max-width: 45%;
+    }
+
+    .support-image {
+        width: 100%;
+    }
+
+    .text-column h2 {
+        font-size: 2.8rem;
+    }
+
+    .text-column p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop Design (default) */
+@media (min-width: 1025px) {
+    #importance-247 {
+        padding: 80px 40px;
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .text-column {
+        text-align: left;
+        max-width: 50%;
+    }
+
+    .image-column {
+        max-width: 50%;
+    }
+
+    .support-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-column h2 {
+        font-size: 3rem;
+    }
+
+    .text-column p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Subtle background animation */
+#importance-247::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-pattern.svg') repeat;
+    opacity: 0.1;
+    z-index: 0;
+    animation: pattern-move 10s linear infinite;
+}
+
+/* Keyframe for subtle background animation */
+@keyframes pattern-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 20px;
+    }
+}
+
+
+/* 24/7 Service Examples Section */
+#examples-247-services {
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1); /* Subtle shadow effect for depth */
+    border-radius: 15px;
+}
+
+#examples-247-services h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.service-examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto grid layout */
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    z-index: 1;
+    position: relative;
+}
+
+.example-card {
+    background: linear-gradient(145deg, #ffffff, #f3f3f3); /* 3D gradient card */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), -5px -5px 20px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 380px; /* Same height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevents overflow of images or text */
+}
+
+.example-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift effect on hover */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), -5px -5px 40px rgba(255, 255, 255, 0.7);
+}
+
+.example-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images cover the space */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.example-card:hover img {
+    transform: scale(1.1); /* Slight zoom effect on image hover */
+}
+
+.example-card h4 {
+    font-size: 1.2rem;
+    color: #0d47a1;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.example-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 10px;
+    margin-top: 15px;
+    flex-grow: 1; /* Ensures the paragraph takes up available space */
+}
+/* Mobile Design (Portrait) */
+@media (max-width: 480px) {
+    #examples-247-services {
+        padding: 40px 20px; /* Reduced padding for mobile */
+    }
+
+    .service-examples-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically for smaller screens */
+        gap: 20px; /* Space between cards */
+    }
+
+    .example-card {
+        height: auto; /* Allow cards to have flexible height */
+        padding: 15px;
+        background-color: #f8f8f8; /* Light background for better visibility */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow to make the cards stand out */
+    }
+
+    .example-card h4 {
+        font-size: 1.4rem; /* Slightly smaller heading for mobile */
+        margin: 10px 0;
+    }
+
+    .example-card p {
+        font-size: 0.9rem; /* Smaller text for mobile devices */
+        color: #555; /* Slightly lighter text for better readability */
+    }
+
+    .example-card img {
+        width: 100%; /* Make the image take up full width */
+        height: auto; /* Maintain image aspect ratio */
+        border-radius: 10px;
+        object-fit: cover; /* Ensure image fits well */
+    }
+}
+
+
+/* Tablet Design (Portrait) */
+@media (max-width: 768px) {
+    #examples-247-services {
+        padding: 70px 20px;
+    }
+
+    .service-examples-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 20px;
+    }
+
+    .example-card {
+        height: auto;
+    }
+
+    .example-card h4 {
+        font-size: 1.4rem;
+    }
+
+    .example-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Laptop Design (Landscape) */
+@media (max-width: 1024px) {
+    #examples-247-services {
+        padding: 80px 30px;
+    }
+
+    .service-examples-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        gap: 30px;
+    }
+
+    .example-card {
+        height: 380px;
+    }
+
+    .example-card h4 {
+        font-size: 1.5rem;
+    }
+
+    .example-card p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop Design (default) */
+@media (min-width: 1025px) {
+    #examples-247-services {
+        padding: 80px 40px;
+    }
+
+    .service-examples-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+        gap: 30px;
+    }
+
+    .example-card {
+        height: 380px;
+    }
+
+    .example-card h4 {
+        font-size: 1.6rem;
+    }
+
+    .example-card p {
+        font-size: 1.2rem;
+    }
+}
+
+ /* Section Styling */
+ #how-we-offer-247 {
+    background: linear-gradient(135deg, #1de3cc, #004d40); /* Lighter background color for better contrast */
+    padding: 60px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+}
+
+.content-wrapper h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffeb3b;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.content-wrapper h3::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #1f77b4; /* Blue accent */
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Service Item Grid Layout */
+.service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: left;
+}
+
+.service-item h4 {
+    font-size: 1.5rem;
+    color: #1f77b4; /* Blue accent color */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Hover Effects */
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+    background-color: #f4f7fb; /* Light blue tint on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-items {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-items {
+        grid-template-columns: 1fr;
+    }
+}
+/* Mobile Devices */
+@media (max-width: 480px) {
+    #how-we-offer-247 {
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .content-wrapper h3 {
+        font-size: 1.8rem; /* Smaller font size for titles */
+        margin-bottom: 20px;
+    }
+
+    .service-items {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .service-item {
+        padding: 20px; /* Adjust padding */
+    }
+}
+
+/* Tablets and Small Laptops */
+@media (min-width: 481px) and (max-width: 768px) {
+    #how-we-offer-247 {
+        padding: 50px 20px; /* Adjust padding */
+    }
+
+    .content-wrapper h3 {
+        font-size: 2.2rem; /* Adjust font size */
+    }
+
+    .service-items {
+        grid-template-columns: 1fr 1fr; /* Two columns */
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+}
+
+/* Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #how-we-offer-247 {
+        padding: 60px 40px; /* Adjust padding */
+    }
+
+    .content-wrapper h3 {
+        font-size: 2.5rem;
+    }
+
+    .service-items {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+    }
+
+    .service-item {
+        padding: 25px;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+    #how-we-offer-247 {
+        padding: 60px 80px; /* Adjust padding */
+    }
+
+    .content-wrapper h3 {
+        font-size: 3rem; /* Larger font for desktop */
+    }
+
+    .service-items {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Four columns */
+    }
+
+    .service-item {
+        padding: 30px; /* Adjust padding */
+    }
+}
+
+     </style>
+</head>
+<body>
+    <!-- Navbar & Hero Start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="about.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                    About Us
+                                </a>
+                                
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                    Leadership
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Testimonial.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                    Testimonials
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="ourStory.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                    Our Story
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Project.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                    Our Projects
+                                 
+                                </a>
+                            </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="service.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                    Our Services
+                                   
+                                </a>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Web Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                                <a href="Interface Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                    Interface Design
+                                </a>
+                                <a href="Business Consulting.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                    Business Consulting
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="App_Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                    Development
+                                </a>
+                                <a href="Content_Creation.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                    Creation
+                                </a>
+                                <a href="Branding.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Software TestingS.html" class="dropdown-item"
+                                style="white-space: normal;color: white;">
+                                <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                Testing
+                            </a>
+                                <a href="UI UX Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                    Design
+                                </a>
+                                <a href="24_7_Service.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                    Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                <div class="nav-item dropdown">
+                    <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Web Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                    Design
+                                </a>
+                                <a href="Cyber Security.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                    Security
+                                </a>
+                                <a href="Mobile Information.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                    Information
+                                </a>
+                                <a href="Web developmentP.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Software Testing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                    Testing
+                                </a>
+                                <a href="Digital Marketing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                    Marketing
+                                </a>
+                                <a href="Keyword Research.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                    Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+    </nav>
+
+     <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb" style="background: url('img/support.png'); background-repeat: no-repeat; background-size: cover;" >
+       <div class="container text-center py-5" style="max-width: 900px;">
+           <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s" >24/7 Services</h4>
+           <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+               <li class="breadcrumb-item" ><a href="index.html">Home</a></li>
+               <li class="breadcrumb-item" ><a href="#">Services</a></li>
+               <li class="breadcrumb-item active text-primary">24/7 Services</li>
+           </ol>    
+       </div>
+   </div>
+   <!-- Header End -->
+</div>
+<!-- Navbar & Hero End -->
+    
+    <!-- Hero Section -->
+    <section id="hero" class="intro-section">
+        <div class="particle-bg"></div>
+        <div class="content-wrapper">
+            <h2>
+                Step into the <span class="highlight">Future</span> <br> 
+                with <span class="highlight">QuantumSoft</span>
+            </h2>
+            <p>Delivering cutting-edge technology and 24/7 IT solutions tailored for your business.</p>
+          <a href="contact.html"> <button class="cta-btn">Get Started</button></a>
+        </div>
+    </section>
+    
+
+
+
+<!-- Our Services Section -->
+<section id="services-offered" class="services-section">
+    <div class="content-wrapper">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-image-container">
+                    <img src="img/support.png" alt="Support" class="service-image">
+                </div>
+                <div class="service-details">
+                    <h3 style="font-size:22px;color: red;">Support</h3>
+                    <p>24/7 helpdesk support for any technical issue or software query.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image-container">
+                    <img src="img/consulting.png" alt="Consulting" class="service-image">
+                </div>
+                <div class="service-details">
+                    <h3 style="font-size: 20px;color: red;">Consulting</h3>
+                    <p>Expert consultation available round the clock to meet your business needs.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image-container">
+                    <img src="img/cyber.png" alt="Cybersecurity" class="service-image">
+                </div>
+                <div class="service-details">
+                    <h3 style="font-size: 20px;color: red;">Cybersecurity</h3>
+                    <p>Real-time monitoring and immediate response to potential security threats.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image-container">
+                    <img src="img/open twenty.jpg" alt="24/7 Service" class="service-image">
+                </div>
+                <div class="service-details">
+                    <h3 style="font-size: 22px;color: red;">24/7 Service</h3>
+                    <p>We offer continuous monitoring and on-call support around the clock, ensuring your business never stops.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Importance of 24/7 Availability Section -->
+<section id="importance-247" class="highlight-section">
+    <div class="content-wrapper">
+        <div class="text-column">
+            <h2>Why 24/7 Availability Matters</h2>
+            <p>For companies like QuantumSoft Technologies, offering 24/7 support or service can:</p>
+            <ul>
+                <li><strong>Enhance Customer Satisfaction:</strong> Clients get immediate help, reducing downtime and frustration.</li>
+                <li><strong>Ensure Business Continuity:</strong> IT systems, websites, and applications stay operational, avoiding financial or reputational losses.</li>
+                <li><strong>Global Accessibility:</strong> Supports users across multiple time zones without delays.</li>
+                <li><strong>Increased Trust:</strong> Demonstrates reliability and dedication to customer needs.</li>
+            </ul>
+        </div>
+        <div class="image-column">
+            <img src="img/twenty seven by.jpg" alt="24/7 Support" class="support-image">
+        </div>
+    </div>
+</section>
+
+    <!-- 24/7 Service Examples Section -->
+    <section id="examples-247-services" class="service-examples-section">
+        <div class="content-wrapper">
+            <h3>Examples of 24/7 Services in IT</h3>
+            <div class="service-examples-grid">
+                <div class="example-card">
+                    <img src="img/customer-support.png" alt="Customer Support" class="example-image">
+                    <h4>Customer Support</h4>
+                    <p>Helpdesk available via live chat, email, or phone with chatbots for basic queries.</p>
+                </div>
+                <div class="example-card">
+                    <img src="img/server-moni.png" alt="Server Monitoring" class="example-image">
+                    <h4>Server Monitoring</h4>
+                    <p>Real-time tracking of server health to prevent crashes with automatic backups and updates.</p>
+                </div>
+                <div class="example-card">
+                    <img src="img/ecommerce.jpg" alt="E-Commerce" class="example-image">
+                    <h4>E-Commerce Operations</h4>
+                    <p>Online stores remain functional for purchases, payments, and support at all hours.</p>
+                </div>
+                <div class="example-card">
+                    <img src="img/cyber secu ser.jpg" alt="Cybersecurity Services" class="example-image">
+                    <h4>Cybersecurity Services</h4>
+                    <p>Monitoring for threats like hacking or malware attacks with immediate response teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How We Offer 24/7 Services Section -->
+<section id="how-we-offer-247" class="method-section">
+    <div class="content-wrapper">
+        <h3>How We Offer 24/7 Services</h3>
+        <div class="service-items">
+            <div class="service-item">
+                <h4>Automation</h4>
+                <p>Use tools like chatbots and ticketing systems to handle basic requests.</p>
+            </div>
+            <div class="service-item">
+                <h4>Global Teams</h4>
+                <p>Our distributed teams across different time zones ensure someone is always available.</p>
+            </div>
+            <div class="service-item">
+                <h4>Monitoring Tools</h4>
+                <p>Software like Nagios, SolarWinds, or Splunk for real-time IT monitoring.</p>
+            </div>
+            <div class="service-item">
+                <h4>Cloud Infrastructure</h4>
+                <p>Systems hosted on AWS, GCP, or Azure to guarantee uptime.</p>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                        src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                                accessible, effective, and tailored to your business needs.
+                                Powered by a team of experts who are passionate about technology and problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+ 
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+ 
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+ 
+                        <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+ 
+                        <a href="mcontact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                            contact@quantumsofttechnologies.com</a>
+ 
+                        <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-twitter"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+     
+           <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#"
+                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white"
+                        href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+     
+     
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+     
+     
+     
+     
+           
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+       
+     
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script src="config/Config.js"></script>
+        <script src="js/script.js"></script>3
+</body>
+</html>

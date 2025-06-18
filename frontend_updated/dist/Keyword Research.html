@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Strategy - QuantumSoft Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+<style>
+    /* Hero Section */
+#hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(26, 35, 126, 0.7), rgba(33, 150, 243, 0.9));
+    z-index: 1;
+}
+
+#hero .content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#hero .highlight {
+    color: #ff4081;
+    text-decoration: underline;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    /* .cta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        } */
+}
+
+/* Overview Section Styles */
+.overview {
+   
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow if content overflows */
+}
+
+/* Overlay on background */
+.overview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 50, 0.6); /* Semi-transparent dark overlay */
+    z-index: 0;
+}
+/* Adding an overlay on background */
+.overview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 50, 0.6);
+    z-index: 0;
+}
+
+.overview-content {
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+    padding: 0 15px;
+    position: relative;
+}
+
+.overview h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect for the heading */
+}
+
+.overview p {
+    font-size: 1.5rem;
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 400;
+    opacity: 0.85; /* Slight transparency for the paragraph */
+}
+
+
+/* Responsive Design */
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .overview h2 {
+        font-size: 3.5rem;
+    }
+
+    .overview p {
+        font-size: 1.4rem;
+    }
+
+    .cta-btn {
+        padding: 15px 40px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Laptop / Tablet */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .overview {
+        height: 60vh;
+        padding: 70px 20px;
+    }
+
+    .overview h2 {
+        font-size: 2.8rem;
+    }
+
+    .overview p {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+}
+
+/* Tablets and Mobile Devices */
+@media (max-width: 768px) {
+    .overview {
+        height: 50vh;
+        padding: 50px 15px;
+    }
+
+    .overview h2 {
+        font-size: 2.2rem;
+    }
+
+    .overview p {
+        font-size: 1.1rem;
+    }
+
+    .cta-btn {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .overview {
+        height: 45vh;
+        padding: 40px 10px;
+    }
+
+    .overview h2 {
+        font-size: 2rem;
+    }
+
+    .overview p {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Keyword Section Styles */
+.keyword-section {
+    background: linear-gradient(to right, #8e4083, #08cee0); /* Gradient background */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.keyword-section h2 {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(210, 8, 8, 0.4); /* Text shadow effect */
+}
+
+/* Keyword Container */
+.keyword-container {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Add space between left and right blocks */
+    align-items: flex-start; /* Align blocks at the top */
+    gap: 20px; /* Add spacing between blocks */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Keyword Block */
+.keyword-block {
+    background: rgb(8, 139, 86); /* Semi-transparent block background */
+    border-radius: 12px;
+    padding: 30px;
+    width: 48%; /* Take equal width for both blocks */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.keyword-block:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Keyword Block Headings */
+.keyword-block h3 {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #ff4081; /* Accent color */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyword Block Paragraph */
+.keyword-block p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Keyword Block List */
+.keyword-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.keyword-block li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    color: #fff;
+}
+
+.keyword-block li::before {
+    content: "✔"; /* Checkmark for list items */
+    color: #4db8ff;
+    position: absolute;
+    left: 0;
+    font-size: 1.4rem;
+}
+
+/* Responsive Media Queries */
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .keyword-section h2 {
+        font-size: 3.5rem;
+    }
+
+    .keyword-container {
+        flex-direction: row; /* Maintain horizontal alignment */
+    }
+
+    .keyword-block {
+        max-width: 48%; /* Both blocks take 48% of the container */
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .keyword-section h2 {
+        font-size: 3rem;
+    }
+
+    .keyword-container {
+        flex-wrap: wrap; /* Wrap the blocks if they don't fit */
+        justify-content: center; /* Center-align blocks */
+    }
+
+    .keyword-block {
+        max-width: 70%; /* Slightly smaller width */
+    }
+
+    .keyword-block h3 {
+        font-size: 1.6rem;
+    }
+
+    .keyword-block p {
+        font-size: 1.1rem;
+    }
+
+    .keyword-block li {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .keyword-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .keyword-container {
+        flex-direction: column; /* Stack blocks vertically */
+        align-items: center;
+    }
+
+    .keyword-block {
+        max-width: 100%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+
+    .keyword-block h3 {
+        font-size: 1.4rem;
+    }
+
+    .keyword-block p {
+        font-size: 1rem;
+    }
+
+    .keyword-block li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Service Cards Section */
+#service-cards {
+    padding: 40px 20px;
+    background: #009688;
+}
+
+#service-cards h2 {
+    text-align: center;
+    color: #ff4081;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #004080, #00b4d8);
+    transition: height 0.4s ease;
+    z-index: 1;
+}
+
+.service-card:hover:before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+.service-card-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #e0e0e0;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin: 15px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.service-card ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-card ul li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #00b4d8;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Buttons for CTAs (Optional) */
+.service-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: linear-gradient(to right, #004080, #00b4d8);
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card a:hover {
+    background: linear-gradient(to right, #d9743a, #ca3d21);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        margin: 0 auto;
+    }
+
+    #service-cards h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Base Styles for the Keywords Section */
+#keywords-section {
+    padding: 60px 20px;
+    background: #1cbfc8;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+#keywords-section h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#keywords-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #d7a683;
+    border-radius: 10px;
+}
+
+/* Container for the Keywords */
+.keywords-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Styling for Each Keyword Card */
+.keyword {
+    background: linear-gradient(135deg, #139fb2 0%, #ffffff 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 48%;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 30px;
+}
+
+/* Hover Effect for Cards */
+.keyword:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #9edb60 0%, #ffac33 100%);
+}
+
+.keyword h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e2a47;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.keyword ul {
+    list-style-type: none;
+    padding: 0;
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.keyword ul li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 25px;
+}
+
+/* Custom Bullet Points */
+.keyword ul li:before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #ff6a00;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+    #keywords-section h2 {
+        font-size: 2rem;
+    }
+
+    .keywords-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .keyword {
+        width: 100%;
+        padding: 20px;
+        min-height: 180px;
+    }
+
+    .keyword h3 {
+        font-size: 1.6rem;
+    }
+
+    .keyword ul {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for tablets and smaller desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .keywords-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .keyword {
+        width: 48%;
+        padding: 25px;
+        min-height: 220px;
+    }
+
+    .keyword h3 {
+        font-size: 1.8rem;
+    }
+
+    .keyword ul {
+        font-size: 1.1rem;
+    }
+}
+
+/* Larger desktops */
+@media (min-width: 1025px) {
+    .keywords-content {
+        flex-direction: row;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .keyword {
+        width: 48%;
+    }
+
+    .keyword h3 {
+        font-size: 2rem;
+    }
+
+    .keyword ul {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* General Styles */
+.cta-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0077b6, #00aaff); /* Gradient from blue to light blue */
+    color: #fff; /* Text color changes to white for better contrast */
+    text-align: center;
+}
+
+
+
+
+.cta-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.cta-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centering the items horizontally */
+    align-items: flex-start; /* Aligns items at the top */
+    gap: 20px;
+    max-width: 1200px; /* Optional: Set a max width to prevent it from stretching too much on large screens */
+    margin: 0 auto; /* Centers the content block */
+}
+
+.cta-block {
+    background-color: #fff;
+    border: 5px solid purple;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Wider width for the divs */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-block h3 {
+    font-size: 1.5rem;
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.cta-block ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cta-block ul li {
+    font-size: 1rem;
+    color: #555;
+    padding: 5px 0;
+}
+
+.cta-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries for responsiveness */
+
+/* Mobile (Portrait) */
+@media (max-width: 600px) {
+    .cta-content {
+        flex-direction: column; /* Stacks the divs vertically on mobile */
+    }
+
+    .cta-block {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-block h3 {
+        font-size: 1.2rem;
+    }
+
+    .cta-block ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (Portrait/Landscape) */
+@media (max-width: 768px) {
+    .cta-block {
+        width: 80%; /* Wider div blocks on tablets */
+    }
+}
+
+/* Laptops (Landscape) */
+@media (max-width: 1024px) {
+    .cta-block {
+        width: 70%; /* Maintain wider divs on laptops */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .cta-block {
+        width: 60%; /* Keeps the divs wide on desktop */
+    }
+
+    .cta-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .cta-block h3 {
+        font-size: 1.6rem;
+    }
+
+    .cta-block ul li {
+        font-size: 1.1rem;
+    }
+}
+
+</style>
+</head>
+<body>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                        Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+                                     
+                                    </a>
+                                </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+                                       
+                                    </a>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                        Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                        Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software TestingS.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                    Testing
+                                </a>
+                                    <a href="UI UX Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                        Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                        Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                        Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                        Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                        Information
+                                    </a>
+                                    <a href="Web developmentP.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                        Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                        Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+        </nav>
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb" >
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Keywords Research</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Project</a></li>
+                    <li class="breadcrumb-item active text-primary">Keywords Research</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+<!-- Hero Section -->
+<section id="hero" class="intro-section">
+    <div class="content-wrapper">
+        <h2>
+            Innovative <span class="highlight">Keyword Solutions</span> <br>
+            By <span class="highlight">QuantumSoft</span>
+        </h2>
+        <p>Optimizing for visibility and discoverability with a tailored keyword strategy.</p>
+        
+    </div>
+</section>
+
+<!-- Keyword Strategy Overview -->
+<section id="overview" class="overview">
+    <div class="overview-content">
+        <h2>Keyword Strategy Overview</h2>
+        <p>At QuantumSoft Technologies, we focus on creating a strong online presence by targeting specific keywords for various pages and services.</p>
+       
+    </div>
+</section>
+
+
+<!-- Keyword Highlights Section -->
+<section id="keyword-highlights" class="keyword-section">
+    <h2>Homepage Keywords</h2>
+    <div class="keyword-container">
+        <!-- Left Div -->
+        <div class="keyword-block left-block">
+            <h3>Brand Discovery</h3>
+            <p>Enhance visibility by targeting essential keywords like:</p>
+            <ul>
+                <li>"Affordable IT solutions for businesses"</li>
+                <li>"Top IT companies for small businesses"</li>
+                <li>"QuantumSoft Technologies services"</li>
+            </ul>
+        </div>
+
+        <!-- Right Div -->
+        <div class="keyword-block right-block">
+            <h3>Customer Reach</h3>
+            <p>Connect with customers using impactful phrases such as:</p>
+            <ul>
+                <li>"Best IT services near me"</li>
+                <li>"Reliable IT partners for startups"</li>
+                <li>"Innovative tech solutions"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Service Cards Section -->
+<section id="service-cards" class="service-section">
+    <h2>Service-Specific Keywords</h2>
+    <div class="card-grid">
+        <!-- Card for Responsive Website Design -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/Responsive Website Design.png" alt="Responsive Website Design" class="card-image">
+                <h3>Responsive Website Design</h3>
+                <ul>
+                    <li>"Custom responsive website design"</li>
+                    <li>"Affordable web development services"</li>
+                    <li>"Top web design companies for startups"</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card for Digital Consulting -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/Digital Consulting.png" alt="Digital Consulting" class="card-image">
+                <h3>Digital Consulting</h3>
+                <ul>
+                    <li>"Digital transformation consulting"</li>
+                    <li>"IT consulting services for businesses"</li>
+                    <li>"Affordable digital strategy consultants"</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card for Cybersecurity -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/Cybersecurity.jpg" alt="Cybersecurity" class="card-image">
+                <h3>Cybersecurity</h3>
+                <ul>
+                    <li>"Small business cybersecurity solutions"</li>
+                    <li>"IT security services for startups"</li>
+                    <li>"Protect your business from cyber threats"</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card for SEO Services -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/SEO Services.png" alt="SEO Services" class="card-image">
+                <h3>SEO Services</h3>
+                <ul>
+                    <li>"SEO for small businesses"</li>
+                    <li>"Local SEO services for increased visibility"</li>
+                    <li>"Top SEO strategies for startups"</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card for Social Media Marketing -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/Social Media Marketing (1).png" alt="Social Media Marketing" class="card-image">
+                <h3>Social Media Marketing</h3>
+                <ul>
+                    <li>"Boost brand presence on social media"</li>
+                    <li>"Effective social media strategies for businesses"</li>
+                    <li>"Grow your startup’s social media following"</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Card for Cloud Computing -->
+        <div class="service-card">
+            <div class="service-card-content">
+                <img src="img/cloud solution.jpeg" alt="Cloud Computing" class="card-image">
+                <h3>Cloud Computing</h3>
+                <ul>
+                    <li>"Scalable cloud services for businesses"</li>
+                    <li>"Affordable cloud storage solutions"</li>
+                    <li>"Cloud infrastructure management for startups"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Combined Keywords Section -->
+<section id="keywords-section" class="keywords-section">
+    <h2>Keywords and Topics</h2>
+    <div class="keywords-content">
+        <!-- Blog Keywords (First Line) -->
+        <div class="keyword">
+            <h3>Informational Content</h3>
+            <ul>
+                <li>"Benefits of cybersecurity for small businesses"</li>
+                <li>"How to choose the right IT consulting company"</li>
+                <li>"Top web design trends in 2024"</li>
+                <li>"Why automation is essential for business growth"</li>
+                <li>"How data analytics improves decision-making"</li>
+            </ul>
+        </div>
+        <!-- Location-Based Keywords (Second Line) -->
+        <div class="keyword">
+            <h3>Local SEO Focus</h3>
+            <ul>
+                <li>"IT consulting services in [Your Location]"</li>
+                <li>"Web development companies near me"</li>
+                <li>"Affordable IT solutions in [City/Region]"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Career and Contact Us Keywords Section -->
+<section id="career-contact-cta" class="cta-section">
+    <h2>Explore Opportunities & Connect with Us</h2>
+    <div class="cta-content">
+        <!-- Career Keywords Section -->
+        <div class="cta-block career-block">
+            <h3>Join the QuantumSoft Team</h3>
+            <ul>
+                <li>"IT jobs at QuantumSoft Technologies"</li>
+                <li>"Careers in application development"</li>
+                <li>"Work with top IT professionals"</li>
+            </ul>
+        </div>
+
+        <!-- Contact Us Keywords Section -->
+        <div class="cta-block contact-block">
+            <h3>Get in Touch with Experts</h3>
+            <ul>
+                <li>"Contact our IT solutions team"</li>
+                <li>"Talk to web design specialists"</li>
+                <li>"Request a free consultation for IT services"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<script src="script.js"></script>
+  
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <div class="footer-item">
+                        <h3 class="text-white mb-4">
+                            <a href="index.html">
+                                <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                    src="img/logo.png" alt="logo"></a>
+                        </h3>
+                        <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                            accessible, effective, and tailored to your business needs.
+                            Powered by a team of experts who are passionate about technology and problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Short Link's</h4>
+                    <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                    <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                    <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                    <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                    <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Help Link's</h4>
+                    <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+
+                    <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                    <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                        contact@quantumsofttechnologies.com</a>
+
+                    <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                </div>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.facebook.com/login/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://x.com/i/flow/login"><i
+                            class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+   <!-- Copyright Start -->
+   <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-body"><a href="#"
+                        class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                        Technologies</a>, All right
+                    reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-body">
+
+                Designed By <a class="border-bottom text-white"
+                    href="#">QuantumSoft</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn about Cyber Security, Network Security, and more. Protect your digital assets today.">
+    <meta name="keywords" content="Cyber Security, Network Security, Data Protection, Malware Defense">
+    <title>Cyber Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+
+    <style>
+        /* Basic Reset */
+
+        .container {
+            max-width: 1200px;
+            /* Limit the content width for larger screens */
+            margin: 0 auto;
+            /* Center align the container */
+            padding: 0 5%;
+            /* Add padding on both sides inside the container */
+        }
+
+
+        /* Header */
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+            background-image: url('img\cs2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header .logo h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        /* nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+} */
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px 10%;
+            text-align: left;
+            background-color: #f7f7f7;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        #about {
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 0, 0);
+            background-image: url('img\cyber2.png');
+        }
+
+        /* Grid Layout for Services Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns for larger screens */
+            gap: 30px;
+            margin: 40px auto;
+            /* Center the grid-container horizontally */
+            padding: 0 10%;
+            /* Add equal padding on left and right sides */
+            max-width: 1200px;
+            /* Optional: Limit the width for better layout control */
+        }
+
+        .card {
+            width: 100%;
+            height: 200px;
+            background: #07182E;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 20px;
+            padding: 40px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            /* Lifts the card slightly */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* Adds shadow */
+        }
+
+        .card h2 {
+            z-index: 1;
+            color: white;
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+
+        .card p {
+            z-index: 1;
+            color: #aaa;
+            font-size: 0.9em;
+            text-align: center;
+            margin: 0;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+            height: 130%;
+            animation: rotBGimg 3s linear infinite;
+            transition: all 0.2s linear;
+        }
+
+        @keyframes rotBGimg {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            background: #07182E;
+            inset: 5px;
+            border-radius: 15px;
+        }
+
+        /* Form and Contact Section */
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #002244;
+        }
+
+        /* Footer */
+        /* footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #003366;
+    color: white;
+    font-size: 0.9rem;
+} */
+
+        /* Flexbox Layout for Image and Text */
+        .info-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-text {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .info-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .info-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* New Section */
+        .new-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            background: none;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+
+        }
+
+        .container .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content .left-side::before {
+            content: '';
+            position: absolute;
+            height: 70%;
+            width: 2px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #afafb6;
+        }
+
+        .content .left-side .details {
+            margin: 14px;
+            text-align: center;
+        }
+
+        .content .left-side .details i {
+            font-size: 30px;
+            color: #160642;
+            margin-bottom: 10px;
+        }
+
+        .content .left-side .details .topic {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .content .left-side .details .text-one,
+        .content .left-side .details .text-two {
+            font-size: 14px;
+            color: #afafb6;
+        }
+
+        .container .content .right-side {
+            width: 75%;
+            margin-left: 75px;
+        }
+
+        .content .right-side .topic-text {
+            font-size: 23px;
+            font-weight: 600;
+            color: #1e0565;
+        }
+
+        .right-side .input-box {
+            height: 50px;
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .right-side .input-box input,
+        .right-side .input-box textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: #F0F1F8;
+            border-radius: 6px;
+            padding: 0 15px;
+            resize: none;
+        }
+
+        .right-side .message-box {
+            min-height: 110px;
+        }
+
+        .right-side .input-box textarea {
+            padding-top: 6px;
+        }
+
+        .right-side .button {
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        .right-side .button input[type="button"] {
+            color: #fff;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #3e2093;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button input[type="button"]:hover {
+            background: #5029bc;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns for medium screens */
+            }
+
+            header {
+                padding: 20px 5%;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .content-section {
+                padding: 20px 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* 1 column for smaller screens */
+            }
+
+            .info-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .info-text,
+            .info-image {
+                flex: none;
+                width: 100%;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .left-side,
+            .right-side {
+                flex: none;
+                width: 100%;
+            }
+
+            .right-side form .input-box input,
+            .right-side form .input-box textarea {
+                width: 100%;
+            }
+
+            header {
+                padding: 20px 3%;
+            }
+
+            /* footer {
+        font-size: 0.8rem;
+    } */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                        Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+                                     
+                                    </a>
+                                </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+                                       
+                                    </a>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                        <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                        Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                        Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software Testing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="UI UX Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                        Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                        Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Project</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                        Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                        Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                        Information
+                                    </a>
+                                    <a href="Web Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                        Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                        Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+        </nav>
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb" >
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Cyber Security</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Project</a></li>
+                    <li class="breadcrumb-item active text-primary">Cyber Security</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <h2 style="text-align: center;">Cyber Security Services</h2>
+    <div class="grid-container">
+        <div class="card">
+            <h2>Cyber Security</h2>
+            <p>Protect your digital assets with the latest in cyber security measures.</p>
+        </div>
+        <div class="card">
+            <h2>Network Security</h2>
+            <p>Secure your network against unauthorized access and breaches.</p>
+        </div>
+        <div class="card">
+            <h2>Data Protection</h2>
+            <p>Keep sensitive data safe from cyber threats and leaks.</p>
+        </div>
+        <div class="card">
+            <h2>Threat Analysis</h2>
+            <p>Identify and mitigate potential cyber security threats effectively.</p>
+        </div>
+        <div class="card">
+            <h2>Malware Defense</h2>
+            <p>Implement solutions to defend against malware and ransomware.</p>
+        </div>
+        <div class="card">
+            <h2>Risk Management</h2>
+            <p>Assess and reduce risks to your digital infrastructure.</p>
+        </div>
+    </div>
+
+    <section id="cybersecurity-info" class="content-section">
+        <div class="info-wrapper">
+            <div class="info-text">
+                <h2>Cyber security Information</h2>
+                <p><b>Cyber security</b> is the practice of protecting systems, networks,
+                    and programs from digital attacks. These cyberattacks are usually
+                    aimed at accessing, changing, or destroying sensitive information;
+                    extorting money from users through ransomware; or interrupting normal business processes.</p>
+            </div>
+            <div class="info-image">
+                <img src="img/cabout.png" alt="Network Security">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>About Cyber Security</h2>
+        <p>
+            We offer comprehensive cyber security services to protect your digital assets and ensure compliance with
+            industry standards.
+            Our solutions include threat analysis, risk management, and data encryption to secure sensitive information.
+            We specialize in network and endpoint security, utilizing advanced technologies like firewalls, intrusion
+            detection,
+            and prevention systems to safeguard against cyber threats. Our cloud security services ensure data safety in
+            cloud environments,
+            while compliance support helps businesses adhere to regulations such as GDPR, HIPAA, and PCI DSS.
+            Additionally,
+            we provide rapid incident response, recovery services, and employee training programs to build a
+            security-conscious workforce.
+        </p>
+    </section>
+    <!-- 
+    <div class="new-section">
+        <div class="container">
+            <div class="content">
+                <div class="left-side">
+                    <div class="address details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">Quantumsoft house, near Prashant Nagar, Prashant Nagar, Shyam Nagar,
+                        </div>
+                        <div class="text-two">Amravati, Maharashtra 444606 </div>
+                    </div>
+                    <div class="phone details">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">+91-7498857371</div>
+                    </div>
+                    <div class="email details">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-two">contact@quantumsofttechnologies.com </div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Send us a message</div>
+                    <p>Feel free to reach out anytime. We are here to assist you with any cybersecurity concerns or
+                        queries you may have.</p>
+                    <form action="submit_form.php" method="POST">
+                        <div class="input-box">
+                            <input type="text" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <textarea name="message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                        src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                                accessible, effective, and tailored to your business needs.
+                                Powered by a team of experts who are passionate about technology and problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+
+                        <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                            contact@quantumsofttechnologies.com</a>
+
+                        <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-twitter"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="https://www.quantumsofttechnologies.com/"
+                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white"
+                        href="https://www.quantumsofttechnologies.com/">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+        new Swiper('.mySwiper', {
+            loop: true, // Ensures infinite looping of slides
+            autoplay: {
+                delay: 0, // No delay between slides
+                disableOnInteraction: false, // Autoplay continues even after interaction
+            },
+            speed: 3000, // Adjust speed for smooth transition (in milliseconds)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 1, // Default slides per view
+            spaceBetween: 20, // Space between slides
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, // 2 slides for tablets
+                },
+                1024: {
+                    slidesPerView: 3, // 3 slides for desktops
+                },
+            },
+        });
+
+    </script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration</title>
+    <style>
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+
+        .left-section {
+            flex: 1;
+            background: url('img/Register.png') center center / cover no-repeat;
+        }
+
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            background-size: 200% 200%;
+            animation: gradientBackground 6s ease infinite;
+            padding: 20px;
+        }
+
+        .registration-form {
+            background: url('img/Registration13.png') center center / cover no-repeat;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: aliceblue;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .registration-form {
+                padding: 20px;
+            }
+
+            .registration-form h2 {
+                font-size: 20px;
+            }
+
+            .form-group input {
+                padding: 8px;
+            }
+
+            .form-group button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section"></div>
+        <div class="right-section">
+            <div class="registration-form">
+                <button class="close-btn" id="closeButton">×</button>
+                <h2>Admin Register</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="mobileNo">Mobile</label>
+                    <input type="text" id="mobileNo" placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <button id="registerButton">Register</button>
+                </div>
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Login here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerButton').addEventListener('click', async () => {
+            const adminData = {
+                name: document.getElementById('name').value,
+                mobileNo: document.getElementById('mobileNo').value,
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                email: document.getElementById('email').value,
+            };
+
+            const formData = new FormData();
+            formData.append('adminData', JSON.stringify(adminData));
+
+            try {
+                const response = await fetch('/api/admin/register', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const message = await response.text();
+                    alert(message); // Success message
+                    // Redirect to login page after successful registration
+                    window.location.href = 'login.html';
+                } else {
+                    const error = await response.text();
+                    alert(`Error: ${error}`); // Display error message
+                }
+            } catch (err) {
+                console.error("Error during registration:", err);
+                alert("An unexpected error occurred. Please try again later.");
+            }
+        });
+
+        // Close button functionality
+        document.getElementById('closeButton').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    </script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

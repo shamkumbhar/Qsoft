@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/quantumsoft leadership.css">
+  <meta charset="utf-8">
+  <title>QuantumSoft Technologies Pvt Ltd</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } */
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #c9cdd3, #243B55);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-y: auto;
+      /* padding: 0 20px; */
+    }
+
+
+
+
+
+
+    /* Hero Section with advanced styling */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      background-image: url('path-to-your-image.jpg');
+      /* Replace with your image path */
+      background-size: cover;
+      background-attachment: fixed;
+      /* Parallax scrolling effect */
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 15px;
+      margin-bottom: 50px;
+      box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      animation: heroSlideIn 2s ease-in-out;
+      /* Slide-in animation */
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 87, 51, 0.7), rgba(0, 0, 128, 0.7));
+      /* Vibrant gradient overlay */
+      border-radius: 15px;
+      z-index: 0;
+      mix-blend-mode: overlay;
+      /* Blends nicely with the background image */
+    }
+
+    .hero-section h1 {
+      position: relative;
+      font-size: 4rem;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      z-index: 1;
+      font-weight: 800;
+      letter-spacing: 3px;
+      animation: textGlow 2s infinite alternate;
+      /* Glowing text effect */
+    }
+
+    .hero-section p {
+      position: relative;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 20px;
+      z-index: 1;
+      color: #f1f1f1;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .hero-section .cta-button {
+      position: relative;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #ff5733, #c70039);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0px 5px 15px rgba(255, 87, 51, 0.6);
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    .hero-section .cta-button:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0px 10px 25px rgba(255, 87, 51, 0.8);
+    }
+
+    /* Animations */
+    @keyframes heroSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes textGlow {
+      from {
+        text-shadow: 0 0 10px #ff5733, 0 0 20px #ff5733, 0 0 30px #ff5733;
+      }
+
+      to {
+        text-shadow: 0 0 20px #ff5733, 0 0 30px #ff5733, 0 0 40px #ff5733;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Media Queries for Hero Section */
+
+    /* For large desktops (1440px and above) */
+    @media screen and (min-width: 1440px) {
+      .hero-section {
+        height: 600px;
+      }
+
+      .hero-section h1 {
+        font-size: 5rem;
+      }
+
+      .hero-section p {
+        font-size: 1.8rem;
+      }
+
+      .hero-section .cta-button {
+        font-size: 1.4rem;
+        padding: 18px 36px;
+      }
+    }
+
+    /* For desktops (1024px to 1439px) */
+    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+      .hero-section {
+        height: 550px;
+      }
+
+      .hero-section h1 {
+        font-size: 4.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1.6rem;
+      }
+
+      .hero-section .cta-button {
+        font-size: 1.3rem;
+        padding: 16px 32px;
+      }
+    }
+
+    /* For tablets (768px to 1023px) */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .hero-section {
+        height: 450px;
+      }
+
+      .hero-section h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1.4rem;
+      }
+
+      .hero-section .cta-button {
+        font-size: 1.2rem;
+        padding: 14px 28px;
+      }
+    }
+
+    /* For smartphones (576px to 767px) */
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+      .hero-section {
+        height: 400px;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+
+      .hero-section .cta-button {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+      }
+    }
+
+    /* For small smartphones (up to 575px) */
+    @media screen and (max-width: 575px) {
+      .hero-section {
+        height: 350px;
+        border-radius: 10px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+        margin-top: 15px;
+      }
+
+      .hero-section .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Leadership Section Styles */
+    .leadership-slider {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .leadership-slider .team-card {
+      background-color: transparent;
+      width: 350px;
+      height: 500px;
+      margin: 0 20px;
+      perspective: 1000px;
+      border-radius: 15px;
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .leadership-slider .team-card:hover {
+      transform: scale(1.05);
+    }
+
+    .leadership-slider .team-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .leadership-slider .team-card:hover .team-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .leadership-slider .team-card-front,
+    .leadership-slider .team-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+    }
+
+    .leadership-slider .team-card-front {
+      background: linear-gradient(135deg, rgba(34, 193, 195, 0.8), rgba(253, 187, 45, 0.6));
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .leadership-slider .team-card-front img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .leadership-slider .team-card-front h2 {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .leadership-slider .team-card-front p {
+      font-size: 1rem;
+      color: #f1f1f1;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Back Side */
+    .leadership-slider .team-card-back {
+      background: linear-gradient(135deg, #afbfdb, #2a5298);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .leadership-slider .team-card-back h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff6347;
+    }
+
+    .leadership-slider .team-card-back p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      line-height: 1.6;
+      text-align: center;
+      color: #f1f1f1;
+    }
+
+    .leadership-slider .team-card-back .contact-details {
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .leadership-slider .team-card-back .contact-details li {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .leadership-slider .team-card-back .contact-details a {
+      color: #ff7f50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .leadership-slider .team-card-back .contact-details a:hover {
+      color: #ff6347;
+    }
+
+    .leadership-slider .team-card-back .contact-details i {
+      font-size: 1.2rem;
+      color: #ff7f50;
+    }
+
+    .leadership-slider .navigation-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .leadership-slider .navigation-dots span {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .leadership-slider .navigation-dots span.active {
+      background: #ff7f50;
+    }
+
+    /* Media Queries for Leadership Section */
+    @media screen and (max-width: 1200px) {
+      .leadership-slider .team-card {
+        width: 300px;
+        height: 450px;
+      }
+
+      .leadership-slider .team-card-front img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .leadership-slider .team-card-front h2 {
+        font-size: 1.1rem;
+      }
+
+      .leadership-slider .team-card-front p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .leadership-slider .team-card {
+        width: 280px;
+        height: 420px;
+      }
+
+      .leadership-slider .team-card-front img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .leadership-slider .team-card-front h2 {
+        font-size: 1rem;
+      }
+
+      .leadership-slider .team-card-front p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .leadership-slider {
+        width: 100%;
+      }
+
+      .leadership-slider .team-card {
+        width: 250px;
+        height: 400px;
+      }
+
+      .leadership-slider .team-card-front img {
+        width: 180px;
+        height: 180px;
+      }
+
+      .leadership-slider .team-card-front h2 {
+        font-size: 0.9rem;
+      }
+
+      .leadership-slider .team-card-front p {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      body {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .leadership-slider {
+        width: 100%;
+        height: 350px;
+      }
+
+      .leadership-slider .team-card {
+        width: 230px;
+        height: 350px;
+        margin: 10px 0;
+      }
+
+      .leadership-slider .team-card-front img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .leadership-slider .team-card-front h2 {
+        font-size: 0.8rem;
+      }
+
+      .leadership-slider .team-card-front p {
+        font-size: 0.7rem;
+      }
+
+      .leadership-slider .navigation-dots {
+        bottom: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Spinner Start -->
+  <!-- <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div> -->
+  <!-- Spinner End -->
+
+  <!-- Navbar & Hero Start -->
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="" class="navbar-brand p-0">
+          <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+          <img src="img/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <div class="nav-item dropdown">
+                  <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                  <div class="dropdown-menu p-3"
+                      style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="about.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                  About Us
+                              </a>
+                              
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                  Leadership
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Testimonial.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                  Testimonials
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="ourStory.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                  Our Story
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Project.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                  Our Projects
+                               
+                              </a>
+                          </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="service.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                  Our Services
+                                 
+                              </a>
+                          </div>
+                         
+
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="nav-item dropdown">
+                  <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                  <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="Web Development.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                  Development
+                              </a>
+                              <a href="Interface Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                  Interface Design
+                              </a>
+                              <a href="Business Consulting.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                  Business Consulting
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="App_Development.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                  Development
+                              </a>
+                              <a href="Content_Creation.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                  Creation
+                              </a>
+                              <a href="Branding.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="Software TestingS.html" class="dropdown-item"
+                              style="white-space: normal;color: white;">
+                              <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                              Testing
+                          </a>
+                              <a href="UI UX Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                  Design
+                              </a>
+                              <a href="24_7_Service.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                  Service
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+              <div class="nav-item dropdown">
+                  <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                  <div class="dropdown-menu p-3"
+                      style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Web Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                  Design
+                              </a>
+                              <a href="Cyber Security.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                  Security
+                              </a>
+                              <a href="Mobile Information.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                  Information
+                              </a>
+                              <a href="Web developmentP.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                  Development
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Software Testing.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                  Testing
+                              </a>
+                              <a href="Digital Marketing.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                  Marketing
+                              </a>
+                              <a href="Keyword Research.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                  Research
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+
+
+              </div>
+              <a href="Careers.html" class="nav-item nav-link">Careers</a>
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+  </nav>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb" style="background: url('img/leaderHeader.png');" >
+      <div class="container text-center py-5" style="max-width: 900px;">
+          <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Leadership</h4>
+          <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="about.html">About </a></li>
+              <li class="breadcrumb-item active text-primary">Our Leadership</li>
+          </ol>    
+      </div>
+  </div>
+  <!-- Header End -->
+</div>
+<!-- Navbar & Hero End --><br><br>
+
+
+  <!-- Hero section -->
+  <!-- <section class="hero-section">
+        <div>
+          <h1>Welcome to QuantumSoft</h1>
+          <p style="font-size: 3rem; font-weight: 600; color: #f1f1f1; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); letter-spacing: 1px; margin-top: 20px;">
+         </p>
+         
+        </div>
+      </section> -->
+
+
+
+
+  <!-- Leadership Slider Section -->
+  <!-- <h1><span style="color: linear-gradient(to right, #02218f, #0e72e3, #02218f); font-size: 50px;">Our Leadership</span>
+  </h1><br><br><br> -->
+
+  <!-- Our Leader Start-->
+  <style>
+    /* Keyframes for animations */
+    @keyframes popIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* General styles */
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    } */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .leader-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, #e3ffe7, #d9e7ff);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.4s ease, background 0.6s ease;
+    }
+
+    .leader-section:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #d9e7ff, #e3ffe7);
+    }
+
+    .leader-photo {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .leader-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .leader-info {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .leader-info h1, .leader-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.8em;
+      color: #222;
+    }
+
+    .leader-info h3 {
+      margin: 0 0 20px;
+      font-size: 1.2em;
+      color: #666;
+    }
+
+    .leader-info p {
+      line-height: 1.6;
+    }
+
+    .leader-info h2 span {
+      color: #c70039;
+    }
+
+    /* Popup styles */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      text-align: center;
+      animation: popIn 0.5s ease-out;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    button {
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff8474;
+    }
+
+    @media (max-width: 768px) {
+      .leader-section {
+        flex-direction: column;
+      }
+
+      .leader-photo {
+        max-width: 100%;
+      }
+    }
+  </style>
+ <div class="container">
+  <!-- Leader Section 1 -->
+  <div class="leader-section">
+    <div class="leader-photo">
+      <img src="img/CEO_NIKHIL.jpg" alt="CEO Photo">
+    </div>
+    <div class="leader-info">
+      <h1>Nikhileshwar Kshirsagar</h1>
+      <h3>Leading the company towards innovation (CEO)</h3>
+      <p>
+        <h2><span>MISSION</span></h2>
+        Our mission is to empower individuals and organizations to achieve their full potential through transformative
+        training and expert consulting in the cloud and other technology domains.
+      </p>
+    </div>
+  </div>
+
+  <!-- Leader Section 2 -->
+  <div class="leader-section" >
+    <div class="leader-photo">
+      <img src="img/Image (5).jpg" alt="Director Photo">
+    </div>
+    <div class="leader-info">
+      <h2>Ketan Shevatkar</h2>
+      <h3>Overseeing smooth operations and growth (Director)</h3>
+      <p>
+        <h2><span>Dynamic IT Leader Driving Innovation</span></h2>
+        With expertise in Strategic Planning, Application Development, IT Operations, and Business Process Consulting
+        in the ITES sector, I bring a well-rounded approach to leadership.
+      </p>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup">
+    <h2>Welcome!</h2>
+    <p>Discover our amazing leadership team.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <div id="overlay"></div>
+</div>
+
+<script>
+  // Show popup
+  function showPopup() {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  // Close popup
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  // Show popup on page load
+  window.onload = function () {
+    setTimeout(showPopup, 1000);
+  };
+</script>
+
+
+
+  <!-- Our Leader End-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Updated Team Section -->
+  <section class="member-section" id="leadership-team">
+    <!-- Team Card -->
+    <div class="member-card">
+      <img src="img/Amol Shewane.jpg" alt="Manager">
+      <h2>Amol Shewane</h2>
+      <p>Executive Director of Human Capital</p>
+    </div>
+
+    <div class="member-card">
+      <img src="img/Smital.JPG" alt="Manager">
+      <h2>Smital</h2>
+      <p>Senior Human Resource</p>
+    </div>
+
+    <div class="member-card">
+      <img src="img/image (3).jpg" alt="Manager">
+      <h2>Samiksha Chaturbhuj</h2>
+      <p>Talent Acquisition Specialist</p>
+    </div>
+
+    <div class="member-card">
+      <img src="img/image.jpeg" alt="Manager">
+      <h2>Swapnil Tali</h2>
+      <p>Senior Project Manager</p>
+    </div>
+
+    <div class="member-card">
+      <img src="img/Sagar1.jpeg" alt="Manager">
+      <h2>Sagar Katekhaye</h2>
+      <p>Project Manager</p>
+    </div>
+
+   
+<!-- 
+    <div class="member-card">
+      <img src="img/sample3.jpg" alt="Manager">
+      <h2>Name</h2>
+      <p>Digital Media Handler</p>
+    </div> -->
+
+   
+
+   
+
+    <div class="member-card">
+      <img src="img/Annu-SIngh.jpg" alt="Manager">
+      <h2>Annu Singh</h2>
+      <p>Developer</p>
+    </div>
+
+    <div class="member-card">
+      <img src="img/Saipasad.jpg" alt="Manager">
+      <h2>Saiprasad Shrimangale</h2>
+      <p>Developer</p>
+    </div>
+
+  </section>
+
+    
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+      <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <div class="footer-item">
+                      <h3 class="text-white mb-4">
+                          <a href="index.html">
+                              <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                  src="img/logo.png" alt="logo"></a>
+                      </h3>
+                      <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                          accessible, effective, and tailored to your business needs.
+                          Powered by a team of experts who are passionate about technology and problem-solving.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Short Link's</h4>
+                  <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                  <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                  <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                  <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                  <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                  <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                  <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Help Link's</h4>
+                  <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                  <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Contact Info</h4>
+
+                  <a href="#"><i class="fa fa-map-marker-alt me-2"></i>
+                    QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                  <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                      contact@quantumsofttechnologies.com</a>
+
+                  <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+              </div>
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-twitter"></i></a>
+                          <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                              class="fab fa-instagram"></i></a>
+                      <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                              class="fab fa-linkedin-in"></i></a>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+          <div class="row g-4 align-items-center">
+              <div class="col-md-6 text-center text-md-start mb-md-0">
+                  <span class="text-body"><a href="#"
+                          class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                          Technologies</a>, All right
+                      reserved.</span>
+              </div>
+              <div class="col-md-6 text-center text-md-end text-body">
+
+                  Designed By <a class="border-bottom text-white"
+                      href="#">QuantumSoft</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Copyright End -->
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+  <script src="config/Config.js"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

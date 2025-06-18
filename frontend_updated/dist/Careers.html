@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | QuantumSoft Technologies</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+    <style>
+        /* *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    } */
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: 400;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-item a {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .header-section {
+            width: 100%;
+            height: inherit;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .center-div {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateY(-50%);
+            transform: translateX(-50%);
+            -ms-transform: translateY(-50%);
+            -ms-transform: translateX(-50%);
+            -webkit-transform: translateY(-50%);
+            -webkit-transform: translateX(-50%);
+        }
+
+        .header-buttons a {
+            border: 1px solid #fff;
+            border-radius: 100px;
+            margin: 0 5px;
+            padding: 12px 35px;
+            outline: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: center;
+            transition: ease 0.5s;
+        }
+
+        .header-buttons a:hover {
+            color: #3f2200;
+            background: #fff;
+            text-decoration: none;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-inner {
+            border: 1px solid white !important;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgb(0, 0, 0);
+            height: auto;
+            /* Adjust this value as needed */
+        }
+
+
+        .dropdown-menu {
+            margin-left: 88%;
+        }
+
+        .card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .post-image {
+            position: absolute !important;
+            height: 100% !important;
+            overflow: hidden;
+        }
+
+        .card .post-image img {
+            transition: 0.5s;
+            width: 100% !important;
+        }
+
+        .card:hover .post-image img {
+            transform: scale(1.2) translateY(-50px);
+        }
+
+        .card .news-content {
+            position: absolute;
+            bottom: -90px;
+            background: #fff;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        .card:hover .news-content {
+            bottom: 0;
+        }
+
+        .card .news-content .post-meta a {
+            text-decoration: none;
+            padding-right: 10px;
+            color: #262626;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        .card .news-content .post-meta a:hover {
+            color: #DF084A;
+        }
+
+        .card .news-content .post-header {
+            margin: 0;
+            padding: 10px 0;
+            color: #007DA6;
+            height: 100px;
+            background: white;
+            font-size: 25px;
+            overflow: hidden;
+        }
+
+        .card .news-content p {
+            font-size: 16px;
+            margin: 10px 0 0;
+            padding: 0;
+            color: #262626;
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .card:hover .news-content p {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .carousel-item img {
+            width: 100%;
+
+        }
+
+        .carousel-caption {
+            top: 100px;
+        }
+
+        .carousel-caption a {
+            font-size: 45px;
+            text-decoration: none;
+            color: rgb(9, 40, 70);
+            letter-spacing: 2px;
+        }
+
+        .carousel-caption p {
+            width: 75%;
+            margin: auto;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contain h1 {
+            /* margin-left: 42%!important; */
+            text-align: center;
+        }
+
+        /* Navbar initial styling */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: transparent;
+            /* Transparent on load */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Navbar styling when scrolled */
+        #navbar.scrolled {
+            background-color: #ffffff;
+            /* White background when scrolled */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Optional shadow effect */
+        }
+
+        /* Navbar link colors (optional) */
+        #navbar .nav-link {
+            color: #0004de;
+            /* Link color */
+            transition: color 0.3s ease;
+        }
+
+        #navbar.scrolled .nav-link {
+            color: #000;
+            /* Change link color when scrolled, if needed */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" id="navbar">
+            <a href="" class="navbar-brand p-0">
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active" style="color: #0004de;">Home</a>
+                    <a href="Jobs Openings.html" class="nav-item nav-link" style="color: #0004de;">Job Openings</a>
+                </div>
+                <div class="text-center my-4">
+                    <a href="loginpage.html">
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            Login
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb" style="background: url('img/career.png');">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Careers</h4>
+            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active text-primary">Careers</li>
+
+
+            </ol>
+        </div>
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="container">
+            <div class="contain">
+                <h1>Which field to choose?</h1>
+
+                The biggest decision post class 10 is picking the right stream. Picking the right stream is extremely
+                important as everything that happens thereafter will depend on it. The Science stream offers you many
+                lucrative career options such as engineering, medical, IT and computer science and even research in a
+                variety of domains. Commerce stream can lead you to some of the most lucrative and high paying jobs such
+                as Chartered Accountants, Company Secretaries, Accountants, Investment Banking and Financial Advisors.
+                An Arts student can opt for career options like Journalism, Literature, Social Work, Teaching and many
+                others.
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <div id="home" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+
+
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/slide1.jpeg">
+                        <div class="carousel-caption d-none d-md-block">
+                            <a href="arts.html">ARTS</a>
+                            <p style="color: #3f2200;">Humanities or what is popularly known as the Arts stream is
+                                traditionally the least preferred option among Class 10 students but this perception is
+                                changing with time. An Arts student can opt for career options like Journalism,
+                                Literature, Social Work, Teaching and many others.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+    </section>
+    <br>
+    <br>
+    <br><br><br>
+    <div class="container">
+        <div class="contain">
+            <h1>Apply Here</h1>
+            <hr class="mx-auto">
+        </div>
+    </div>
+
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="post-image">
+                                <img src="img/card11.jpeg" class="img-fluid">
+                            </div>
+                            <div class="news-content">
+                                <h3>Web Developer</h3>
+                                <p><strong>Company:</strong> QuantumSoft Technologies</p>
+                                <p><strong>Location:</strong> Pune</p>
+                                <p><strong>Description:</strong>Web Developer</p>
+                                <a href="Jobs Openings.html" class="btn btn-primary mt-2">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="post-image">
+                                <img src="img/card22.jpeg" class="img-fluid">
+                            </div>
+                            <div class="news-content">
+                                <h3>Graphic Designer</h3>
+                                <p><strong>Company:</strong> QuantumSoft Technologies</p>
+                                <p><strong>Location:</strong> Nagpur</p>
+                                <p><strong>Description:</strong>Graphic Designer </p>
+                                <a href="Jobs Openings.html" class="btn btn-primary mt-2">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                        src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                                accessible, effective, and tailored to your business needs.
+                                Powered by a team of experts who are passionate about technology and problem-solving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contactus.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+
+                        <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                            contact@quantumsofttechnologies.com</a>
+
+                        <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                            href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0"
+                            href="https://www.linkedin.com/company/93195251/admin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="https://www.quantumsofttechnologies.com/"
+                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white"
+                        href="https://www.quantumsofttechnologies.com/">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <script>
+        // Detect scroll and toggle the 'scrolled' class
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Testing Overview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+   <style>
+    /* Global Styles */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+} */
+
+/* body {
+    background-color: #f0f0f0;
+    color:white;
+    line-height: 1.6;
+    font-size: 16px;
+} */
+
+h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background: url('img\software testing3.png') center/cover no-repeat, 
+                linear-gradient(135deg, rgba(0, 188, 212, 0.8), rgba(76, 175, 80, 0.8));
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 75vh; /* Adjust to your desired height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 10px solid #222;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    z-index: 2; /* Ensures content is on top of the background */
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 4rem; /* Increased font size */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.8;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Optional: Overlay for better readability */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+    z-index: 1; /* Ensures overlay is below the content */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Introduction Section */
+#intro {
+    background: linear-gradient(135deg, #00bcd4, #4CAF50); /* Gradient background */
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center; /* Center align content */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Introduction Section Container */
+#intro .intro-container {
+    max-width: 950px; /* Increase max-width for larger readability */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 30px 20px;
+    text-align: left; /* Align text to the left */
+    background: rgba(255, 255, 255, 0.8); /* Light background for better contrast */
+    border-radius: 15px; /* Rounded corners for container */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Shadow effect for depth */
+}
+
+/* Heading Styling */
+#intro h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: black; /* White color for the heading */
+    font-weight: bold;
+    text-align: center; /* Center the heading */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Slightly space out the letters */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    animation: fadeIn 1s ease-out; /* Animation effect */
+}
+
+/* Paragraph Styling */
+#intro p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Justified text */
+    color: #555; /* Slightly darker color for text contrast */
+    max-width: 800px;
+    margin: 0 auto; /* Center the paragraph */
+    opacity: 0.9;
+    animation: fadeInUp 1.2s ease-out; /* Animation effect */
+}
+
+/* Remove margin for the last paragraph */
+#intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets (Devices with a max-width of 768px) */
+@media screen and (max-width: 768px) {
+    #intro .intro-container {
+        padding: 25px; /* Adjust padding for tablets */
+    }
+
+    #intro h2 {
+        font-size: 2.3em; /* Adjust heading font size */
+    }
+
+    #intro p {
+        font-size: 1.1em; /* Adjust paragraph font size */
+    }
+}
+
+/* For Mobile (Devices with a max-width of 480px) */
+@media screen and (max-width: 480px) {
+    #intro h2 {
+        font-size: 1.8em; /* Smaller font size for mobile */
+    }
+
+    #intro p {
+        font-size: 1em; /* Adjust paragraph font size */
+        line-height: 1.6; /* Slightly tighter line spacing for mobile */
+    }
+
+    #intro .intro-container {
+        padding: 15px; /* Reduce padding on mobile */
+    }
+}
+
+/* For Large Tablets (Devices with min-width of 768px and max-width of 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #intro h2 {
+        font-size: 2.5em; /* Adjust font size for larger tablets */
+    }
+
+    #intro p {
+        font-size: 1.1em; /* Adjust paragraph font size */
+    }
+}
+
+/* For Laptops and Desktops (Devices with min-width of 1024px) */
+@media screen and (min-width: 1024px) {
+    #intro .intro-container {
+        padding: 40px; /* Increase padding on larger screens */
+    }
+
+    #intro h2 {
+        font-size: 3.2em; /* Larger heading for bigger screens */
+    }
+
+    #intro p {
+        font-size: 1.2em; /* Slightly bigger font size for paragraphs */
+    }
+}
+
+/* Animations for Fade-In Effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Essential Software Testing Insights */
+#testing-types {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #4ecada, #e9b2b2);
+    text-align: center;
+    border-top: 5px solid #009688;
+    border-bottom: 5px solid #00796b;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding subtle decorative patterns */
+#testing-types::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 150, 136, 0.2);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+#testing-types::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 150, 136, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float-reverse 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(20px) translateX(20px);
+    }
+}
+
+@keyframes float-reverse {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(-20px);
+    }
+}
+
+#testing-types h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    color: #163cce;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Software Testing Process Section */
+.testing-process {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f2f4f7, #e0e0e0);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.process-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.process-details {
+    flex: 1;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.process-details p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.process-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.process-details li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.process-details li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-size: 1.5rem;
+}
+
+.process-image {
+    flex: 1;
+    text-align: center;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.process-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .process-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .process-details,
+    .process-image {
+        flex: unset;
+        max-width: 100%;
+    }
+}
+
+/* Testing Environments Section */
+.testing-env-section {
+    background: linear-gradient(135deg, #00695c, #004d40); /* Darker green gradient background */
+    color: #ffffff;
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Heading */
+.testing-env-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffeb3b; /* Yellow color */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Shadow for a 3D effect */
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Paragraph Styling */
+.testing-env-section p {
+    font-size: 1.3em;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    opacity: 0.9;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Flexbox for Cards (Specific to Testing Environments Section) */
+.testing-env-section .testing-env-cards-container {
+    display: flex;
+    justify-content: space-between; /* Equal space between cards */
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Card Styling for Testing Environments */
+.testing-env-section .testing-env-card {
+    background: #00796b; /* Dark teal background for the card */
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 22%; /* 4 cards in a row */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #ffffff; /* White text color */
+}
+
+/* Hover Effect on Cards */
+.testing-env-section .testing-env-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Title and Content for Testing Environments */
+.testing-env-section .testing-env-card h3 {
+    font-size: 1.5rem;
+    color: #ffeb3b; /* Yellow color for card title */
+    margin-bottom: 15px;
+}
+
+.testing-env-section .testing-env-card p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Media Queries */
+
+/* For Tablets (Devices with a max-width of 768px) */
+@media screen and (max-width: 768px) {
+    .testing-env-section h2 {
+        font-size: 2.2em;
+    }
+    
+    .testing-env-section p {
+        font-size: 1.1em;
+    }
+    
+    .testing-env-section .testing-env-cards-container {
+        justify-content: space-evenly; /* Adjust spacing for tablets */
+    }
+
+    .testing-env-section .testing-env-card {
+        width: 45%; /* 2 cards per row on tablets */
+    }
+}
+
+/* For Mobile Phones (Devices with a max-width of 480px) */
+@media screen and (max-width: 480px) {
+    .testing-env-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .testing-env-section p {
+        font-size: 1em;
+    }
+
+    .testing-env-section .testing-env-cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .testing-env-section .testing-env-card {
+        width: 90%; /* 1 card per row on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+/* For Desktops and Large Laptops (Devices with a min-width of 1024px) */
+@media screen and (min-width: 1024px) {
+    .testing-env-section .testing-env-card {
+        width: 22%; /* 4 cards in a row on desktops */
+    }
+}
+
+/* For Small Laptops (Devices with a min-width of 768px and max-width of 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .testing-env-section .testing-env-card {
+        width: 30%; /* 3 cards per row on small laptops */
+    }
+}
+
+
+
+
+
+
+/* Popular Testing Tools Section */
+#tools {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ffffff, #eeeeee);
+}
+
+#tools h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #009688;
+    font-weight: bold;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Ensure uniform image height */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+/* General Enhancements */
+/* body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f9fbe7, #e3f2fd);
+    color: #333;
+} */
+
+/* Importance of Software Testing Section */
+#importance {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(53, 153, 224, 0.8), rgba(227, 177, 208, 0.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#importance::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(183, 15, 15, 0.4), transparent);
+    z-index: 1;
+    animation: glow 8s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        transform: translate(-30%, -30%);
+    }
+    to {
+        transform: translate(30%, 30%);
+    }
+}
+
+.importance-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+    align-items: stretch;
+    position: relative;
+    z-index: 2;
+}
+
+.importance-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.importance-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.importance-image:hover img {
+    transform: scale(1.08);
+}
+
+.importance-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.importance-text:hover {
+    background-color: #f1f8e9;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-image: linear-gradient(45deg, #81c784, #4caf50) 1;
+}
+
+.importance-text h2 {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.importance-text h2 span {
+    color: #4caf50;
+    font-size: 3rem;
+    animation: bounce 2s infinite;
+    text-align: justify;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.importance-text p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.importance-text p span {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.importance-text .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #81c784, #4caf50);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.importance-text .cta-button:hover {
+    background: linear-gradient(45deg, #66bb6a, #388e3c);
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .importance-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .importance-image, .importance-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .importance-text h2 {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .importance-text h2 {
+        font-size: 2rem;
+    }
+
+    .importance-text p {
+        font-size: 1rem;
+    }
+}
+/* Benefits Section */
+.benefits-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #ffffff, #f2f4f7);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.benefits-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.benefits-details {
+    flex: 1;
+    text-align: left;
+}
+
+.benefits-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-details li {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    position: relative;
+    padding-left: 30px;
+}
+
+.benefits-details li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #4caf50;
+}
+
+.benefits-image {
+    flex: 1;
+    text-align: center;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.benefits-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Mobile (Small screens) */
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    #intro p, #process li, #environments li, #benefits li {
+        font-size: 1rem;
+    }
+
+    #testing-types .card-container,
+    #tools .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet (Portrait and Landscape) */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    #intro p, #process li, #environments li, #benefits li {
+        font-size: 1.1rem;
+    }
+
+    #testing-types .card-container,
+    #tools .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptop (Medium screens) */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    #intro p {
+        font-size: 1.1rem;
+    }
+
+    #testing-types .card-container,
+    #tools .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (Larger screens) */
+@media (min-width: 1025px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    #intro p {
+        font-size: 1.2rem;
+    }
+
+    #testing-types .card-container,
+    #tools .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+   </style>
+</head>
+<body>
+
+    <!-- Navbar & Hero Start -->
+ <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="about.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                    About Us
+                                </a>
+                                
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                    Leadership
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Testimonial.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                    Testimonials
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="ourStory.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                    Our Story
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Project.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                    Our Projects
+                                 
+                                </a>
+                            </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="service.html" class="dropdown-item"
+                                    style="white-space: normal; color: white;">
+                                    <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                    Our Services
+                                   
+                                </a>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Web Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                                <a href="Interface Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                    Interface Design
+                                </a>
+                                <a href="Business Consulting.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                    Business Consulting
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="App_Development.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                    Development
+                                </a>
+                                <a href="Content_Creation.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                    Creation
+                                </a>
+                                <a href="Branding.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Software TestingS.html" class="dropdown-item"
+                                style="white-space: normal;color: white;">
+                                <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                Testing
+                            </a>
+                                <a href="UI UX Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                    Design
+                                </a>
+                                <a href="24_7_Service.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                    Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                <div class="nav-item dropdown">
+                    <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                    <div class="dropdown-menu p-3"
+                        style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Web Design.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                    Design
+                                </a>
+                                <a href="Cyber Security.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                    Security
+                                </a>
+                                <a href="Mobile Information.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                    Information
+                                </a>
+                                <a href="Web developmentP.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                    Development
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Software Testing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                    Testing
+                                </a>
+                                <a href="Digital Marketing.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                    Marketing
+                                </a>
+                                <a href="Keyword Research.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                    Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+    </nav>
+
+     <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb" style="background:url('img/Software-Test.png') !important;">
+       <div class="container text-center py-5" style="max-width: 900px;">
+           <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s" >Software Testing</h4>
+           <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+               <li class="breadcrumb-item" ><a href="index.html">Home</a></li>
+               <li class="breadcrumb-item" ><a href="#">Project</a></li>
+               <li class="breadcrumb-item active text-primary">Software Testing</li>
+           </ol>    
+       </div>
+   </div>
+   <!-- Header End -->
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- Hero Section -->
+<!-- <section class="hero">
+    <div class="hero-content">
+        <h2>Software Testing</h2>
+        <p>Ensuring quality through thorough testing at every stage of software development.</p>
+    </div>
+</section> -->
+
+
+<!-- Introduction Section -->
+<section id="intro" class="intro-section">
+    <div class="intro-container">
+        <h2 style="font-size: 40px;">What is Software Testing?</h2>
+        <p>Software testing is the process of checking a software application to ensure it works correctly, meets requirements, and is free of bugs. It also helps improve performance, security, and user experience, while ensuring reliability and compliance with standards..</p>
+    </div>
+</section>
+
+<!-- Types of Software Testing Section -->
+<section id="testing-types" class="types-testing">
+    <div class="types-content">
+        <h2>Essential Software Testing Insights</h2>
+
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Role of a Software Tester</h3>
+                <img src="img\ut.png" alt="Unit Testing" />
+                <p>Software testers create test plans, execute tests, report defects, and collaborate with developers to ensure high-quality software.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Test Environments</h3>
+                <img src="img\software testing.jpg" alt="Integration Testing" />
+                <p>Testing occurs in various environments such as development, staging, and production, each serving different purposes in the testing lifecycle.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Key Testing Metrics</h3>
+                <img src="img\st.jpeg" alt="System Testing" />
+                <p>Metrics like test coverage, defect density, and test execution time are crucial to evaluate the efficiency and effectiveness of testing efforts.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <h3>Acceptance Testing</h3>
+                <img src="img\AC.jpg" alt="Acceptance Testing" />
+                <p>Verifies that the software meets the client's requirements and is ready for deployment.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <h3>Regression Testing</h3>
+                <img src="img\RT.png" alt="Regression Testing" />
+                <p>Ensures new code changes do not negatively impact the existing functionality of the software.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+                <h3>Tools for Software Testing</h3>
+                <img src="img\pt.png" alt="Performance Testing" />
+                <p>Popular tools like Selenium, Jira, and Postman are widely used to automate tests, track issues, and test APIs in software development.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Software Testing Process Section -->
+<section id="process" class="testing-process">
+    <div class="process-container">
+        <h2 class="section-title">Software Testing Process</h2>
+        <div class="process-content">
+            <!-- Left Div: Details -->
+            <div class="process-details">
+                <p>
+                    The software testing process is a systematic approach to testing software to ensure it meets the defined requirements. It typically follows the stages outlined below:
+                </p>
+                <ul>
+                    <li><strong>Requirement Analysis:</strong> Understand the software's needs to determine the scope of testing and create a plan.</li>
+                    <li><strong>Test Planning:</strong> Outline the testing strategy, resources, schedule, and tools.</li>
+                    <li><strong>Test Design:</strong> Develop test cases and select testing techniques based on requirements.</li>
+                    <li><strong>Test Execution:</strong> Run the tests on the software, documenting the outcomes and identifying issues.</li>
+                    <li><strong>Defect Tracking:</strong> Monitor and resolve defects discovered during testing, ensuring fixes are implemented and retested.</li>
+                    <li><strong>Test Reporting:</strong> Summarize the test results, defects, and provide feedback to the development team for further improvement.</li>
+                </ul>
+            </div>
+            <!-- Right Div: Image -->
+            <div class="process-image">
+                <div class="image-wrapper">
+                    <img src="img\software testing process.png" alt="Software Testing Process">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testing Environments Section -->
+<section class="testing-env-section">
+    <h2>Testing Environments</h2>
+    <p>Testing environments are specialized setups that simulate real-world conditions where software is tested. Below are some common types of testing environments:</p>
+    <div class="testing-env-cards-container">
+        <div class="testing-env-card">
+            <h3>Development Environment</h3>
+            <p>Where initial tests are done by developers to identify basic issues during coding.</p>
+        </div>
+        <div class="testing-env-card">
+            <h3>Staging Environment</h3>
+            <p>A replica of the production environment used for final testing before deployment.</p>
+        </div>
+        <div class="testing-env-card">
+            <h3>Production Environment</h3>
+            <p>The live system where the application runs in real-world conditions.</p>
+        </div>
+        <div class="testing-env-card">
+            <h3>Test Lab</h3>
+            <p>A controlled environment with various configurations used for system, integration, and load testing.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Popular Testing Tools Section -->
+<section id="tools" class="testing-tools">
+    <div class="tools-container">
+        <h2>Popular Testing Tools</h2>
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Selenium</h3>
+                <img src="img\selenium.jpg" alt="Selenium" />
+                <p>An open-source tool for automating web applications, primarily for functional testing.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>JUnit</h3>
+                <img src="img\junit.png" alt="JUnit" />
+                <p>A framework for writing and running unit tests in Java-based applications.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>TestNG</h3>
+                <img src="img\testng.jpg" alt="TestNG" />
+                <p>A flexible testing framework for Java that supports parallel test execution and data-driven testing.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <h3>Appium</h3>
+                <img src="img\appium.jpg" alt="Appium" />
+                <p>An open-source tool for automating mobile applications on Android and iOS.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <h3>Postman</h3>
+                <img src="img\postman.png" alt="Postman" />
+                <p>A tool for testing and automating API requests and responses.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+                <h3>LoadRunner</h3>
+                <img src="img\loadrunner.png" alt="LoadRunner" />
+                <p>A performance testing tool used to simulate virtual users to test load and performance of applications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Importance of Software Testing Section -->
+<section id="importance" class="importance-testing">
+    <div class="importance-container">
+        <!-- Left Div: Image -->
+        <div class="importance-image">
+            <img src="img\pt.png" alt="Importance of Testing" />
+        </div>
+        <!-- Right Div: Text -->
+        <div class="importance-text">
+            <h2>Why is Software Testing Important?</h2>
+            <p>Software testing is essential for ensuring functionality, reliability, and security. It helps prevent costly errors, improves software quality, and ensures a positive user experience. Without proper testing, software can suffer from undetected bugs, security vulnerabilities, and poor performance, leading to user dissatisfaction and costly fixes down the line.</p>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Benefits of Software Testing Section -->
+<section id="benefits" class="benefits-section">
+    <div class="benefits-container">
+        <h2 class="section-title">Benefits of Software Testing</h2>
+        <div class="benefits-content">
+            <!-- Left Div: Details -->
+            <div class="benefits-details">
+                <ul>
+                    <li>
+                        <strong>Improved Software Quality:</strong> By identifying issues early in development, the quality of the final product is greatly improved.
+                    </li>
+                    <li>
+                        <strong>Reduced Costs:</strong> Detecting and fixing bugs early in the development lifecycle saves time and money compared to addressing issues after release.
+                    </li>
+                    <li>
+                        <strong>Enhanced User Experience:</strong> Testing ensures that the software functions as expected, providing a seamless user experience.
+                    </li>
+                    <li>
+                        <strong>Security Assurance:</strong> Software testing helps detect and fix security vulnerabilities before they can be exploited.
+                    </li>
+                    <li>
+                        <strong>Regulatory Compliance:</strong> Testing ensures the software adheres to industry regulations and standards, avoiding legal issues.
+                    </li>
+                </ul>
+            </div>
+            <!-- Right Div: Image -->
+            <div class="benefits-image">
+                <div class="image-wrapper">
+                    <img src="img\benifits.png" alt="Benefits of Software Testing">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+    
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <div class="footer-item">
+                        <h3 class="text-white mb-4">
+                            <a href="index.html">
+                                <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                    src="img/logo.png" alt="logo"></a>
+                        </h3>
+                        <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                            accessible, effective, and tailored to your business needs.
+                            Powered by a team of experts who are passionate about technology and problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Short Link's</h4>
+                    <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                    <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                    <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                    <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                    <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Help Link's</h4>
+                    <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+
+                    <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                    <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                        contact@quantumsofttechnologies.com</a>
+
+                    <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                </div>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.facebook.com/login/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://x.com/i/flow/login"><i
+                            class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+ 
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#"
+                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white"
+                        href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+ 
+ 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+ 
+ 
+ 
+ 
+       
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

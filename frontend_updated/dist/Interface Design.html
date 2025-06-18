@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>QuantumSoft Technologies Pvt Ltd</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Apply box-sizing globally */
+/* *, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+} */
+
+header {
+    background: #95beec;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 5rem;
+    justify-items: center;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-header {
+    background: #002d62;
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+    line-height: 1.5;
+}
+
+.description-section {
+    /* background: #fff; */
+    border: 3px solid #002d62;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.1;
+    box-sizing: border-box;
+    min-height: 100px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #002d62;
+    color: #fff;
+}
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-header {
+        font-size: 1.1rem;
+    }
+
+    .card-content {
+        font-size: 0.95rem;
+    }
+
+    .description-section {
+        padding: 1.5rem;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .description-section {
+        padding: 1rem;
+        min-height: 300px;
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-header {
+        font-size: 1rem;
+    }
+
+    .card-content {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .description-section {
+        font-size: 1rem;
+    }
+
+    .card-header {
+        font-size: 1rem;
+    }
+
+    .card-content {
+        font-size: 0.85rem;
+    }
+
+    /* footer {
+        font-size: 0.85rem;
+    } */
+}
+
+.new-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 88%;
+    /* background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.container .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .left-side::before {
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background: #afafb6; */
+}
+
+.content .left-side .details {
+    margin: 14px;
+    text-align: center;
+}
+
+.content .left-side .details i {
+    font-size: 30px;
+    color: #3e2093;
+    margin-bottom: 10px;
+}
+
+.content .left-side .details .topic {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.content .left-side .details .text-one,
+.content .left-side .details .text-two {
+    font-size: 14px;
+    color: #afafb6;
+}
+
+.container .content .right-side {
+    width: 75%;
+    margin-left: 75px;
+}
+
+.content .right-side .topic-text {
+    font-size: 23px;
+    font-weight: 600;
+    color: #3e2093;
+}
+
+.right-side .input-box {
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.right-side .input-box input,
+.right-side .input-box textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    /* background: #F0F1F8; */
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+}
+
+.right-side .message-box {
+    min-height: 110px;
+}
+
+.right-side .input-box textarea {
+    padding-top: 6px;
+}
+
+.right-side .button {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.right-side .button input[type="button"] {
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #3e2093;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input[type="button"]:hover {
+    background: #5029bc;
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 90%;
+        padding: 30px 40px 40px 35px;
+    }
+    .container .content .right-side {
+        width: 75%;
+        margin-left: 55px;
+    }
+}
+
+@media (max-width: 820px) {
+    .container {
+        margin: 40px 0;
+        height: 100%;
+    }
+    .container .content {
+        flex-direction: column-reverse;
+    }
+    .container .content .left-side {
+        width: 100%;
+        flex-direction: row;
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container .content .left-side::before {
+        display: none;
+    }
+    .container .content .right-side {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Ensure responsiveness of all elements */
+@media (max-width: 480px) {
+    .new-section {
+        padding: 10px;
+    }
+    .container .content {
+        flex-direction: column;
+    }
+    .container .content .left-side,
+    .container .content .right-side {
+        width: 100%;
+        margin: 0;
+    }
+
+    .right-side .button input[type="button"] {
+        width: 100%; /* Make button take full width on small screens */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                        Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+                                     
+                                    </a>
+                                </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item"
+                                        style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+                                       
+                                    </a>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                        Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                        Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software TestingS.html" class="dropdown-item"
+                                    style="white-space: normal;color: white;">
+                                    <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                                    Testing
+                                </a>
+                                    <a href="UI UX Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                        Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                        Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                        <div class="dropdown-menu p-3"
+                            style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                        Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                        Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                        Information
+                                    </a>
+                                    <a href="Web developmentP.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                        Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                        Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                        Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item"
+                                        style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                        Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+        </nav>
+
+            <!-- Header Start -->
+            <div class="container-fluid bg-breadcrumb">
+                <div class="container text-center py-5" style="max-width: 900px;">
+                    <h1 style="text-shadow: 2px 2px 4px rgb(255, 255, 255); font-family: 'Times New Roman', serif; color: white;">
+                        Principles of Interface Design
+                    </h1>
+                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Service</a></li>
+                        <li class="breadcrumb-item active text-primary">Interface Design</li>
+                    </ol>    
+                </div>
+            </div>
+            <!-- Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Interface Design Start-->
+
+
+
+        
+    
+        <main>
+            <div class="card">
+                <div class="card-header">User-Centered Design</div>
+                <img src="img/aj5.png" alt="User-Centered Design">
+                <div class="card-content">
+                    The interface is built around the needs and preferences of the target users.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Consistency</div>
+                <img src="img/Consistency.png" alt="Consistency">
+                <div class="card-content">
+                    "Maintain consistency in buttons, colors, and fonts to improve user familiarity and navigation ease."
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Visual Hierarchy</div>
+                <img src="img/third.png" alt="Visual Hierarchy">
+                <div class="card-content">
+                    Important elements should stand out, guiding the user's attention in a logical flow.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Accessibility</div>
+                <img src="img/1685082192326.png" alt="Accessibility">
+                <div class="card-content">
+                    Ensure the interface is usable for people with disabilities, such as using screen readers.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Interactivity</div>
+                <img src="img/1_vizDQbojTAzKN1EUgsbdWw.png" alt="Interactivity">
+                <div class="card-content">
+                    Interfaces should allow users to perform tasks smoothly, with clear feedback, animations. 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Simplicity</div>
+                <img src="img/images.png" alt="Simplicity">
+                <div class="card-content">
+                    The design should avoid clutter, making it easy for users to find what they need.
+                </div>
+            </div>
+        </main>
+    
+        <div class="description-section">
+            <h2>What is Interface Design?</h2>
+            <p>
+                Interface Design refers to the process of designing the interaction between users and software, devices, or systems.
+                It focuses on the usability, aesthetics, and functionality of the interface to ensure that it meets the needs of users while being intuitive and visually appealing.
+                Key aspects include:
+            </p>
+        </div>
+    
+        <br><br>
+    
+
+
+        <!-- Interface Design End-->
+
+         
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <div class="footer-item">
+                        <h3 class="text-white mb-4">
+                            <a href="index.html">
+                                <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                    src="img/logo.png" alt="logo"></a>
+                        </h3>
+                        <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                            accessible, effective, and tailored to your business needs.
+                            Powered by a team of experts who are passionate about technology and problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Short Link's</h4>
+                    <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                    <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                    <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                    <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                    <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Help Link's</h4>
+                    <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                    <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+
+                    <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                    <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                        contact@quantumsofttechnologies.com</a>
+
+                    <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                </div>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.facebook.com/login/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://x.com/i/flow/login"><i
+                            class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+ 
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#"
+                            class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                            Technologies</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    Designed By <a class="border-bottom text-white"
+                        href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+ 
+ 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+ 
+ 
+ 
+ 
+       
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+   
+ 
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+    </body>
+ 
+</html>

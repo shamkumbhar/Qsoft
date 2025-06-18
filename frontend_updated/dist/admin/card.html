@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: -90px;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #333;
+        }
+        .card p {
+            font-size: 1rem;
+            margin: 10px 0 0;
+            color: #666;
+        }
+        .card i {
+            font-size: 3rem;
+            color: #092073;
+            margin-bottom: 10px;
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <i class="fas fa-briefcase"></i>
+            <h2 id="totalUsers">0</h2>
+            <p>Job Posting</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h2 id="activeJobs">0</h2>
+            <p>Job Applied</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-comments"></i>
+            <h2 id="pendingApplications">0</h2>
+            <p>Blogs & News</p>
+        </div>
+       
+    </div>
+    <script>
+        function animateCount(id, start, end, duration) {
+            let element = document.getElementById(id);
+            let range = end - start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let current = start;
+            let timer = setInterval(() => {
+                current += increment;
+                element.textContent = current;
+                if (current === end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+
+        animateCount("totalUsers", 0, 150, 2000);
+        animateCount("activeJobs", 0, 45, 2000);
+        animateCount("pendingApplications", 0, 30, 2000);
+        animateCount("newMessages", 0, 10, 2000);
+    </script>
+     <script src="config/Config.js"></script>
+     <script src="js/script.js"></script>
+</body>
+</html>

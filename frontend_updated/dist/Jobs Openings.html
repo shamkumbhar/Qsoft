@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+    <style>
+        /* General Styles */
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .info-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .info-section h2 {
+            color: #f3f3f3;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+        }
+
+        .info-section ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .info-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .info-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .info-section a:hover {
+            text-decoration: underline;
+        }
+
+        .image-section {
+            flex: 1;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        body {
+
+
+
+            background: #1A1A2E;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            background: #002D62;
+            /* Dark blue header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .search-container input,
+        .search-container select {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            background: #f39c12;
+            color: white;
+            border-radius: 5px;
+            cursor: not-allowed;
+            transition: background 0.3s ease;
+        }
+
+        .search-container button.enabled {
+            cursor: pointer;
+            background: #f39c12;
+        }
+
+        .search-container button.enabled:hover {
+            background: #e67e22;
+        }
+
+        #jobs {
+            padding: 20px;
+        }
+
+        .job-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns */
+            grid-template-rows: repeat(3, 1fr);
+            /* 3 rows */
+            gap: 20px;
+        }
+
+        .job-card {
+            background: rgb(255, 255, 255);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .job-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .job-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .job-card a {
+            text-decoration: none;
+            color: #002D62;
+            font-weight: bold;
+        }
+
+        .job-card a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* Center the modal on the page */
+        .modal {
+            display: none;
+            /* Hide modal by default */
+            justify-content: center;
+            /* Horizontally center */
+            align-items: center;
+            /* Vertically center */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+            z-index: 1000;
+        }
+
+        /* Show the modal when it's active */
+        .modal.active {
+            display: flex;
+            /* Show modal when it has the "active" class */
+        }
+
+        /* Adjust the size and centering of the modal content */
+        .modal-content {
+            background: #fff;
+            padding: 30px 40px;
+            /* Increased padding for better spacing */
+            width: 600px;
+            /* Adjusted form width */
+            max-width: 90%;
+            /* Ensure form is responsive */
+            border-radius: 10px;
+            /* Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: left;
+            /* Keep form content aligned left */
+        }
+
+
+        /* Form styling */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            /* Increase gap for better spacing between fields */
+            margin-bottom: 20px;
+            /* Increase spacing between rows */
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            /* Make labels stand out */
+        }
+
+        input {
+            padding: 10px;
+            /* Adjust padding for inputs */
+            font-size: 16px;
+            /* Make input text larger */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            /* Ensure inputs take full width of their container */
+        }
+
+        /* Button styles */
+        .modal button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            border: none;
+            background: #f39c12;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background: #e67e22;
+        }
+
+        /* Header styling */
+        .modal-header h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #002D62;
+            font-size: 24px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .heading {
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: center;
+            color: #e5e9ed;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .job-cards {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns */
+            }
+
+            .search-container input,
+            .search-container select,
+            .search-container button {
+                width: 100%;
+                /* Full width on small screens */
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+
+            .job-card {
+                padding: 15px;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .job-cards {
+                grid-template-columns: 1fr;
+                /* 1 column on very small screens */
+            }
+
+            .search-container input,
+            .search-container select,
+            .search-container button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+
+
+        /* Default styling for the image container */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            /* Makes the container fill the entire viewport height */
+        }
+
+        /* Styling for the image inside the container */
+        .image-container img {
+            width: 100%;
+            height: 50%;
+            /* Ensures the image fills the container's height */
+            object-fit: cover;
+            /* Makes sure the image covers the container without distorting */
+        }
+
+        /* Styling for the centered text */
+        .centered {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            /* Ensures the text is visible on the image */
+            font-size: 1.7em;
+            /* Increases the font size */
+            text-align: center;
+            /* Centers multi-line text */
+            line-height: 1.4;
+            /* Improves readability for multi-line text */
+        }
+
+        /* Default styling for the image container */
+        .image-container {
+            position: relative;
+            width: 100%;
+            /* Full width of its parent */
+            height: auto;
+            /* Maintain aspect ratio */
+            overflow: hidden;
+            /* Ensures content doesn't overflow the container */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Ensures the image fills the container */
+            height: auto;
+            /* Maintains the image aspect ratio */
+            object-fit: cover;
+            /* Ensures the image scales correctly */
+        }
+
+        /* Media Query for screens smaller than 1024px (medium laptops, tablets) */
+        @media (max-width: 1024px) {
+            .centered {
+                font-size: 1.6em;
+                /* Slightly reduces font size */
+                top: 42%;
+                /* Adjusts text position */
+            }
+
+            .image-container img {
+                height: 90%;
+                /* Scales down image for medium screens */
+            }
+        }
+
+        /* Media Query for screens smaller than 768px (tablets, small laptops) */
+        @media (max-width: 768px) {
+            .image-container img {
+                height: 80%;
+                /* Adjusts the image height for smaller screens */
+            }
+
+            .centered {
+                font-size: 1.5em;
+                /* Reduces font size */
+                top: 40%;
+                /* Adjusts the position of the centered text */
+            }
+        }
+
+        /* Media Query for screens smaller than 480px (smartphones) */
+        @media (max-width: 480px) {
+            .image-container {
+                padding: 10px;
+                /* Adds padding to avoid edge overflow */
+            }
+
+            .image-container img {
+                height: 70%;
+                /* Further reduces image height */
+                object-fit: contain;
+                /* Ensures the entire image is visible */
+            }
+
+            .centered {
+                font-size: 1.2em;
+                /* Further reduces font size */
+                top: 50%;
+                /* Adjusts text position */
+            }
+        }
+
+        /* Media Query for screens smaller than 320px (very small devices) */
+        @media (max-width: 320px) {
+            .centered {
+                font-size: 1em;
+                /* Makes text smaller for very small screens */
+                top: 30%;
+                /* Adjusts position further */
+            }
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .close-button {
+                font-size: 24px;
+                cursor: pointer;
+                color: #ff0000;
+            }
+
+            .close-button:hover {
+                color: #cc0000;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="Jobs Openings.html" class="nav-item nav-link ">Job Openings</a>
+                    <div class="text-center my-4">
+
+                        <a href="loginpage.html"> <button class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">
+                                Login</button> </a>
+
+                    </div>
+
+
+                </div>
+        </nav>
+
+        <div class="image-container">
+            <img src="img/main.png" alt="Snow">
+            <div class="centered">
+                <h1 style="color: white;">Find The Perfect Job That You Deserve</h1>
+            </div>
+        </div>
+
+        <header>
+
+            <div class="search-container">
+                <input type="text" id="jobRole" placeholder="Search Job Role" oninput="checkFields()">
+
+                <select id="jobRole" onchange="checkFields()">
+                    <option value="">Select Experience</option>
+                    <option value="fresher">Fresher</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4 Years</option>
+                    <option value="5">5 Years</option>
+                    <option value="6">6 Years</option>
+                    <option value="7">7 Years</option>
+                    <option value="8">8 Years</option>
+                    <option value="9">9 Years</option>
+                    <option value="10">10 Years</option>
+                </select>
+
+                <select id="location" onchange="checkFields()">
+                    <option value="">Select Location</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                </select>
+                <button id="searchButton" class="disabled" onclick="searchJobs()" disabled>Search</button>
+            </div>
+        </header>
+
+
+        <section id="jobs">
+            <h2 style="text-align: center; color: white;">Available Job Profiles</h2>
+
+            <div class="job-cards" id="jobCards">
+                <!-- Job cards will be dynamically added here -->
+            </div>
+        </section>
+
+
+
+
+        <!-- Modal for applying -->
+        <div id="applyModal" class="modal" style="align-items: center; justify-items: center;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color:#002D62">Apply for Job</h2>
+                    <span class="close-button" onclick="closeModal()"
+                        style="font-size: 24px; cursor: pointer; color: #ff0000;">&times;</span>
+
+                </div>
+                <form id="userForm" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name"
+                                required pattern="[A-Za-z\s]+"
+                                title="Only alphabetic characters and spaces are allowed.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required
+                                pattern="[A-Za-z\s]+" title="Only alphabetic characters and spaces are allowed.">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number:</label>
+                            <input type="number" id="mobileNumber" name="mobileNumber"
+                                placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position:</label>
+                            <input type="text" id="position" name="position" placeholder="Enter your position" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" id="location" name="location" placeholder="Enter your location" required
+                                pattern="[A-Za-z\s]+" title="Only alphabetic characters and spaces are allowed.">
+                        </div>
+                        <div class="form-group">
+                            <label for="adminId">Admin ID:</label>
+                            <input type="number" id="adminId" name="adminId" value="1" placeholder="Please Enter admin ID 1"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cv">CV:</label>
+                            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container1">
+            <!-- Information Section -->
+            <div class="info-section" style="color: white;">
+                <h2 style="color: white;">Information</h2>
+                <p style="color: white;">Welcome to QuantumSoft Technologies! We specialize in delivering cutting-edge
+                    solutions in Responsive Website Designing, Digital Consulting, Cyber Security, Application
+                    Development, Data Analysis, and Automation. Our approach ensures that every project is tailored to
+                    meet client needs with strategic planning, transparent communication, and timely execution.</p>
+
+                <!-- <p style="color: white;">Here's another paragraph with more information. You can also use this space to include links, call-to-actions, or other relevant content.</p> -->
+
+                <h3 style="color: white;">Additional Details</h3>
+                <ul style="color: white;">
+                    <li style="color: white;">Responsive Website Design – Crafting mobile-friendly, high-performance
+                        websites.</li>
+                    <li style="color: white;">Digital Consulting – Providing expert guidance to boost your digital
+                        presence.</li>
+                    <li style="color: white;">Cyber Security Solutions – Safeguarding your data and systems from cyber
+                        threats.</li>
+                    <li style="color: white;">Application Development – Developing scalable web and mobile applications.
+                    </li>
+                    <li style="color: white;">Data Analysis & Automation – Leveraging data insights and automation for
+                        efficiency.</li>
+                </ul>
+
+                <h3 style="color: white;">Contact Info</h3>
+                <p style="color: white;">If you'd like to reach out, please contact us at <br><br><a
+                        href="contact@quantumsofttechnologies.com" style="color: white;">📧
+                        Email:contact@quantumsofttechnologies.com</a>.</p>
+                <p>📞 Phone:+91-7498857371</p>
+            </div>
+
+            <!-- Image Section (one image) -->
+            <div class="image-section">
+                <img src="img/job.jpg" alt="Image 1">
+            </div>
+
+
+
+        </div>
+
+
+
+        <script>
+            // Job data with experience
+            const jobs = [
+                { role: "Software Engineer", location: "Mumbai", experience: "1-2 years", link: "#", icon: "fa-laptop-code" },
+                { role: "Data Analyst", location: "Pune", experience: "1-2 years", link: "#", icon: "fa-chart-bar" },
+                { role: "Web Developer", location: "Delhi", experience: "1-2 years", link: "#", icon: "fa-code" },
+                { role: "Project Manager", location: "Bangalore", experience: "1-2 years", link: "#", icon: "fa-project-diagram" },
+                { role: "UI/UX Designer", location: "Hyderabad", experience: "1-2 years", link: "#", icon: "fa-brush" },
+                { role: "Quality Analyst", location: "Chennai", experience: "1-2 years", link: "#", icon: "fa-check-circle" },
+                { role: "Backend Developer", location: "Kolkata", experience: "1-2 years", link: "#", icon: "fa-server" },
+                { role: "HR Manager", location: "Ahmedabad", experience: "1-2 years", link: "#", icon: "fa-user-tie" },
+                { role: "DevOps Engineer", location: "Gurgaon", experience: "1-2 years", link: "#", icon: "fa-cogs" },
+                { role: "Software Tester", location: "Nagpur", experience: "1-3 years", link: "#", icon: "fa-check-circle" },
+                { role: "AI Engineers", location: "New Delhi", experience: "1-2 years", link: "#", icon: "fa-robot" },
+                { role: "Blockchain Engineer", location: "Nagpur", experience: "1-3 years", link: "#", icon: "fa-cogs" }
+            ];
+
+            // Populate job cards
+            function populateJobCards(jobs) {
+                const jobCardsContainer = document.getElementById('jobCards');
+                jobCardsContainer.innerHTML = '';
+
+                jobs.forEach(job => {
+                    const card = document.createElement('div');
+                    card.classList.add('job-card');
+                    card.innerHTML = `
+                <h3>${job.role}</h3>
+                <p>Location: ${job.location}</p>
+                <p>Experience: ${job.experience}</p>
+                <a href="${job.link}" onclick="openModal(event)">Apply</a>
+            `;
+                    jobCardsContainer.appendChild(card);
+                });
+            }
+
+            // Filter jobs based on search input
+            function searchJobs() {
+                const jobRole = document.getElementById('jobRole').value.toLowerCase();
+                const location = document.getElementById('location').value.toLowerCase();
+
+                const filteredJobs = jobs.filter(job => {
+                    const matchesRole = job.role.toLowerCase().includes(jobRole);
+                    const matchesLocation = location === "" || job.location.toLowerCase().includes(location);
+                    return matchesRole && matchesLocation;
+                });
+
+                populateJobCards(filteredJobs);
+            }
+
+            // Enable or disable the search button based on inputs
+            function checkFields() {
+                const jobRole = document.getElementById('jobRole').value;
+                const location = document.getElementById('location').value;
+                const button = document.getElementById('searchButton');
+
+                if (jobRole || location) {
+                    button.classList.add('enabled');
+                    button.disabled = false;
+                } else {
+                    button.classList.remove('enabled');
+                    button.disabled = true;
+                }
+            }
+
+            // Open modal
+            function openModal(event) {
+                event.preventDefault();
+                document.getElementById('applyModal').style.display = "block";
+            }
+
+            // Close modal
+            function closeModal() {
+                document.getElementById('applyModal').style.display = "none";
+            }
+
+            // Handle form submission and close modal
+            document.getElementById('userForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                // Form submission logic here (e.g., AJAX, etc.)
+                alert("Form submitted successfully!"); // Just for demonstration
+
+                // Close the modal after submission
+                closeModal();
+            });
+
+            // Attach event listeners to inputs to trigger filtering
+            document.getElementById('jobRole').addEventListener('input', () => {
+                searchJobs();
+                checkFields(); // Check fields on input change
+            });
+
+            document.getElementById('location').addEventListener('input', () => {
+                searchJobs();
+                checkFields(); // Check fields on input change
+            });
+
+            // Initial job population
+            populateJobCards(jobs);
+
+            function closeModal() {
+                document.getElementById("applyModal").style.display = "none";
+            }
+        </script>
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <h3 class="text-white mb-4">
+                                    <a href="index.html">
+                                        <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                            src="img/logo.png" alt="logo"></a>
+                                </h3>
+                                <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                                    accessible, effective, and tailored to your business needs.
+                                    Powered by a team of experts who are passionate about technology and
+                                    problem-solving.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Short Link's</h4>
+                            <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                            <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                            <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                            <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                            <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                            <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Help Link's</h4>
+                            <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms &
+                                Conditions</a>
+                            <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                            <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                            <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+
+                            <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i
+                                    class="fa fa-map-marker-alt me-2"></i>
+                                QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11,
+                                Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                            <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                                contact@quantumsofttechnologies.com</a>
+
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                href="https://x.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-secondary btn-md-square rounded-circle me-0"
+                                href="https://www.linkedin.com/company/93195251/admin"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                    class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                                Technologies</a>, All right
+                            reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body" style="text-align: right !important;">
+
+                        Designed By <a class="border-bottom text-white" href="#">QuantumSoft</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i
+                class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+
+        <script>
+            document.getElementById('userForm').addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Create a FormData object from the form
+                const formElement = document.getElementById('userForm');
+                const formData = new FormData(formElement);
+
+                // Append the nested JSON object as a string
+                const adminId = formData.get('adminId');
+                const nestedData = {
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    country: formData.get('country'),
+                    mobileNumber: formData.get('mobileNumber'),
+                    position: formData.get('position'),
+                    location: formData.get('location'),
+                    admin: { id: parseInt(adminId) }
+                };
+
+                formData.delete('adminId'); // Remove adminId since it's part of the nested object
+                formData.append('formData', JSON.stringify(nestedData)); // Add the nested JSON
+
+                try {
+                    const response = await fetch('/api/forms/form/saveForm', {
+                        method: 'POST',
+                        body: formData, // Use FormData directly as the body
+                    });
+
+
+                } catch (error) {
+                    alert(`Error: ${error.message}`);
+                }
+            });
+
+        </script>
+
+        <script>
+
+            // Function to fetch jobs from the backend
+
+            async function fetchJobs() {
+
+                try {
+
+                    // Replace with your backend API endpoint
+
+                    const response = await fetch('/api/jobs/job/getAllJobs');
+
+                    if (!response.ok) {
+
+                        throw new Error(`Failed to fetch jobs: ${response.statusText}`);
+
+                    }
+
+                    const jobs = await response.json(); // Parse JSON response
+
+                    populateJobCards(jobs); // Populate the job cards dynamically
+
+                } catch (error) {
+
+                    console.error('Error fetching jobs:', error);
+
+                    alert('Failed to load job openings. Please try again later.');
+
+                }
+
+            }
+
+            // Populate job cards dynamically
+
+            function populateJobCards(jobs) {
+
+                const jobCardsContainer = document.getElementById('jobCards');
+
+                jobCardsContainer.innerHTML = ''; // Clear existing cards
+
+                if (jobs.length === 0) {
+
+                    jobCardsContainer.innerHTML = `<p>No job openings available at the moment.</p>`;
+
+                    return;
+
+                }
+
+                jobs.forEach((job) => {
+
+                    const card = document.createElement('div');
+
+                    card.classList.add('job-card');
+
+                    card.innerHTML = `
+<h3>${job.title}</h3>
+<p>Location: ${job.location}</p>
+<p>Experience: ${job.experience}</p>
+<p>Salary: ${job.salary}</p>
+<a href="#" onclick="openModal(event)">Apply</a>
+ 
+            `;
+
+                    jobCardsContainer.appendChild(card);
+
+                });
+
+            }
+
+
+
+
+
+
+
+            // Fetch jobs on page load
+
+            document.addEventListener('DOMContentLoaded', fetchJobs);
+        </script>
+
+
+
+
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script src="config/Config.js"></script>
+        <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

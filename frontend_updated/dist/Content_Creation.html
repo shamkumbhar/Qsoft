@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>QuantumSoft Technologies Pvt Ltd</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="containc.css"> -->
+  <title>Content Creation</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+
+
+    h1 {
+      background-image: url('');
+      background-size: cover;
+      background-position: center;
+      color: rgb(0, 46, 107);
+      padding: 80px;
+      text-align: center;
+    }
+
+    /* * {
+     margin: 0;
+     font-family: 'Open Sans', sans-serif;
+     box-sizing: border-box;
+   } */
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      text-transform: capitalize;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .cards {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 2rem;
+      row-gap: 2rem;
+      grid-auto-flow: dense;
+      align-items: start;
+    }
+
+    .card {
+      margin: 0 auto;
+      max-width: 320px;
+      height: fit-content;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background-color: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      cursor: pointer;
+      box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    .card-hero img {
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .card-header {
+      padding: 8px 16px;
+    }
+
+    .card-body {
+      padding: 8px 16px;
+    }
+
+    .card-footer {
+      padding: 8px 16px 16px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* .footer-item {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: start;
+   } */
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .muted {
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media only screen and (max-width: 1100px) {
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media only screen and (max-width: 920px) {
+      .cards {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+
+    /* Global Variables */
+    :root {
+      --color1: #242d3c;
+      --color2: #89919c;
+      --color3: #fff;
+    }
+
+    /* Reset Default Settings */
+    /* * {
+   box-sizing: border-box;
+   margin: 0;
+} */
+
+    body {
+      background-color: #eee;
+      min-height: 100vh;
+      font-family: 'Open Sans', sans-serif;
+
+      /* Flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      /* Flex */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container__title {
+      text-align: center;
+
+      /* Flex */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container__titleMainText {
+      color: var(--color1);
+      margin-bottom: 19.920px;
+      font-weight: 900;
+    }
+
+    .container__titleSubText {
+      color: var(--color2);
+      max-width: 500px;
+    }
+
+    .container__circle {
+      width: 500px;
+      height: 500px;
+      margin-top: 60px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .container__circle::before {
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      filter: brightness(0.5) contrast(0.8);
+
+      /* Background */
+      background-image: url(https://raw.githubusercontent.com/mohjarabahh/codepen-assets/main/pens/VwzKLga/images/servers-room.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    /* Main-Feature */
+    .container__mainFeat {
+      color: var(--color3);
+      text-align: center;
+
+      /* Position */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .container__mainFeatMainText {
+      margin-bottom: 12px;
+      font-weight: 900;
+      color: rgb(219, 207, 33);
+    }
+
+    .container__mainFeatSubText {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Sub-Feature */
+    .container__subFeat {
+      height: 110px;
+
+      /* Flex */
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      /* Position */
+      position: absolute;
+      left: 0;
+      top: 20px;
+      transform: translateX(calc(-100% + 88px + 15px + 20px));
+    }
+
+    .container__subFeat--right {
+      /* Flex */
+      flex-direction: row;
+
+      /* Position */
+      left: initial;
+      right: 0;
+      transform: translateX(calc(100% - 88px - 15px - 20px));
+    }
+
+    .container__subFeat:not(:first-child):nth-child(odd) {
+      top: inherit;
+      bottom: 20px;
+    }
+
+    .container__subFeatImgContent {
+      min-width: 88px;
+      min-height: 88px;
+      padding: 10px;
+      margin-left: 15px;
+      border: solid 7px var(--color3);
+      border-radius: 50%;
+
+      /* Flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container__subFeat--right .container__subFeatImgContent {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+
+    .container__subFeatIcon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .container__subFeatContent {
+      max-width: 300px;
+      padding: 15px;
+      direction: rtl;
+    }
+
+    .container__subFeat--right .container__subFeatContent {
+      direction: ltr;
+    }
+
+    .container__subFeatMainText {
+      color: var(--color2);
+      margin-bottom: 15px;
+    }
+
+    .container__subFeatSubText {
+      color: var(--color2);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+
+
+
+
+
+
+
+
+    .new-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container1 {
+      width: 180%;
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 60px 30px 40px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container1 .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .content .left-side::before {
+      content: '';
+      position: absolute;
+      height: 70%;
+      width: 2px;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #afafb6;
+    }
+
+    .content .left-side .details {
+      margin: 14px;
+      text-align: center;
+    }
+
+    .content .left-side .details i {
+      font-size: 30px;
+      color: #160642;
+      margin-bottom: 10px;
+    }
+
+    .content .left-side .details .topic {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .content .left-side .details .text-one,
+    .content .left-side .details .text-two {
+      font-size: 14px;
+      color: #afafb6;
+    }
+
+    .container1 .content .right-side {
+      width: 75%;
+      margin-left: 75px;
+    }
+
+    .content .right-side .topic-text {
+      font-size: 23px;
+      font-weight: 600;
+      color: #1e0565;
+    }
+
+    .right-side .input-box {
+      height: 50px;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .right-side .input-box input,
+    .right-side .input-box textarea {
+      height: 100%;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: #F0F1F8;
+      border-radius: 6px;
+      padding: 0 15px;
+      resize: none;
+    }
+
+    .right-side .message-box {
+      min-height: 110px;
+    }
+
+    .right-side .input-box textarea {
+      padding-top: 6px;
+    }
+
+    .right-side .button {
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    .right-side .button input[type="button"] {
+      color: #fff;
+      font-size: 18px;
+      outline: none;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: #3e2093;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button input[type="button"]:hover {
+      background: #5029bc;
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for medium screens */
+      }
+
+      header {
+        padding: 20px 5%;
+      }
+
+      .logo h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .content-section {
+        padding: 20px 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        /* 1 column for smaller screens */
+      }
+
+      .info-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info-text,
+      .info-image {
+        flex: none;
+        width: 100%;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      .left-side,
+      .right-side {
+        flex: none;
+        width: 100%;
+      }
+
+      .right-side form .input-box input,
+      .right-side form .input-box textarea {
+        width: 100%;
+      }
+
+      header {
+        padding: 20px 3%;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="" class="navbar-brand p-0">
+          <!-- <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>Acuas</h1> -->
+          <img src="img/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <div class="nav-item dropdown">
+                  <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                  <div class="dropdown-menu p-3"
+                      style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */ backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="about.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                  About Us
+                              </a>
+                              
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Quantumsoft Leadership.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our
+                                  Leadership
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Testimonial.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                  Testimonials
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="ourStory.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                  Our Story
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Project.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-cloud " style="margin-right: 8px; color: blue;"></i>
+                                  Our Projects
+                               
+                              </a>
+                          </div><div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="service.html" class="dropdown-item"
+                                  style="white-space: normal; color: white;">
+                                  <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                  Our Services
+                                 
+                              </a>
+                          </div>
+                         
+
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="nav-item dropdown">
+                  <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                  <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="Web Development.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                  Development
+                              </a>
+                              <a href="Interface Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                  Interface Design
+                              </a>
+                              <a href="Business Consulting.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                  Business Consulting
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="App_Development.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App
+                                  Development
+                              </a>
+                              <a href="Content_Creation.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content
+                                  Creation
+                              </a>
+                              <a href="Branding.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-4" style="padding: 10px;">
+                              <a href="Software TestingS.html" class="dropdown-item"
+                              style="white-space: normal;color: white;">
+                              <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software
+                              Testing
+                          </a>
+                              <a href="UI UX Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX
+                                  Design
+                              </a>
+                              <a href="24_7_Service.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7
+                                  Service
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+              <div class="nav-item dropdown">
+                  <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                  <div class="dropdown-menu p-3"
+                      style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */backdrop-filter: blur(8px);">
+                      <div class="row">
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Web Design.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web
+                                  Design
+                              </a>
+                              <a href="Cyber Security.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber
+                                  Security
+                              </a>
+                              <a href="Mobile Information.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile
+                                  Information
+                              </a>
+                              <a href="Web developmentP.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web
+                                  Development
+                              </a>
+                          </div>
+                          <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                              <a href="Software Testing.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software
+                                  Testing
+                              </a>
+                              <a href="Digital Marketing.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital
+                                  Marketing
+                              </a>
+                              <a href="Keyword Research.html" class="dropdown-item"
+                                  style="white-space: normal;color: white;">
+                                  <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword
+                                  Research
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+
+
+              </div>
+              <a href="Careers.html" class="nav-item nav-link">Careers</a>
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+  </nav>
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(to right, #000000, #0a2a43, #0055aa);
+ ">
+      <!-- style="background: url('img/contentcreatio.png') !important;" -->
+      <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Content Creation</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Services</a></li>
+          <li class="breadcrumb-item active text-primary">Content Creation</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header End -->
+  </div>
+  <!-- Navbar & Hero End -->
+
+  <h1>Content Solutions</h1>
+  <div class="cards">
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/notepad.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Blog Writing</h3>
+      </div>
+      <div class="card-body">
+        <p>Crafting informative and engaging blog posts to boost your online presence and SEO.</p>
+      </div>
+
+    </a>
+
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/Social.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Social Media Content</h3>
+      </div>
+      <div class="card-body">
+        <p>Creative and impactful content tailored for social media platforms to engage your audience.</p>
+      </div>
+
+    </a>
+
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/Video.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Video Production</h3>
+      </div>
+      <div class="card-body">
+        <p>Producing high-quality videos that tell your brand’s story and captivate viewers.</p>
+      </div>
+
+    </a>
+
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/Copywriting.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Copywriting</h3>
+      </div>
+      <div class="card-body">
+        <p>Persuasive and compelling copy that drives conversions and communicates your message effectively.</p>
+      </div>
+
+    </a>
+
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/ContentMarketing.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Content Marketing</h3>
+      </div>
+      <div class="card-body">
+        <p>Strategic content planning and execution that drives engagement and attracts new customers.</p>
+      </div>
+
+    </a>
+
+
+
+
+    <a class="card">
+      <div class="card-hero">
+        <img src="img/ContentCreation.png" width="288" />
+      </div>
+      <div class="card-header">
+        <h3>Content Creation </h3>
+      </div>
+      <div class="card-body">
+        <p>Writing articles, blogs, marketing copy, videos, and graphics tailored to specific audiences.</p>
+      </div>
+
+
+  </div>
+  </a>
+
+  </div>
+
+  <br>
+
+  <div class='container'>
+    <!-- Title -->
+    <div class='container__title'>
+      <h1 class='container__titleMainText'>Why Choose Us</h1>
+      <p class='container__titleSubText'>
+    </div>
+    <!-- Circle -->
+    <div class='container__circle'>
+      <!-- Main Feature -->
+      <div class='container__mainFeat'>
+        <h3 class='container__mainFeatMainText'>Content Solutions</h3>
+        <p class='container__mainFeatSubText' style="color:#89919c">
+
+          "Content Solutions" is a broad term that generally refers to services or strategies designed to help
+          businesses create, manage, distribute, and optimize content to achieve specific goals, such as marketing,
+          branding, communication, or education.
+        </p>
+      </div>
+      <!-- Sub Feature 1 -->
+      <div class='container__subFeat'>
+        <div class='container__subFeatImgContent' style='background-color: #ffd260;'>
+          <svg class='container__subFeatIcon' version='1.1' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='m451.5 35.5c10.046 2.2054 16.879 8.2054 20.5 18 0.667 27.667 0.667 55.333 0 83-2.578 10.075-8.744 16.741-18.5 20h-362c-8.403 0.37-16.736-0.13-25-1.5-6.6487-3.314-11.149-8.481-13.5-15.5-0.6667-29-0.6667-58 0-87 2.9294-8.5965 8.7627-14.096 17.5-16.5 127-0.5 254-0.6667 381-0.5z'
+              fill='#1080ac' opacity='.996' />
+            <path
+              d='m451.5 35.5c15.391-0.4354 30.725 0.0646 46 1.5 6.666 3.4922 11.332 8.6589 14 15.5v87c-6.835 14.916-18.502 20.582-35 17h-23c9.756-3.259 15.922-9.925 18.5-20 0.667-27.667 0.667-55.333 0-83-3.621-9.7946-10.454-15.795-20.5-18z'
+              fill='#057195' />
+            <path
+              d='m88.5 69.5c74.001-0.1667 148 0 222 0.5 6.667 4.6667 6.667 9.3333 0 14-74 0.6667-148 0.6667-222 0-6.6013-4.8291-6.6013-9.6624 0-14.5z'
+              fill='#e7f2fe' />
+            <path
+              d='m435.5 69.5c16.915-2.4648 28.415 4.2019 34.5 20 2.25 15.67-3.917 26.503-18.5 32.5-17.071 3.248-28.571-3.252-34.5-19.5-2.064-15.737 4.102-26.737 18.5-33z'
+              fill='#68d7e3' />
+            <path
+              d='m88.5 107.5c74.001-0.167 148 0 222 0.5 6.667 4.667 6.667 9.333 0 14-74 0.667-148 0.667-222 0-6.6013-4.829-6.6013-9.662 0-14.5z'
+              fill='#e7f2fe' />
+            <path d='m91.5 156.5h362 23v38c-7.58 0.966-15.247 1.299-23 1-120.83 0.333-241.5 0-362-1v-38z'
+              fill='#6da7c7' />
+            <path
+              d='m91.5 194.5c120.5 1 241.17 1.333 362 1 9.544 2.375 15.711 8.375 18.5 18 0.167 13.667 0.333 27.333 0.5 41 0.134 15.052-0.366 30.052-1.5 45-2.882 8.672-8.715 14.005-17.5 16h-238c0.317-4.202-0.017-8.202-1-12 9e-3 -1.808-0.491-3.475-1.5-5-12.035-12.202-24.202-24.202-36.5-36-2-3.494-5-5.66-9-6.5-38.332-0.5-76.665-0.667-115-0.5-0.1666-14.337 1e-4 -28.671 0.5-43 2.0948-8.427 7.2614-13.927 15.5-16.5 7.5952-1.356 15.262-1.856 23-1.5z'
+              fill='#3590ba' />
+            <path
+              d='m476.5 194.5c7.505-0.512 14.839 0.322 22 2.5 6.07 3.329 10.404 8.162 13 14.5v88c-3.463 9.29-10.13 14.79-20 16.5-4.989 0.499-9.989 0.666-15 0.5-7.58-0.966-15.247-1.299-23-1 8.785-1.995 14.618-7.328 17.5-16 1.134-14.948 1.634-29.948 1.5-45-0.167-13.667-0.333-27.333-0.5-41-2.789-9.625-8.956-15.625-18.5-18 7.753 0.299 15.42-0.034 23-1z'
+              fill='#0e80ac' />
+            <path
+              d='m437.5 228.5c22.81-0.69 33.643 10.31 32.5 33-5.259 15.552-16.093 22.385-32.5 20.5-15.843-5.501-22.677-16.668-20.5-33.5 3.444-10.279 10.278-16.946 20.5-20z'
+              fill='#f8d20c' />
+            <path
+              d='m212.5 228.5c32.335-0.167 64.668 0 97 0.5 7.908 4.858 7.908 9.858 0 15-32.333 0.667-64.667 0.667-97 0-6.599-5.212-6.599-10.379 0-15.5z'
+              fill='#e2effc' />
+            <path
+              d='m38.5 255.5c-0.1665 9.672 2e-4 19.339 0.5 29 0.7845 1.786 1.9512 3.286 3.5 4.5 43.333 0.667 86.667 0.667 130 0 1.201-0.903 2.035-2.069 2.5-3.5 0.171-7.844 0.671-15.511 1.5-23 12.298 11.798 24.465 23.798 36.5 36 1.009 1.525 1.509 3.192 1.5 5v161c-1.608 5.273-4.941 8.94-10 11-65.001 0.167-130 0-195-0.5-4.7548-1.261-8.0882-4.095-10-8.5v-202c1.8148-3.979 4.8148-6.812 9-8.5 9.9944-0.5 19.994-0.666 30-0.5z'
+              fill='#e7f2fe' opacity='.999' />
+            <path
+              d='m38.5 255.5h14c38.335-0.167 76.668 0 115 0.5 4 0.84 7 3.006 9 6.5-0.829 7.489-1.329 15.156-1.5 23-0.465 1.431-1.299 2.597-2.5 3.5-43.333 0.667-86.667 0.667-130 0-1.5488-1.214-2.7155-2.714-3.5-4.5-0.4998-9.661-0.6665-19.328-0.5-29z'
+              fill='#b3d7fa' />
+            <path
+              d='m248.5 266.5c20.336-0.167 40.669 0 61 0.5 7.893 4.91 7.893 9.91 0 15-20.333 0.667-40.667 0.667-61 0-5.035-3.013-6.202-7.18-3.5-12.5 1.145-1.136 2.312-2.136 3.5-3z'
+              fill='#e1effc' />
+            <path
+              d='m214.5 303.5c0.983 3.798 1.317 7.798 1 12h238c7.753-0.299 15.42 0.034 23 1v38h-23-238c0.332 36.837-2e-3 73.504-1 110v-161z'
+              fill='#6ea8c8' />
+            <path
+              d='m170.5 350.5c-12.338-0.167-24.671 0-37 0.5 0.711 1.255 1.544 2.421 2.5 3.5 0.667 26 0.667 52 0 78-1.107 2.613-2.94 4.28-5.5 5-29.755 0.484-59.421-0.016-89-1.5-0.9601-1.419-1.7935-2.919-2.5-4.5-0.6667-25.333-0.6667-50.667 0-76 1.1667-2.5 3-4.333 5.5-5.5 42.169-0.831 84.169-0.665 126 0.5z'
+              fill='#7fd061' />
+            <path
+              d='m170.5 350.5c2.591 0.754 4.424 2.421 5.5 5 0.667 25.333 0.667 50.667 0 76-0.774 2.439-2.274 4.273-4.5 5.5-13.663 0.5-27.329 0.667-41 0.5 2.56-0.72 4.393-2.387 5.5-5 0.667-26 0.667-52 0-78-0.956-1.079-1.789-2.245-2.5-3.5 12.329-0.5 24.662-0.667 37-0.5z'
+              fill='#53be29' />
+            <path
+              d='m453.5 354.5c8.917 3.083 15.084 9.083 18.5 18 0.667 28 0.667 56 0 84-3.222 10.394-10.055 16.727-20.5 19h-247c5.059-2.06 8.392-5.727 10-11 0.998-36.496 1.332-73.163 1-110h238z'
+              fill='#1080ac' opacity='.997' />
+            <path
+              d='m453.5 354.5h23c16.498-3.582 28.165 2.084 35 17v87c-3.245 8.408-9.245 13.908-18 16.5-13.996 0.5-27.996 0.667-42 0.5 10.445-2.273 17.278-8.606 20.5-19 0.667-28 0.667-56 0-84-3.416-8.917-9.583-14.917-18.5-18z'
+              fill='#057195' />
+            <path
+              d='m435.5 388.5c14.395-2.382 25.228 2.618 32.5 15 5.297 16.233 0.464 28.4-14.5 36.5-15.128 4.512-26.628 0.012-34.5-13.5-5.635-17.615-0.135-30.282 16.5-38z'
+              fill='#f86931' />
+            <path
+              d='m247.5 389.5c21.336-0.167 42.669 0 64 0.5 5.804 5.641 5.137 10.308-2 14-20.333 0.667-40.667 0.667-61 0-5.035-3.013-6.202-7.18-3.5-12.5 0.995-0.566 1.828-1.233 2.5-2z'
+              fill='#e6f2fe' />
+            <path
+              d='m247.5 427.5c21.003-0.167 42.003 0 63 0.5 4.934 2.665 6.101 6.498 3.5 11.5-1.171 1.393-2.671 2.227-4.5 2.5-20.667 0.667-41.333 0.667-62 0-5.298-4.908-5.298-9.742 0-14.5z'
+              fill='#e6f2fe' />
+          </svg>
+        </div>
+        <div class='container__subFeatContent'>
+          <h3 class='container__subFeatMainText' ></h3>
+          <p>
+            Expert content creators with diverse industry experience
+          </p>
+        </div>
+      </div>
+      <!-- Sub Feature 2 -->
+      <div class='container__subFeat'>
+        <div class='container__subFeatImgContent' style='background-color: #ff7058;'>
+          <svg class='container__subFeatIcon' version='1.1' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='m232.5-0.5h23c0.319 10.249-0.014 20.416-1 30.5-85.926 3.3586-151.09 41.525-195.5 114.5-32.809 61.908-37.476 125.91-14 192 32 76.329 88.501 123.16 169.5 140.5 13.568 2.357 27.234 3.523 41 3.5v31h-19c-91.312-9.722-160.14-54.056-206.5-133-16.695-31.471-26.861-64.804-30.5-100v-46c10.425-88.068 53.425-154.9 129-200.5 32.619-17.82 67.285-28.653 104-32.5z'
+              fill='#fee704' opacity='.981' />
+            <path
+              d='m511.5 236.5v38c-11.155 99.844-61.822 171.68-152 215.5-27.307 11.743-55.64 18.91-85 21.5h-19v-31c83.191-2.809 147.36-38.809 192.5-108 37.695-65.923 42.695-134.26 15-205-10.761-24.408-25.094-46.408-43-66 0.499 11.997 1.333 23.997 2.5 36-10.337 0.611-20.671 1.278-31 2-2.444-28.657-4.777-57.324-7-86 28.688-2.1129 57.354-4.4462 86-7 0.943 10.314 1.609 20.647 2 31-9.993 0.8328-19.993 1.6661-30 2.5 40.833 44.178 63.833 96.345 69 156.5z'
+              fill='#ecbe00' />
+            <path
+              d='m255.5 96.5v30c-5.095-0.279-10.095 0.055-15 1-53.851 8.684-90.017 38.684-108.5 90-2.299 7.525-3.799 15.191-4.5 23-1.302 10.004-1.302 20.004 0 30 9.332 55.834 40.998 92.334 95 109.5 5.919 1.481 11.919 2.314 18 2.5 4.805 0.987 9.805 1.321 15 1v31c-56.008-1.415-100.17-24.749-132.5-70-28.737-45.566-34.404-93.9-17-145 20.403-50.737 56.903-83.57 109.5-98.5 13.133-3.3083 26.466-4.8083 40-4.5z'
+              fill='#7dd5f4' opacity='.994' />
+            <path
+              d='m255.5 96.5c68.326 2.5609 117.16 34.561 146.5 96 22.486 59.598 14.486 114.6-24 165-32.22 37.19-73.054 56.19-122.5 57v-31c5.062 0.226 10.062-0.108 15-1 42.353-5.582 74.52-26.582 96.5-63 8.489-15.298 13.655-31.632 15.5-49 1.295-10.128 1.295-20.128 0-30-7.992-54.831-38.325-90.998-91-108.5-6.976-1.828-13.976-3.328-21-4.5-4.993-0.416-9.993-0.749-15-1v-30z'
+              fill='#6ba7fe' />
+            <path d='m255.5 126.5v28h-15v-27c4.905-0.945 9.905-1.279 15-1z' fill='#e5dedd' />
+            <path d='m255.5 126.5c5.007 0.251 10.007 0.584 15 1v27h-15v-28z' fill='#d9d0cb' />
+            <path
+              d='m240.5 127.5v27h15v19h-15c0.167 25.002 0 50.002-0.5 75-13.339 11.176-26.506 22.509-39.5 34 6.343 7.374 12.677 14.707 19 22 12.019-9.69 24.019-19.357 36-29v80 1h-15v26c-6.081-0.186-12.081-1.019-18-2.5-54.002-17.166-85.668-53.666-95-109.5h27v-30h-27c0.701-7.809 2.201-15.475 4.5-23 18.483-51.316 54.649-81.316 108.5-90z'
+              fill='#f8f8f8' />
+            <path
+              d='m270.5 127.5c7.024 1.172 14.024 2.672 21 4.5 52.675 17.502 83.008 53.669 91 108.5h-27v30h27c-1.845 17.368-7.011 33.702-15.5 49-21.98 36.418-54.147 57.418-96.5 63v-27h-15v-80-1c4.96-3.788 9.793-7.788 14.5-12 0.5-29.665 0.667-59.331 0.5-89h-15v-19h15v-27z'
+              fill='#ebe9e7' />
+            <path
+              d='m255.5 173.5v101 1c-11.981 9.643-23.981 19.31-36 29-6.323-7.293-12.657-14.626-19-22 12.994-11.491 26.161-22.824 39.5-34 0.5-24.998 0.667-49.998 0.5-75h15z'
+              fill='#464646' />
+            <path d='m255.5 173.5h15c0.167 29.669 0 59.335-0.5 89-4.707 4.212-9.54 8.212-14.5 12v-101z'
+              fill='#2e2e2e' />
+            <path d='m127.5 240.5h27v30h-27c-1.302-9.996-1.302-19.996 0-30z' fill='#e6dfdd' />
+            <path d='m382.5 240.5c1.295 9.872 1.295 19.872 0 30h-27v-30h27z' fill='#dad0cb' />
+            <path d='m255.5 356.5v27c-5.195 0.321-10.195-0.013-15-1v-26h15z' fill='#e6dedc' />
+            <path d='m255.5 355.5h15v27c-4.938 0.892-9.938 1.226-15 1v-27-1z' fill='#dad0cb' />
+          </svg>
+
+        </div>
+        <div class='container__subFeatContent'>
+          <h3 class='container__subFeatMainText'></h3>
+          <p>
+            Tailored content strategies to meet your goals
+          </p>
+        </div>
+      </div>
+      <!-- Sub Feature 3 -->
+      <div class='container__subFeat container__subFeat--right'>
+        <div class='container__subFeatImgContent' style='background-color: #80dcfe;'>
+          <svg class='container__subFeatIcon' clip-rule='evenodd' fill-rule='evenodd' image-rendering='optimizeQuality'
+            shape-rendering='geometricPrecision' text-rendering='geometricPrecision' version='1.1' viewBox='0 0 512 512'
+            xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='m56.5-0.5h398c3.123 2.2209 5.289 5.2209 6.5 9 0.667 33 0.667 66 0 99-1.096 5.265-4.263 8.265-9.5 9h-392c-5.2369-0.735-8.4035-3.735-9.5-9-0.6667-33-0.6667-66 0-99 1.2105-3.7791 3.3772-6.7791 6.5-9z'
+              fill='#494f53' />
+            <path d='m448.5 12.5h-385v91c-0.9981-30.496-1.3315-61.162-1-92 128.83-0.3329 257.5 4e-4 386 1z'
+              fill='#2d3339' />
+            <path d='m448.5 12.5v91h-385v-91h385z' fill='#20262d' />
+            <path d='m132.5 43.5c-0.977-2.7869-1.31-5.7869-1-9h10v10c-3.213 0.31-6.213-0.0233-9-1z' fill='#a6a8ab' />
+            <path d='m132.5 43.5v-8h8v8h-8z' fill='#f6f7f6' />
+            <path d='m161.5 35.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m161.5 35.5c2.787-0.9767 5.787-1.31 9-1v10c-3.213 0.31-6.213-0.0233-9-1h8v-8h-8z' fill='#c1c2c4' />
+            <path d='m190.5 34.5h9v10h-9v-10z' fill='#e7e7e8' />
+            <path d='m219.5 34.5h9v10h-9v-10z' fill='#e7e7e8' />
+            <path d='m102.5 34.5h10v10h-10v-10z' fill='#919498' />
+            <path d='m103.5 35.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path
+              d='m409.5 47.5c7.439-0.1208 12.106 3.3792 14 10.5-0.596 7.0514-4.429 10.885-11.5 11.5-8.459-2.1499-11.459-7.4833-9-16 2.063-2.2341 4.229-4.2341 6.5-6z'
+              fill='#efeff0' />
+            <path d='m116.5 53.5h9v9-9h-9z' fill='#efeff0' />
+            <path d='m116.5 53.5c3.125-0.9794 6.458-1.3128 10-1 0.313 3.5419-0.021 6.8752-1 10v-9h-9z' fill='#787c80' />
+            <path d='m154.5 62.5v-9h-8v9c-0.979-3.1248-1.313-6.4581-1-10h10c0.313 3.5419-0.021 6.8752-1 10z'
+              fill='#909296' />
+            <path d='m154.5 62.5h-8v-9h8v9z' fill='#f3f3f3' />
+            <path d='m184.5 53.5h-9v9c-0.979-3.1248-1.313-6.4581-1-10 3.542-0.3128 6.875 0.0206 10 1z' fill='#7d8084' />
+            <path d='m184.5 53.5v9h-9v-9h9z' fill='#efefef' />
+            <path d='m204.5 53.5h9v9h-9v-9z' fill='#f1f1f1' />
+            <path d='m234.5 53.5c2.787-0.9767 5.787-1.31 9-1v10h-10c-0.31-3.2131 0.023-6.2131 1-9z' fill='#afb1b3' />
+            <path d='m234.5 53.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m103.5 71.5h9v9-9h-9z' fill='#eeefef' />
+            <path d='m132.5 71.5h9v9h-9v-9z' fill='#f1f1f2' />
+            <path d='m161.5 71.5h9v9h-9v-9z' fill='#f4f4f4' />
+            <path d='m190.5 71.5h9v9h-9v-9z' fill='#f6f6f6' />
+            <path d='m219.5 71.5h9v9h-9v-9z' fill='#f6f6f6' />
+            <path d='m103.5 71.5v9h9c-3.125 0.9794-6.458 1.3128-10 1-0.313-3.5419 0.021-6.8752 1-10z' fill='#66696f' />
+            <path
+              d='m59.5 116.5h392c-3.798 0.983-7.798 1.317-12 1v17c4.202-0.317 8.202 0.017 12 1h-392c3.7984-0.983 7.7984-1.317 12-1v-17c-4.2016 0.317-8.2016-0.017-12-1z'
+              fill='#21272e' />
+            <path
+              d='m59.5 135.5h392c5.237 0.735 8.404 3.735 9.5 9 0.667 33 0.667 66 0 99-1.089 3.686-3.255 6.519-6.5 8.5-4.989 0.499-9.989 0.666-15 0.5h-368c-5.0111 0.166-10.011-1e-3 -15-0.5-3.2447-1.981-5.4114-4.814-6.5-8.5-0.6667-33-0.6667-66 0-99 1.0965-5.265 4.2631-8.265 9.5-9z'
+              fill='#494f53' />
+            <path d='m63.5 148.5h385v91h-385v-91z' fill='#20262d' />
+            <path d='m102.5 170.5h10v9h-10v-9z' fill='#e6e7e7' />
+            <path d='m132.5 170.5h9v9h-9v-9z' fill='#f2f2f2' />
+            <path d='m161.5 170.5h9v9h-9v-9z' fill='#f5f5f5' />
+            <path d='m190.5 170.5h9v9h-9v-9z' fill='#f6f7f6' />
+            <path d='m219.5 170.5h9v9h-9v-9z' fill='#f6f7f6' />
+            <path
+              d='m409.5 182.5c8.136-0.612 12.802 3.054 14 11-2.018 8.864-7.351 12.031-16 9.5-4.772-3.699-6.272-8.533-4.5-14.5 1.914-2.356 4.081-4.356 6.5-6z'
+              fill='#efefef' />
+            <path d='m145.5 188.5h10v10h-10v-10z' fill='#9fa1a4' />
+            <path d='m146.5 189.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m204.5 188.5h9v9-9h-9z' fill='#eeefef' />
+            <path d='m116.5 188.5h10v10h-10v-10z' fill='#999b9f' />
+            <path d='m117.5 189.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m174.5 188.5h10v10h-10v-10z' fill='#999b9f' />
+            <path d='m175.5 189.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m204.5 188.5v9h9c-3.125 0.979-6.458 1.313-10 1-0.313-3.542 0.021-6.875 1-10z' fill='#818488' />
+            <path d='m233.5 188.5h10v10h-10v-10z' fill='#979a9d' />
+            <path d='m234.5 189.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m111.5 216.5v-9h-8v9c-0.979-3.125-1.313-6.458-1-10h10c0.313 3.542-0.021 6.875-1 10z'
+              fill='#888b8f' />
+            <path d='m111.5 216.5h-8v-9h8v9z' fill='#f5f5f5' />
+            <path d='m132.5 207.5h9v9h-9v-9z' fill='#f1f1f2' />
+            <path d='m161.5 207.5h9v9h-9v-9z' fill='#f3f3f3' />
+            <path d='m190.5 207.5h9v9h-9v-9z' fill='#f5f5f5' />
+            <path d='m219.5 207.5h9v9h-9v-9z' fill='#f5f5f5' />
+            <path d='m71.5 252.5h368v17c-122.67 1.333-245.33 1.333-368 0v-17z' fill='#20262d' />
+            <path
+              d='m71.5 269.5c122.67 1.333 245.33 1.333 368 0 5.099-0.325 10.099 0.175 15 1.5 2.5 1.167 4.333 3 5.5 5.5 1.147 17.437 1.647 34.937 1.5 52.5 0.147 17.563-0.353 35.063-1.5 52.5-1.663 2.417-3.829 4.25-6.5 5.5-4.655 0.499-9.321 0.666-14 0.5h-368c-4.6785 0.166-9.3452-1e-3 -14-0.5-2.6707-1.25-4.8374-3.083-6.5-5.5-1.1467-17.437-1.6467-34.937-1.5-52.5-0.1467-17.563 0.3533-35.063 1.5-52.5 1.1667-2.5 3-4.333 5.5-5.5 4.9012-1.325 9.9012-1.825 15-1.5z'
+              fill='#484e53' opacity='.998' />
+            <path d='m63.5 283.5h385v91h-385v-91z' fill='#20262d' />
+            <path d='m112.5 306.5h-9v9c-0.979-3.125-1.313-6.458-1-10 3.542-0.313 6.875 0.021 10 1z' fill='#85898c' />
+            <path d='m112.5 306.5v9h-9v-9h9z' fill='#ededee' />
+            <path d='m132.5 306.5c2.787-0.977 5.787-1.31 9-1v10h-10c-0.31-3.213 0.023-6.213 1-9z' fill='#a6a8ab' />
+            <path d='m132.5 306.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m161.5 306.5h9v9h-9v-9z' fill='#f1f1f1' />
+            <path d='m190.5 306.5h9v9h-9v-9z' fill='#f2f3f3' />
+            <path d='m219.5 306.5h9v9h-9v-9z' fill='#f2f3f3' />
+            <path
+              d='m408.5 318.5c10.326-0.839 15.159 3.828 14.5 14-3.133 5.827-7.966 7.993-14.5 6.5-5.609-3.277-7.442-8.11-5.5-14.5 1.36-2.523 3.193-4.523 5.5-6z'
+              fill='#f0f0f0' />
+            <path d='m116.5 324.5h10v9h-10v-9z' fill='#e7e7e8' />
+            <path d='m145.5 324.5h10v9h-10v-9z' fill='#e7e7e8' />
+            <path d='m175.5 324.5h9v9-9h-9z' fill='#f0f1f1' />
+            <path d='m204.5 324.5h9v9h-9v-9z' fill='#f3f3f3' />
+            <path d='m233.5 324.5h10v9h-10v-9z' fill='#e6e7e7' />
+            <path d='m175.5 324.5v9h9c-3.125 0.979-6.458 1.313-10 1-0.313-3.542 0.021-6.875 1-10z' fill='#5b5f64' />
+            <path d='m161.5 343.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m161.5 343.5c2.787-0.977 5.787-1.31 9-1v10c-3.213 0.31-6.213-0.023-9-1h8v-8h-8z' fill='#c1c2c4' />
+            <path d='m190.5 342.5h9v10h-9v-10z' fill='#e7e7e8' />
+            <path d='m219.5 342.5h9v10h-9v-10z' fill='#e7e7e8' />
+            <path d='m102.5 342.5h10v10h-10v-10z' fill='#9ea0a3' />
+            <path d='m103.5 343.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m131.5 342.5h10v10h-10v-10z' fill='#9ea1a4' />
+            <path d='m132.5 343.5h8v8h-8v-8z' fill='#f6f7f6' />
+            <path d='m63.5 283.5v91h385c-128.5 1-257.17 1.333-386 1-0.3315-30.838 0.0019-61.505 1-92z' fill='#32383e' />
+            <path d='m71.5 387.5h368v19h-169c-10-1.333-20-1.333-30 0h-169v-19z' fill='#1f262c' opacity='.963' />
+            <path d='m270.5 406.5v40c-10 1.333-20 1.333-30 0v-40c10-1.333 20-1.333 30 0z' fill='#f9bf52'
+              opacity='.971' />
+            <path
+              d='m240.5 446.5c10 1.333 20 1.333 30 0h18v18c-1.333 10-1.333 20 0 30v17h-66v-17c1.333-10 1.333-20 0-30v-18h18z'
+              fill='#1f262c' opacity='.981' />
+            <path d='m222.5 464.5c1.333 10 1.333 20 0 30h-151v-30h151z' fill='#fbc052' opacity='.971' />
+            <path d='m288.5 464.5h151v30h-151c-1.333-10-1.333-20 0-30z' fill='#fbc052' opacity='.971' />
+          </svg>
+
+        </div>
+        <div class='container__subFeatContent'>
+          <h3 class='container__subFeatMainText'></h3>
+          <p>
+            Focus on audience engagement and brand storytelling.
+          </p>
+        </div>
+      </div>
+      <!-- Sub Feature 4 -->
+      <div class='container__subFeat container__subFeat--right'>
+        <div class='container__subFeatImgContent' style='background-color: #4cd4c0;'>
+          <svg class='container__subFeatIcon' clip-rule='evenodd' fill-rule='evenodd' image-rendering='optimizeQuality'
+            shape-rendering='geometricPrecision' text-rendering='geometricPrecision' version='1.1' viewBox='0 0 512 512'
+            xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='m237.5-0.5h36c0 0.66667 0.333 1 1 1-63.296 12.255-106.46 48.588-129.5 109-17.03 59.525-5.697 112.86 34 160 12.537 12.712 26.37 23.712 41.5 33 2.77 2.757 5.104 5.757 7 9v49c-12.511-0.329-24.845 5e-3 -37 1-1.333 0.333-2.667 0.667-4 1 0.167-15.004 0-30.004-0.5-45-1.517-6.182-4.683-11.349-9.5-15.5-59.621-36.739-86.788-90.239-81.5-160.5 9.007-60.548 41.174-103.71 96.5-129.5 14.955-6.0692 30.288-10.236 46-12.5z'
+              fill='#fec458' />
+            <path
+              d='m274.5 0.5c55.782 7.625 97.282 35.958 124.5 85 25.779 53.873 24.112 106.87-5 159-15.261 23.928-35.094 43.094-59.5 57.5-4.817 4.151-7.983 9.318-9.5 15.5-0.5 14.996-0.667 29.996-0.5 45-44.624-0.99-89.291-1.323-134-1 12.155-0.995 24.489-1.329 37-1h16 24 16c-0.167-24.336 0-48.669 0.5-73 4.755-7.176 9.755-14.176 15-21 1.608-2.882 2.941-5.882 4-9 1.444-21.622 1.944-43.288 1.5-65 6.609-0.758 8.776-4.425 6.5-11-1.413-1.914-3.247-3.247-5.5-4-3.023-8.517-8.19-10.184-15.5-5-1.009 1.525-1.509 3.192-1.5 5h-66c-1.182-6.767-5.182-9.267-12-7.5-2.897 1.715-4.231 4.215-4 7.5-8.853 2.763-10.186 7.597-4 14.5 1.293 0.49 2.627 0.657 4 0.5-0.167 20.003 0 40.003 0.5 60 0.592 3.776 1.592 7.443 3 11 6.055 7.722 11.722 15.722 17 24 0.5 7.993 0.666 15.993 0.5 24-1.896-3.243-4.23-6.243-7-9-15.13-9.288-28.963-20.288-41.5-33-39.697-47.141-51.03-100.48-34-160 23.037-60.412 66.204-96.745 129.5-109z'
+              fill='#fee081' opacity='.997' />
+            <path
+              d='m308.5 43.5c2.687-0.1641 5.354 0.0026 8 0.5 33.85 17.845 55.85 45.178 66 82-0.156 7.259-3.823 9.926-11 8l-2.5-2.5c-9.735-34.477-30.569-59.81-62.5-76-3.012-4.5965-2.345-8.5965 2-12z'
+              fill='#ffe9c6' />
+            <path
+              d='m38.5 90.5c11.78 2.0372 23.114 5.7039 34 11 4.9054 7.189 3.2387 12.189-5 15-9.7757-3.203-19.442-6.703-29-10.5-5.292-5.165-5.292-10.332 0-15.5z'
+              fill='#fec457' opacity='.956' />
+            <path
+              d='m464.5 90.5c9.157-1.0108 12.99 2.9892 11.5 12l-3.5 3.5c-9.558 3.797-19.224 7.297-29 10.5-7.657-2.482-9.657-7.315-6-14.5 9.089-3.885 18.089-7.7184 27-11.5z'
+              fill='#fec457' opacity='.954' />
+            <path
+              d='m26.5 148.5c11.338-0.167 22.672 0 34 0.5 6.6667 5 6.6667 10 0 15-11.333 0.667-22.667 0.667-34 0-5.292-5.165-5.292-10.332 0-15.5z'
+              fill='#fec458' opacity='.959' />
+            <path
+              d='m450.5 148.5c11.338-0.167 22.672 0 34 0.5 5.333 5 5.333 10 0 15-11.333 0.667-22.667 0.667-34 0-6.586-5.16-6.586-10.327 0-15.5z'
+              fill='#fec458' opacity='.958' />
+            <path
+              d='m304.5 192.5h-15c0.33 19.507-3e-3 38.841-1 58v-58h-66v59c-0.997-19.493-1.33-39.16-1-59h-15c-1.373 0.157-2.707-0.01-4-0.5-6.186-6.903-4.853-11.737 4-14.5-0.231-3.285 1.103-5.785 4-7.5 6.818-1.767 10.818 0.733 12 7.5h66c-9e-3 -1.808 0.491-3.475 1.5-5 7.31-5.184 12.477-3.517 15.5 5 2.253 0.753 4.087 2.086 5.5 4 2.276 6.575 0.109 10.242-6.5 11z'
+              fill='#fec356' />
+            <path
+              d='m206.5 192.5h15c-0.33 19.84 3e-3 39.507 1 59 0.255 2.516 1.089 4.85 2.5 7 8.085 8.409 14.085 18.075 18 29 0.5 24.331 0.667 48.664 0.5 73h-16v-49c0.166-8.007 0-16.007-0.5-24-5.278-8.278-10.945-16.278-17-24-1.408-3.557-2.408-7.224-3-11-0.5-19.997-0.667-39.997-0.5-60z'
+              fill='#ffb641' />
+            <path
+              d='m288.5 250.5c0.04 2.925-0.793 5.591-2.5 8-4.667 6-9.333 12-14 18-1.927 3.448-3.261 7.115-4 11-0.5 24.331-0.667 48.664-0.5 73h-24c0.167-24.336 0-48.669-0.5-73-3.915-10.925-9.915-20.591-18-29-1.411-2.15-2.245-4.484-2.5-7v-59h66v58z'
+              fill='#fee080' />
+            <path
+              d='m304.5 192.5c0.444 21.712-0.056 43.378-1.5 65-1.059 3.118-2.392 6.118-4 9-5.245 6.824-10.245 13.824-15 21-0.5 24.331-0.667 48.664-0.5 73h-16c-0.167-24.336 0-48.669 0.5-73 0.739-3.885 2.073-7.552 4-11 4.667-6 9.333-12 14-18 1.707-2.409 2.54-5.075 2.5-8 0.997-19.159 1.33-38.493 1-58h15z'
+              fill='#ffb641' />
+            <path
+              d='m65.5 196.5c7.3077 0.139 10.474 3.805 9.5 11-0.5831 1.502-1.4164 2.835-2.5 4-10.839 5.449-22.173 8.949-34 10.5-5.3333-5-5.3333-10 0-15 9.1387-3.43 18.139-6.93 27-10.5z'
+              fill='#fec457' opacity='.958' />
+            <path
+              d='m441.5 196.5c10.541 2.792 20.874 6.292 31 10.5 5.333 5 5.333 10 0 15-11.827-1.551-23.161-5.051-34-10.5-4.503-6.154-3.503-11.154 3-15z'
+              fill='#fec457' opacity='.958' />
+            <path
+              d='m190.5 361.5c44.709-0.323 89.376 0.01 134 1 3.774 1.438 6.107 4.105 7 8-1.514 5.013-4.848 8.18-10 9.5-44 0.667-88 0.667-132 0-5.152-1.32-8.486-4.487-10-9.5 0.893-3.895 3.226-6.562 7-8 1.333-0.333 2.667-0.667 4-1z'
+              fill='#eeebee' opacity='.997' />
+            <path
+              d='m179.5 370.5c1.514 5.013 4.848 8.18 10 9.5 44 0.667 88 0.667 132 0 5.152-1.32 8.486-4.487 10-9.5 1.154 6.487 1.321 13.154 0.5 20-0.935 3.095-2.769 5.429-5.5 7-46.626 2.313-93.293 2.646-140 1-3.653-1.489-6.153-4.156-7.5-8-0.821-6.846-0.654-13.513 0.5-20z'
+              fill='#e2dfe2' />
+            <path
+              d='m326.5 397.5c-0.418 0.722-1.084 1.222-2 1.5 3.946 2.111 6.613 5.278 8 9.5-1.768 2.008-3.434 4.174-5 6.5-2.217 1.275-4.551 2.275-7 3-43.333 0.667-86.667 0.667-130 0-2.677-0.249-5.01-1.249-7-3-1.566-2.326-3.232-4.492-5-6.5 1.588-4.249 4.255-7.582 8-10 46.707 1.646 93.374 1.313 140-1z'
+              fill='#eeebee' opacity='.997' />
+            <path
+              d='m178.5 408.5c1.768 2.008 3.434 4.174 5 6.5 1.99 1.751 4.323 2.751 7 3 43.333 0.667 86.667 0.667 130 0 2.449-0.725 4.783-1.725 7-3 1.566-2.326 3.232-4.492 5-6.5 0.166 6.675 0 13.342-0.5 20-3.226 7.032-8.726 10.032-16.5 9h-120c-7.774 1.032-13.274-1.968-16.5-9-0.5-6.658-0.666-13.325-0.5-20z'
+              fill='#e2dfe2' />
+            <path
+              d='m195.5 437.5h120c3.24 2.139 5.24 5.139 6 9-1.73 3.568-4.397 6.402-8 8.5-38.667 0.667-77.333 0.667-116 0-3.548-2.047-6.215-4.88-8-8.5 0.76-3.861 2.76-6.861 6-9z'
+              fill='#efecef' opacity='.997' />
+            <path
+              d='m189.5 446.5c1.785 3.62 4.452 6.453 8 8.5 38.667 0.667 77.333 0.667 116 0 3.603-2.098 6.27-4.932 8-8.5 1.153 5.819 1.319 11.819 0.5 18-1.5 5.5-5 9-10.5 10.5-7.993 0.5-15.993 0.666-24 0.5h-35-29c-8.007 0.166-16.007 0-24-0.5-5.5-1.5-9-5-10.5-10.5-0.819-6.181-0.653-12.181 0.5-18z'
+              fill='#e1dee2' />
+            <path
+              d='m223.5 475.5h29c-0.561 6.232 0.272 12.232 2.5 18 4.041 5.862 8.541 11.195 13.5 16-1.903 0.296-3.57 0.963-5 2h-16c-16.445-6.191-24.445-18.191-24-36z'
+              fill='#6e60b8' />
+            <path
+              d='m252.5 475.5h35c0.919 15.504-5.414 26.837-19 34-4.959-4.805-9.459-10.138-13.5-16-2.228-5.768-3.061-11.768-2.5-18z'
+              fill='#8478c2' opacity='.994' />
+          </svg>
+        </div>
+        <div class='container__subFeatContent'>
+          <h3 class='container__subFeatMainText'></h3>
+          <p> Creative solutions that align with your brand identity.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- <div class="new-section">
+    <div class="container1">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Address</div>
+            <div class="text-one">Quantumsoft house, near Prashant Nagar, Prashant Nagar, Shyam Nagar, </div>
+            <div class="text-two">Amravati, Maharashtra 444606 </div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Phone</div>
+            <div class="text-one">+91-7498857371</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-two">contact@quantumsofttechnologies.com </div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Send us a message</div>
+          <p>Feel free to reach out anytime. We are here to assist you with any cybersecurity concerns or queries you
+            may have.</p>
+          <form action="submit_form.php" method="POST">
+            <div class="input-box">
+              <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+              <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+              <textarea name="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <div class="button">
+              <input type="submit" value="Send Message">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    
+ <!-- Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+      <div class="row g-5">
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <div class="footer-item">
+                      <h3 class="text-white mb-4">
+                          <a href="index.html">
+                              <img style="width: 225px; display: flex;align-items: center;padding: 0px; "
+                                  src="img/logo.png" alt="logo"></a>
+                      </h3>
+                      <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be
+                          accessible, effective, and tailored to your business needs.
+                          Powered by a team of experts who are passionate about technology and problem-solving.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Short Link's</h4>
+                  <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                  <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                  <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                  <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                  <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                  <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                  <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Help Link's</h4>
+                  <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                  <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                  <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="footer-item d-flex flex-column">
+                  <h4 class="text-white mb-4">Contact Info</h4>
+
+                  <a href="#"><i class="fa fa-map-marker-alt me-2"></i>
+                    QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+
+                  <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                      contact@quantumsofttechnologies.com</a>
+
+                  <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+              </div>
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
+                          class="fab fa-twitter"></i></a>
+                          <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i
+                              class="fab fa-instagram"></i></a>
+                      <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i
+                              class="fab fa-linkedin-in"></i></a>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+   <!-- Copyright Start -->
+   <!-- <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-body"><a href="#"
+                        class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft
+                        Technologies</a>, All right
+                    reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-body">
+
+                Designed By <a class="border-bottom text-white"
+                    href="#">QuantumSoft</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Copyright End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+  <script src="config/Config.js"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

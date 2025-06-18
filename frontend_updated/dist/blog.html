@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>QuantumSoft Technologies Pvt Ltd - Blog & News</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="QuantumSoft Technologies blog, tech news, IT updates" name="keywords">
+    <meta content="Latest news and blog posts from QuantumSoft Technologies" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+        } */
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .news-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .news-img-container {
+            height: 200px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        
+        .news-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-img {
+            transform: scale(1.1);
+        }
+        
+        .news-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .news-date {
+            margin-right: 15px;
+        }
+        
+        .news-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .news-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            transition: color 0.3s ease;
+        }
+        
+        .news-card:hover .news-title {
+            color: var(--primary-color);
+        }
+        
+        .news-excerpt {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title h1 {
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .bg-breadcrumb {
+            background: linear-gradient(url('img/blog-banner.jpg'));
+            
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            justify-content: center;
+        }
+        
+        .breadcrumb-item a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+        
+        /* News Modal Styles */
+        .news-modal .modal-dialog {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+        
+        .news-modal .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .news-modal .modal-header {
+            border-bottom: none;
+            padding: 0;
+            position: relative;
+        }
+        
+        .news-modal .modal-header .btn-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .news-modal .modal-header .btn-close:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        .news-modal .modal-body {
+            padding: 0;
+        }
+        
+        .news-modal-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .news-modal-content {
+            padding: 30px;
+            background: white;
+        }
+        
+        .news-modal-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .news-modal-date {
+            margin-right: 20px;
+        }
+        
+        .news-modal-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .news-modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.3;
+        }
+        
+        .news-modal-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .news-modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-top: 1px solid #eee;
+            background: #f9f9f9;
+        }
+        
+        .news-modal-share {
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-modal-share span {
+            margin-right: 10px;
+            color: #777;
+            font-weight: 500;
+        }
+        
+        .share-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #555;
+            margin-right: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-icons a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .share-icons .facebook:hover {
+            background: #3b5998;
+            color: white;
+        }
+        
+        .share-icons .twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .share-icons .linkedin:hover {
+            background: #0077B5;
+            color: white;
+        }
+        
+        .share-icons .whatsapp:hover {
+            background: #25D366;
+            color: white;
+        }
+        
+        .news-modal .btn-close-modal {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .news-modal .btn-close-modal:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-img-container {
+                height: 250px;
+            }
+            
+            .bg-breadcrumb {
+                padding: 60px 0;
+            }
+            
+            .news-modal .modal-dialog {
+                margin: 1rem auto;
+            }
+            
+            .news-modal-img {
+                height: 250px;
+            }
+            
+            .news-modal-title {
+                font-size: 22px;
+            }
+            
+            .news-modal-content {
+                padding: 20px;
+            }
+            
+            .news-modal-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <img src="img/logo.png" alt="QuantumSoft Technologies Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud" style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software TestingS.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                    </a>
+                                    <a href="UI UX Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7 Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="blog.html" class="nav-item nav-link active">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                        <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile Information
+                                    </a>
+                                    <a href="Web developmentP.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our News & Blog</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-primary">News & Blog</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <div class="section-title">
+                    <h4 class="text-uppercase text-primary">Our Blog</h4>
+                    <h1 class="display-3 text-capitalize mb-3">Latest Blog & News</h1>
+                </div>
+                <p class="mb-4">Stay updated with the latest trends, insights, and announcements from QuantumSoft Technologies.</p>
+            </div>
+            
+            <div class="blog-container" id="blogContainer">
+                <!-- Blog posts will be dynamically loaded here -->
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-3">Loading latest news...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- News Modal -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content news-modal">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img id="modalNewsImage" src="" alt="News Image" class="news-modal-img">
+                </div>
+                <div class="modal-body">
+                    <div class="news-modal-content">
+                        <div class="news-modal-meta">
+                            <span class="news-modal-date" id="modalNewsDate"><i class="far fa-calendar-alt me-2"></i></span>
+                            <span class="news-modal-category">Tech</span>
+                        </div>
+                        <h3 class="news-modal-title" id="modalNewsTitle"></h3>
+                        <div class="news-modal-text" id="modalNewsContent"></div>
+                    </div>
+                    <div class="news-modal-footer">
+                        <div class="news-modal-share">
+                            <span>Share:</span>
+                            <div class="share-icons">
+                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-close-modal" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px;" src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be accessible, effective, and tailored to your business needs. Powered by a team of experts who are passionate about technology and problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <a href="https://maps.app.goo.gl/w36SmLDpoiTe9Uai8"><i class="fa fa-map-marker-alt me-2"></i>
+                            QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i>
+                            contact@quantumsofttechnologies.com</a>
+                        <a href="tel:+917498857371"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end mt-3">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft Technologies</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+                    Designed By <a class="border-bottom text-white" href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize WOW animations
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+    
+            // Fetch news from API
+            fetchNews();
+    
+            async function fetchNews() {
+                try {
+                    const response = await fetch('/api/News/allnews');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const newsData = await response.json();
+                    renderNews(newsData);
+                } catch (error) {
+                    console.error('Error fetching news:', error);
+                    showError();
+                }
+            }
+    
+            function renderNews(newsData) {
+                const blogContainer = document.getElementById('blogContainer');
+                
+                if (!newsData || newsData.length === 0) {
+                    blogContainer.innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                            <h3 class="text-muted">No news available</h3>
+                            <p>Check back later for updates.</p>
+                        </div>
+                    `;
+                    return;
+                }
+    
+                blogContainer.innerHTML = '';
+                
+                newsData.forEach(news => {
+                    const newsCard = document.createElement('div');
+                    newsCard.className = 'news-card wow fadeInUp';
+                    newsCard.setAttribute('data-wow-delay', '0.1s');
+    
+                    // Format the date
+                    const createdAt = news.publishedDate ? new Date(news.publishedDate) : new Date();
+                    const formattedDate = createdAt.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+    
+                    // Handle image URL - use the getNewsImage endpoint
+                    const imageUrl = news.imageUrl 
+                        ? `/api/News/getNewsImage/${news.id}`
+                        : 'img/default-news.jpg';
+    
+                    newsCard.innerHTML = `
+                        <div class="news-img-container">
+                            <img src="${imageUrl}" alt="${news.newsTitle}" class="news-img"
+                                 onerror="this.src='img/default-news.jpg';this.onerror=null;">
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>${formattedDate}</span>
+                                <span class="news-category">Tech</span>
+                            </div>
+                            <h3 class="news-title">${news.newsTitle || 'No title'}</h3>
+                            <p class="news-excerpt">${news.newsContent ? news.newsContent.substring(0, 150) + '...' : 'No content available'}</p>
+                            <a href="#" class="read-more" data-news-id="${news.id}">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    `;
+    
+                    blogContainer.appendChild(newsCard);
+                });
+                
+                // Add click event listeners to all "Read More" buttons
+                document.querySelectorAll('.read-more').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const newsId = this.getAttribute('data-news-id');
+                        showNewsModal(newsId, newsData);
+                    });
+                });
+            }
+            
+            function showNewsModal(newsId, newsData) {
+                const news = newsData.find(item => item.id == newsId);
+                if (!news) return;
+                
+                // Format the date
+                const createdAt = news.publishedDate ? new Date(news.publishedDate) : new Date();
+                const formattedDate = createdAt.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // Set modal content
+                document.getElementById('modalNewsTitle').textContent = news.newsTitle || 'No title';
+                document.getElementById('modalNewsContent').innerHTML = news.newsContent || 'No content available';
+                document.getElementById('modalNewsDate').textContent = formattedDate;
+                
+                // Set image - use the getNewsImage endpoint
+                const imageUrl = news.imageUrl 
+                    ? `/api/News/getNewsImage/${news.id}`
+                    : 'img/default-news.jpg';
+                
+                const modalImage = document.getElementById('modalNewsImage');
+                modalImage.src = imageUrl;
+                modalImage.alt = news.newsTitle || 'News Image';
+                modalImage.onerror = function() {
+                    this.src = 'img/default-news.jpg';
+                    this.onerror = null;
+                };
+                
+                // Update share links
+                const currentUrl = encodeURIComponent(window.location.href.split('?')[0] + `?news=${newsId}`);
+                const title = encodeURIComponent(news.newsTitle || 'Check out this news');
+                const text = encodeURIComponent(news.newsContent ? news.newsContent.substring(0, 100) + '...' : 'Interesting news from QuantumSoft');
+                
+                document.querySelector('.news-modal .facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                document.querySelector('.news-modal .twitter').href = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`;
+                document.querySelector('.news-modal .linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${title}&summary=${text}`;
+                document.querySelector('.news-modal .whatsapp').href = `https://wa.me/?text=${title}%20${currentUrl}`;
+                
+                // Show modal
+                const newsModal = new bootstrap.Modal(document.getElementById('newsModal'));
+                newsModal.show();
+            }
+    
+            function showError() {
+                const blogContainer = document.getElementById('blogContainer');
+                blogContainer.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-exclamation-triangle fa-3x text-danger mb-3"></i>
+                        <h3 class="text-danger">Failed to load news</h3>
+                        <p>Please check your connection and try again later.</p>
+                        <button class="btn btn-primary mt-3" onclick="location.reload()">Retry</button>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
