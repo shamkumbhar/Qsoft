@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS Services | QuantumSoft Technologies</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- GIS Specific CSS -->
+    <style>
+        .gis-map-container {
+            height: 500px;
+            width: 100%;
+            border-radius: 0 0 8px 8px;
+        }
+        .gis-hero {
+            background-color: #000000ec;
+            padding: 10rem;
+            color: white;
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="/" class="navbar-brand p-0">
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="about.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                    About Us
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Quantumsoft Leadership.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our Leadership
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Testimonial.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                    Testimonials
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="ourStory.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                    Our Story
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Project.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-cloud" style="margin-right: 8px; color: blue;"></i>
+                                    Our Projects
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="service.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                    Our Services
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Web Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                </a>
+                                <a href="Interface Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                    Interface Design
+                                </a>
+                                <a href="Business Consulting.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                    Business Consulting
+                                </a>
+                                <a href="gis_services.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-map-marked-alt" style="margin-right: 8px; color: green;"></i> GIS Services
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="App_Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App Development
+                                </a>
+                                <a href="Content_Creation.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content Creation
+                                </a>
+                                <a href="Branding.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                </a>
+                                <a href="gps_services.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                    <i class="fas fa-location-arrow" style="margin-right: 8px; color: red;"></i> GPS Services
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-4" style="padding: 10px;">
+                                <a href="Software TestingS.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                </a>
+                                <a href="UI UX Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX Design
+                                </a>
+                                <a href="24_7_Service.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7 Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                <div class="nav-item dropdown">
+                    <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                    <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                        <div class="row">
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Web Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web Design
+                                </a>
+                                <a href="Cyber Security.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber Security
+                                </a>
+                                <a href="Mobile Information.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile Information
+                                </a>
+                                <a href="Web developmentP.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                <a href="Software Testing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                </a>
+                                <a href="Digital Marketing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital Marketing
+                                </a>
+                                <a href="Keyword Research.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                    <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- GIS Hero Section -->
+    <section class="gis-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Advanced GIS Services</h1>
+                    <p class="lead mb-4">Powerful geospatial analysis, visualization, and data management solutions for your business needs.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#gis-tools" class="btn btn-light btn-lg px-4">Explore Tools</a>
+                        <button type="button" class="btn btn-outline-light btn-lg px-4" data-bs-toggle="modal" data-bs-target="#gisConsultationModal">
+                            Request GIS Consultation
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="GIS Visualization" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIS Consultation Modal -->
+    <div class="modal fade" id="gisConsultationModal" tabindex="-1" aria-labelledby="gisConsultationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="gisConsultationModalLabel">Request GIS Consultation</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="gisConsultationForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="gisName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="gisName" name="gisName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="gisCompany" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="gisCompany" name="gisCompany">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="gisEmail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="gisEmail" name="gisEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="gisPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="gisPhone" name="gisPhone" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gisService" class="form-label">GIS Service Needed</label>
+                            <select class="form-select" id="gisService" name="gisService" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <option value="Mapping & Visualization">Mapping & Visualization</option>
+                                <option value="Spatial Analysis">Spatial Analysis</option>
+                                <option value="Location Intelligence">Location Intelligence</option>
+                                <option value="Asset Tracking">Asset Tracking</option>
+                                <option value="Custom GIS Development">Custom GIS Development</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gisMessage" class="form-label">Project Details</label>
+                            <textarea class="form-control" id="gisMessage" name="gisMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="gisAgreeTerms" name="gisAgreeTerms" required>
+                            <label class="form-check-label" for="gisAgreeTerms">I agree to the terms and conditions</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitGisForm">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GIS Tools Section -->
+    <section id="gis-tools" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our GIS Tools & Services</h2>
+                <p class="text-muted">Comprehensive geospatial solutions for various industries</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Map Container -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white border-0">
+                            <ul class="nav nav-tabs card-header-tabs" id="gisTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button">Interactive Map</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="analysis-tab" data-bs-toggle="tab" data-bs-target="#analysis-tab-pane" type="button">Spatial Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="3d-tab" data-bs-toggle="tab" data-bs-target="#3d-tab-pane" type="button">3D Visualization</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="tab-content" id="gisTabsContent">
+                                <div class="tab-pane fade show active" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab">
+                                    <div id="gis-map" class="gis-map-container"></div>
+                                </div>
+                                <div class="tab-pane fade" id="analysis-tab-pane" role="tabpanel" aria-labelledby="analysis-tab">
+                                    <div class="p-4 text-center">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Spatial Analysis" class="img-fluid rounded">
+                                        <h4 class="mt-3">Advanced Spatial Analysis</h4>
+                                        <p class="text-muted">Perform complex geospatial analysis including buffer zones, heat maps, and spatial statistics.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="3d-tab-pane" role="tabpanel" aria-labelledby="3d-tab">
+                                    <div class="p-4 text-center">
+                                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="3D Visualization" class="img-fluid rounded">
+                                        <h4 class="mt-3">3D Geospatial Visualization</h4>
+                                        <p class="text-muted">Explore your data in three dimensions with our advanced 3D visualization tools.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GIS Tools Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4"><i class="fas fa-tools me-2"></i>GIS Tools</h5>
+                            
+                            <div class="mb-4">
+                                <h6>Base Layers</h6>
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" id="satelliteLayer" checked>
+                                    <label class="form-check-label" for="satelliteLayer">Satellite Imagery</label>
+                                </div>
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" id="streetLayer" checked>
+                                    <label class="form-check-label" for="streetLayer">Street Map</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="terrainLayer">
+                                    <label class="form-check-label" for="terrainLayer">Terrain</label>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="mb-4">
+                                <h6>Overlay Layers</h6>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="parcelsLayer">
+                                    <label class="form-check-label" for="parcelsLayer">Land Parcels</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="zoningLayer">
+                                    <label class="form-check-label" for="zoningLayer">Zoning Districts</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="floodLayer">
+                                    <label class="form-check-label" for="floodLayer">Flood Zones</label>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="mb-4">
+                                <h6>Analysis Tools</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-ruler me-1"></i>Measure</button>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-draw-polygon me-1"></i>Draw</button>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-chart-pie me-1"></i>Statistics</button>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-fire me-1"></i>Heatmap</button>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-buffer me-1"></i>Buffer</button>
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fas fa-route me-1"></i>Network</button>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div>
+                                <h6>Coordinates</h6>
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text">Lat</span>
+                                    <input type="text" class="form-control" id="latitudeInput" readonly>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text">Lng</span>
+                                    <input type="text" class="form-control" id="longitudeInput" readonly>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary w-100" id="copyCoordsBtn">
+                                    <i class="fas fa-copy me-1"></i>Copy Coordinates
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIS Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3">
+                                <i class="fas fa-database fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Geospatial Data Management</h5>
+                            <p class="card-text text-muted">Store, organize, and manage large volumes of spatial data with our robust database solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-success bg-opacity-10 text-success mb-3">
+                                <i class="fas fa-map fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Web Mapping Applications</h5>
+                            <p class="card-text text-muted">Custom interactive web maps tailored to your specific business requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-info bg-opacity-10 text-info mb-3">
+                                <i class="fas fa-brain fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">AI-Powered Analytics</h5>
+                            <p class="card-text text-muted">Machine learning models for predictive analysis and automated feature detection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-warning bg-opacity-10 text-warning mb-3">
+                                <i class="fas fa-people-arrows fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Field Data Collection</h5>
+                            <p class="card-text text-muted">Mobile apps for efficient field data collection with offline capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-danger bg-opacity-10 text-danger mb-3">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Spatial Business Intelligence</h5>
+                            <p class="card-text text-muted">Combine GIS with BI tools for powerful location-based business insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-box bg-secondary bg-opacity-10 text-secondary mb-3">
+                                <i class="fas fa-cloud fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Cloud GIS Solutions</h5>
+                            <p class="card-text text-muted">Scalable cloud-based GIS infrastructure for enterprises of all sizes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Need Custom GIS Solutions?</h2>
+                    <p class="text-muted mb-4">Our team at QuantumSoft Technologies can develop tailored GIS applications for your specific needs.</p>
+                    <div class="d-flex mb-3">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5>Our Location</h5>
+                            <p class="text-muted">QuantumSoft Technologies Private Limited, Pune, Maharashtra, India</p>
+                            <div class="mt-2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2807244417154!2d73.94225977423869!3d18.561378482540125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c33573bfa8bf%3A0x6015064d985aee34!2sQuantumSoft%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1747732732814!5m2!1sen!2sin" width="100%" height="200" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="card-title mb-4">Request GIS Solution</h5>
+                            <form id="gisSolutionForm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="solutionName" name="solutionName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Email Address" id="solutionEmail" name="solutionEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Company Name" id="solutionCompany" name="solutionCompany">
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" id="solutionService" name="solutionService" required>
+                                        <option value="" selected disabled>Select GIS Service</option>
+                                        <option value="Web Mapping Application">Web Mapping Application</option>
+                                        <option value="Spatial Analysis">Spatial Analysis</option>
+                                        <option value="Data Management">Data Management</option>
+                                        <option value="Custom GIS Development">Custom GIS Development</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Describe your project requirements" id="solutionRequirements" name="solutionRequirements" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; " src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be accessible, effective, and tailored to your business needs. Powered by a team of experts who are passionate about technology and problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <a href="https://maps.app.goo.gl/5p7kxPFTrmMmLiuP9"><i class="fa fa-map-marker-alt me-2"></i> QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i> contact@quantumsofttechnologies.com</a>
+                        <a href="tel:+91-7498857371"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+     
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft Technologies</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+                    Designed By <a class="border-bottom text-white" href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+ 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/gis.js"></script>
+    
+    <script>
+        // Handle GIS Consultation Form Submission (Modal)
+        document.getElementById('submitGisForm').addEventListener('click', function() {
+            const form = document.getElementById('gisConsultationForm');
+            if (form.checkValidity()) {
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('gisName').value,
+                    company: document.getElementById('gisCompany').value,
+                    email: document.getElementById('gisEmail').value,
+                    phone: document.getElementById('gisPhone').value,
+                    service: document.getElementById('gisService').value,
+                    message: document.getElementById('gisMessage').value
+                };
+                
+                // Create mailto link
+                const subject = `GIS Consultation Request - ${formData.name}`;
+                const body = `Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService Needed: ${formData.service}\n\nProject Details:\n${formData.message}`;
+                
+                const mailtoLink = `mailto:contact@quantumsofttechnologies.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Open default email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                alert('Thank you for your request. Your email client will open to send your consultation request.');
+                
+                // Close the modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('gisConsultationModal'));
+                modal.hide();
+                
+                // Reset form
+                form.reset();
+            } else {
+                form.reportValidity();
+            }
+        });
+        
+        // Handle GIS Solution Form Submission (Contact Section)
+        document.getElementById('gisSolutionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('solutionName').value,
+                email: document.getElementById('solutionEmail').value,
+                company: document.getElementById('solutionCompany').value,
+                service: document.getElementById('solutionService').value,
+                requirements: document.getElementById('solutionRequirements').value
+            };
+            
+            // Create mailto link
+            const subject = `GIS Solution Request - ${formData.name}`;
+            const body = `Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nService Needed: ${formData.service}\n\nRequirements:\n${formData.requirements}`;
+            
+            const mailtoLink = `mailto:contact@quantumsofttechnologies.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your request. Your email client will open to send your GIS solution request.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Initialize map
+        document.addEventListener('DOMContentLoaded', function() {
+            // Basic map initialization
+            const map = L.map('gis-map').setView([18.5614, 73.9485], 13);
+            
+            // Add base layers
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            // Add a marker for QuantumSoft location
+            L.marker([18.5614, 73.9485]).addTo(map)
+                .bindPopup('QuantumSoft Technologies')
+                .openPopup();
+                
+            // Update coordinates on map click
+            map.on('click', function(e) {
+                document.getElementById('latitudeInput').value = e.latlng.lat.toFixed(6);
+                document.getElementById('longitudeInput').value = e.latlng.lng.toFixed(6);
+            });
+            
+            // Copy coordinates button
+            document.getElementById('copyCoordsBtn').addEventListener('click', function() {
+                const lat = document.getElementById('latitudeInput').value;
+                const lng = document.getElementById('longitudeInput').value;
+                if (lat && lng) {
+                    navigator.clipboard.writeText(`${lat}, ${lng}`);
+                    alert('Coordinates copied to clipboard!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

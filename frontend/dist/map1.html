@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GIS Services | QuantumSoft Technologies Pvt Ltd</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GIS services, geospatial solutions, mapping, spatial analysis, location intelligence" name="keywords">
+    <meta content="Professional GIS services including spatial data mapping, geospatial analysis, asset tracking, and custom GIS solutions for various industries." name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Main Content Styling */
+        .gis-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .gis-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gis-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .service-container {
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0d6efd;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #0d6efd;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card .card-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin: 20px 0;
+        }
+
+        .service-card .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-card .card-text {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .industry-badge {
+            display: inline-block;
+            margin: 8px;
+            padding: 10px 20px;
+            background-color: #edf2fa;
+            border-radius: 25px;
+            font-size: 1rem;
+            color: #0d6efd;
+            border: 1px solid #cfe2ff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .industry-badge:hover {
+            background-color: #0d6efd;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(13, 110, 253, 0.2);
+        }
+
+        .location-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            border-radius: 15px;
+            margin: 60px 0;
+            overflow: hidden;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .location-info {
+            padding: 30px;
+        }
+
+        .location-info h3 {
+            color: #0d6efd;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .location-info p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .location-info i {
+            color: #0d6efd;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .map-container {
+            height: 100%;
+            min-height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .tech-stack {
+            margin: 60px 0;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 15px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #0d6efd;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .gis-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="/" class="navbar-brand p-0">
+                <img src="img/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="about.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-address-card" style="margin-right: 8px; color: blue;"></i>
+                                        About Us
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Quantumsoft Leadership.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-user-tie" style="margin-right: 8px; color: blue;"></i> Our Leadership
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Testimonial.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-comments" style="margin-right: 8px; color: blue;"></i>
+                                        Testimonials
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="ourStory.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-film" style="margin-right: 8px; color: blue;"></i>
+                                        Our Story
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Project.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-cloud" style="margin-right: 8px; color: blue;"></i>
+                                        Our Projects
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="service.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-window-restore" style="margin-right: 8px; color: blue;"></i>
+                                        Our Services
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu p-3" style="min-width: 500px; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6);  backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Web Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                    </a>
+                                    <a href="Interface Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-pencil-ruler" style="margin-right: 8px; color: blue;"></i>
+                                        Interface Design
+                                    </a>
+                                    <a href="Business Consulting.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-briefcase" style="margin-right: 8px; color: blue;"></i>
+                                        Business Consulting
+                                    </a>
+                                    <a href="gis_services.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-map-marked-alt" style="margin-right: 8px; color: green;"></i>
+                                        GIS Services
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="App_Development.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> App Development
+                                    </a>
+                                    <a href="Content_Creation.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-pen" style="margin-right: 8px; color: blue;"></i> Content Creation
+                                    </a>
+                                    <a href="Branding.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Branding
+                                    </a>
+                                    <a href="gps_services.html" class="dropdown-item" style="white-space: normal; color: white;">
+                                        <i class="fas fa-location-arrow" style="margin-right: 8px; color: red;"></i> GPS Services
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4" style="padding: 10px;">
+                                    <a href="Software TestingS.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bug" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                    </a>
+                                    <a href="UI UX Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-palette" style="margin-right: 8px; color: blue;"></i> UI/UX Design
+                                    </a>
+                                    <a href="24_7_Service.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-clock" style="margin-right: 8px; color: blue;"></i> 24/7 Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="blog.html" class="nav-item nav-link">Blogs & News</a>
+                    <div class="nav-item dropdown">
+                        <a href="Project.html" class="nav-link dropdown-toggle" data-bs-toggle="">Projects</a>
+                        <div class="dropdown-menu p-3" style="min-width: 300px; width: auto; border: 1px solid #ddd; background-color: rgba(127, 135, 158, 0.6); backdrop-filter: blur(8px);">
+                            <div class="row">
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Web Design.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-paint-brush" style="margin-right: 8px; color: blue;"></i> Web Design
+                                    </a>
+                                    <a href="Cyber Security.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-shield-alt" style="margin-right: 8px; color: blue;"></i> Cyber Security
+                                    </a>
+                                    <a href="Mobile Information.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-mobile-alt" style="margin-right: 8px; color: blue;"></i> Mobile Information
+                                    </a>
+                                    <a href="Web developmentP.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-code" style="margin-right: 8px; color: blue;"></i> Web Development
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6" style="padding: 10px 15px;">
+                                    <a href="Software Testing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-vials" style="margin-right: 8px; color: blue;"></i> Software Testing
+                                    </a>
+                                    <a href="Digital Marketing.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-bullhorn" style="margin-right: 8px; color: blue;"></i> Digital Marketing
+                                    </a>
+                                    <a href="Keyword Research.html" class="dropdown-item" style="white-space: normal;color: white;">
+                                        <i class="fas fa-search" style="margin-right: 8px; color: blue;"></i> Keyword Research
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Careers.html" class="nav-item nav-link">Careers</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- GIS Hero Section -->
+        <div class="container-fluid gis-hero wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <h1 class="display-4 animated slideInDown">Geospatial Intelligence Solutions</h1>
+                <p class="animated fadeInUp">Transform your spatial data into actionable insights with our cutting-edge GIS services. We bridge the gap between location data and business intelligence.</p>
+                <a href="#contact" class="btn btn-primary btn-lg rounded-pill py-3 px-5 animated slideInUp">Get a Free Consultation</a>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- GIS Services Section -->
+    <div class="container service-container wow fadeInUp" data-wow-delay="0.1s">
+        <h2 class="section-title">Our GIS Services</h2>
+        <p class="text-center mb-5">We provide comprehensive Geographic Information System solutions tailored to your specific needs, helping you visualize, analyze, and interpret data to make informed decisions.</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="card-title">Spatial Data Mapping</h3>
+                        <p class="card-text">Create interactive, multi-layered digital maps that provide valuable insights into your geographic data with our advanced mapping solutions.</p>
+                        <ul class="text-start ps-4">
+                            <li>Thematic mapping</li>
+                            <li>Land use classification</li>
+                            <li>3D terrain visualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="card-title">Data Collection & Integration</h3>
+                        <p class="card-text">Gather and integrate spatial data from multiple sources including satellite imagery, IoT devices, and field surveys for comprehensive analysis.</p>
+                        <ul class="text-start ps-4">
+                            <li>Mobile data collection</li>
+                            <li>Satellite imagery processing</li>
+                            <li>Data normalization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Geospatial Analysis</h3>
+                        <p class="card-text">Perform sophisticated spatial analysis to identify patterns, relationships, and trends that drive strategic decision-making.</p>
+                        <ul class="text-start ps-4">
+                            <li>Network analysis</li>
+                            <li>Hotspot detection</li>
+                            <li>Suitability modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                        <h3 class="card-title">Asset Tracking</h3>
+                        <p class="card-text">Monitor and manage mobile assets in real-time with our GPS-enabled tracking solutions integrated with GIS platforms.</p>
+                        <ul class="text-start ps-4">
+                            <li>Fleet management</li>
+                            <li>Field personnel tracking</li>
+                            <li>Geofencing alerts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">Web & Mobile GIS</h3>
+                        <p class="card-text">Access your geospatial data anywhere with our custom web and mobile GIS applications tailored to your workflow.</p>
+                        <ul class="text-start ps-4">
+                            <li>Interactive dashboards</li>
+                            <li>Field data collection apps</li>
+                            <li>Location intelligence portals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="service-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3 class="card-title">Urban Planning Solutions</h3>
+                        <p class="card-text">Support smart city initiatives with GIS tools for zoning analysis, infrastructure planning, and demographic studies.</p>
+                        <ul class="text-start ps-4">
+                            <li>Land use planning</li>
+                            <li>Transportation modeling</li>
+                            <li>Utility network management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industries Section -->
+    <div class="container mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="text-center mb-5">Our GIS solutions are transforming operations across multiple sectors by providing location-based intelligence.</p>
+        
+        <div class="text-center">
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.1s"><i class="fas fa-city me-2"></i> Urban Planning</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.2s"><i class="fas fa-truck me-2"></i> Logistics</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.3s"><i class="fas fa-leaf me-2"></i> Agriculture</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.4s"><i class="fas fa-bolt me-2"></i> Utilities</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.5s"><i class="fas fa-shield-alt me-2"></i> Public Safety</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.6s"><i class="fas fa-mountain me-2"></i> Mining</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.7s"><i class="fas fa-tree me-2"></i> Forestry</span>
+            <span class="industry-badge wow fadeInUp" data-wow-delay="0.8s"><i class="fas fa-graduation-cap me-2"></i> Education</span>
+        </div>
+    </div>
+
+    <!-- Technology Stack -->
+    <div class="container tech-stack wow fadeIn" data-wow-delay="0.1s">
+        <h2 class="section-title">Our Technology Stack</h2>
+        <p class="text-center mb-5">We leverage leading GIS platforms and complementary technologies to deliver robust solutions.</p>
+        
+        <div class="row g-4">
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h4 class="tech-name">ArcGIS</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <h4 class="tech-name">QGIS</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h4 class="tech-name">Google Maps API</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-location-arrow"></i>
+                    </div>
+                    <h4 class="tech-name">OpenLayers</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4 class="tech-name">Leaflet</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h4 class="tech-name">PostGIS</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="tech-name">GeoServer</h4>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h4 class="tech-name">Carto</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <div class="container-fluid location-section wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="location-card">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="location-info">
+                            <h3>Visit Our Office</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</p>
+                            <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91-7498857371</p>
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> contact@quantumsofttechnologies.com</p>
+                            <p><i class="fas fa-clock"></i> <strong>Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <a href="https://maps.app.goo.gl/5p7kxPFTrmMmLiuP9" class="btn btn-primary mt-3" target="_blank"><i class="fas fa-directions me-2"></i> Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2807244417154!2d73.94225977423869!3d18.561378482540125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c33573bfa8bf%3A0x6015064d985aee34!2sQuantumSoft%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1747732732814!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container cta-section wow fadeIn" data-wow-delay="0.1s">
+        <h2>Ready to Transform Your Spatial Data?</h2>
+        <p>Our GIS experts are ready to help you unlock the power of location intelligence. Contact us today to discuss your project requirements.</p>
+        <a href="contact.html" class="btn btn-cta btn-lg">Get Started Now</a>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <div class="footer-item">
+                            <h3 class="text-white mb-4">
+                                <a href="index.html">
+                                    <img style="width: 225px; display: flex;align-items: center;padding: 0px; " src="img/logo.png" alt="logo"></a>
+                            </h3>
+                            <p class="mb-3">At QuantumSoft Technologies, we believe that technology should be accessible, effective, and tailored to your business needs. Powered by a team of experts who are passionate about technology and problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Short Link's</h4>
+                        <a href="index.html"><i class="fas fa-angle-right me-2"></i>Home</a>
+                        <a href="about.html"><i class="fas fa-angle-right me-2"></i>About</a>
+                        <a href="service.html"><i class="fas fa-angle-right me-2"></i>Service</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i>Blogs & News</a>
+                        <a href="Careers.html"><i class="fas fa-angle-right me-2"></i>Careers</a>
+                        <a href="testimonial.html"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Help Link's</h4>
+                        <a href="TermsandConditions.html"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="PrivacyPolicy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> Helps</a>
+                        <a href="help&Faq.html"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <a href="https://maps.app.goo.gl/5p7kxPFTrmMmLiuP9"><i class="fa fa-map-marker-alt me-2"></i> QuantumSoft Technologies, WTC Kharadi Fountain Road, CityVista, A Wing, Office No: 11, Third Floor, Kharadi, Pune, Maharashtra 411014</a>
+                        <a href="mailto:contact@quantumsofttechnologies.com"><i class="fas fa-envelope me-2"></i> contact@quantumsofttechnologies.com</a>
+                        <a href="tel:+012 345 67890"><i class="fas fa-phone me-2"></i> +91-7498857371</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/quantumsoft_technologies/profilecard/?igsh=MTYzMGFzYjdsZ3Jtbg=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/93195251/admin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Quantumsoft Technologies</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+                    Designed By <a class="border-bottom text-white" href="#">QuantumSoft</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="config/Config.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Initialize WOW.js for animations
+        new WOW().init();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

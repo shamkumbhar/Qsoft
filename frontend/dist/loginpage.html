@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #007BFF, #00D4FF);
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: not-allowed;
+      background-color: #ccc;
+      color: white;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    .btn.enabled {
+      cursor: pointer;
+      background-color: #007BFF;
+    }
+
+    .btn.enabled:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" class="input-field" placeholder="Username" oninput="checkInputs()" />
+    <input type="password" id="password" class="input-field" placeholder="Password" oninput="checkInputs()" />
+    <button class="btn" id="login-button" onclick="validateLogin()" disabled>Login</button>
+    <div id="error-message" class="error"></div>
+  </div>
+
+  <script>
+    const VALID_USERNAME = "admin";
+    const VALID_PASSWORD = "password123";
+
+    function checkInputs() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const loginButton = document.getElementById('login-button');
+
+      // Enable the login button if both fields are filled, otherwise disable it
+      if (username && password) {
+        loginButton.disabled = false;
+        loginButton.classList.add('enabled');
+      } else {
+        loginButton.disabled = true;
+        loginButton.classList.remove('enabled');
+      }
+    }
+
+    function validateLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorMessage = document.getElementById('error-message');
+
+      if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+        alert('Login successful!');
+        window.location.href = "accesslogin.html"; // Redirect to accesslogin.html
+      } else {
+        errorMessage.textContent = 'Invalid username or password';
+      }
+    }
+  </script>
+  <script>
+    // Right-click disable
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    
+    // Disable developer tools shortcuts
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+          (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+      }
+    });
+    
+    // Obfuscated credentials and validation
+    const _0xad3d=["\x61\x64\x6D\x69\x6E","\x70\x61\x73\x73\x77\x6F\x72\x64\x31\x32\x33"];
+    function checkInputs(){document.getElementById("username").value.trim()&&document.getElementById("password").value.trim()?(document.getElementById("login-button").disabled=!1,document.getElementById("login-button").classList.add("enabled")):(document.getElementById("login-button").disabled=!0,document.getElementById("login-button").classList.remove("enabled"))}
+    function validateLogin(){document.getElementById("username").value.trim()===_0xad3d[0]&&document.getElementById("password").value.trim()===_0xad3d[1]?(alert("Login successful!"),window.location.href="accesslogin.html"):document.getElementById("error-message").textContent="Invalid username or password"}
+    </script>
+</body>
+</html>

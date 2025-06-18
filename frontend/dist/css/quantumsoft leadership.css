@@ -1,0 +1,435 @@
+/* Member Section Title */
+.member-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.member-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    margin: 10px auto 0;
+    border-radius: 50px;
+    animation: grow 1s ease-out;
+}
+
+/* Member Section Container */
+.member-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #1a237e, #5c6bc0);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Member Card */
+.member-card {
+    background: linear-gradient(135deg, #d88282, #f3f4f6);
+    width: 350px;
+    height: 500px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* Hover Effect */
+.member-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #e0f7fa, #b3e5fc);
+}
+
+/* Member Card Decorative Shine */
+.member-card:before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.member-card:hover:before {
+    opacity: 1;
+}
+
+/* Member Card Image */
+.member-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.member-card img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Member Card Text */
+.member-card h2 {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1a237e;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.member-card p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+/* Animated Social Media Icons */
+.member-card .social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    z-index: 1;
+}
+
+.member-card .social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card .social-icons a:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+/* Responsive Design - Media Queries */
+@media screen and (max-width: 1024px) {
+    .member-card {
+        width: 300px;
+        height: 450px;
+    }
+
+    .member-card img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .member-card {
+        width: 250px;
+        height: 400px;
+    }
+
+    .member-card img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .member-card {
+        width: 220px;
+        height: 350px;
+    }
+
+    .member-card img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Team Section */
+.team-section {
+    background: linear-gradient(135deg, #00695c, #1a237e); /* Green to deep blue gradient */
+    color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Adding shadow for depth */
+}
+
+/* Section Heading */
+.team-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #ffeb3b; /* Bright Yellow */
+    font-weight: 900;
+    text-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5); /* Strong Glow effect */
+    animation: fadeInDown 1s ease-out;
+    position: relative;
+    display: inline-block;
+}
+
+/* Add underline effect to the heading */
+.team-section h2:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 6px;
+    background: #ffeb3b; /* Yellow underline */
+    margin: 10px auto 0;
+    border-radius: 50px;
+    animation: scaleIn 1s ease-out;
+}
+
+/* Paragraph Styling */
+.team-section p {
+    font-size: 1.6em;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0.95;
+    animation: fadeIn 1.2s ease-out;
+    color: #e0f7fa; /* Light teal text */
+    font-weight: 400;
+}
+
+/* Flexbox for Cards */
+.team-section .team-cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Card Styling */
+.team-section .team-card {
+    background: linear-gradient(145deg, #00bcd4, #00796b); /* Vibrant gradient for cards */
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 22%; /* 4 cards per row */
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease, filter 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+}
+
+/* Circular Image inside each card */
+.team-section .team-card img {
+    width: 140px;  /* Adjust the size of the image */
+    height: 140px; /* Same height as width for a perfect circle */
+    border-radius: 50%;  /* This makes the image circular */
+    object-fit: cover;  /* Ensures the image covers the circular area without distortion */
+    margin-bottom: 20px;  /* Space between the image and text */
+    border: 5px solid #ffeb3b; /* Yellow border around the image */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Adding shadow around the image */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition on hover */
+}
+
+/* Hover Effect on Image */
+.team-section .team-card:hover img {
+    transform: scale(1.15);  /* Slightly enlarge the image on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Shadow effect on hover */
+}
+
+/* Hover Effect on Cards */
+.team-section .team-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(145deg, #26a69a, #00897b); /* Darker gradient on hover */
+    border: 3px solid #ffeb3b; /* Yellow border on hover */
+    filter: brightness(1.2); /* Slightly brightens the card on hover */
+}
+
+/* Card Title */
+.team-section .team-card h3 {
+    font-size: 1.9rem;
+    color: #ffeb3b; /* Bright Yellow for Titles */
+    margin-bottom: 15px;
+    font-weight: 700;
+    z-index: 1;
+    position: relative;
+    text-transform: uppercase; /* Capitalize titles */
+    letter-spacing: 3px; /* Space between letters */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Hover effect for Card Title */
+.team-section .team-card:hover h3 {
+    color: #ffffff; /* Change color to white when card is hovered */
+}
+
+/* Card Content */
+.team-section .team-card p {
+    font-size: 1.2rem;
+    color: #e0f7fa; /* Light teal */
+    line-height: 1.6;
+    z-index: 1;
+    position: relative;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Media Queries */
+
+/* For Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .team-section h2 {
+        font-size: 2.6em;
+    }
+
+    .team-section p {
+        font-size: 1.3em;
+    }
+
+    .team-section .team-cards-container {
+        justify-content: center; /* Center align for smaller screens */
+    }
+
+    .team-section .team-card {
+        width: 45%; /* 2 cards per row on tablets */
+    }
+}
+
+/* For Mobile Phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .team-section h2 {
+        font-size: 2.2em;
+    }
+
+    .team-section p {
+        font-size: 1.1em;
+    }
+
+    .team-section .team-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-section .team-card {
+        width: 90%; /* Stack cards on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+/* For Desktops and Large Laptops (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    .team-section .team-card {
+        width: 22%; /* 4 cards per row with better spacing */
+    }
+}
